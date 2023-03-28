@@ -9,8 +9,8 @@
    <children>
       <Button layoutX="96.0" layoutY="255.0" mnemonicParsing="false" onAction="#createEntity" prefHeight="32.0" prefWidth="109.0" text="Create new entity" />
       <Group />
-      <Button layoutX="96.0" layoutY="298.0" mnemonicParsing="false" text="Delete all entities" />
-      <Button layoutX="80.0" layoutY="336.0" mnemonicParsing="false" text="Print number of entities" />
+      <Button onAction="#deleteEntity" layoutX="96.0" layoutY="298.0" mnemonicParsing="false" text="Delete all entities" />
+      <Button onAction="#printEntity" layoutX="80.0" layoutY="336.0" mnemonicParsing="false" text="Print number of entities" />
       <TextField fx:id="damage" accessibleRole="TEXT_AREA" alignment="CENTER" layoutX="76.0" layoutY="47.0" promptText="damage" />
       <TextField fx:id="health" alignment="CENTER" layoutX="75.0" layoutY="86.0" promptText="health" />
       <TextField fx:id="positionX" alignment="CENTER" layoutX="75.0" layoutY="129.0" promptText="position: x" />

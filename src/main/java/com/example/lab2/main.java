@@ -1,17 +1,18 @@
 package com.example.lab2;
 
 import javafx.application.Application;
+import javafx.fxml.FXMLLoader;
 import javafx.scene.Group;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.image.Image;
-import javafx.scene.image.ImageView;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 import javafx.scene.canvas.Canvas;
 
 import java.util.ArrayList;
 import java.util.Scanner;
-
+//52, 13, 17, 26, 40
 public class main extends Application {
 
     public static final int CANVAS_WIDTH;
@@ -35,12 +36,11 @@ public class main extends Application {
     @Override
     public void start(Stage stage) throws Exception{
 
+        Parent root1 = FXMLLoader.load(getClass().getResource("sample.fxml"));
+        Scene input = new Scene(root1,500,500);
+
         Canvas canvas = new Canvas(400, 300);
 
-        if (spriteImage == null) {
-            System.err.println("Failed to load sprite image");
-            System.exit(1);
-        }
         Sprite sprite = new Sprite(spriteImage, 120, 120, 2 , 100, 100);
         sprite.render(canvas);
         Group root = new Group();

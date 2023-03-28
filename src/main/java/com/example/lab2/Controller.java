@@ -7,6 +7,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 
 import java.net.URL;
+import java.util.Collection;
 import java.util.ResourceBundle;
 
 
@@ -27,5 +28,13 @@ public class Controller implements Initializable {
     private void createEntity(ActionEvent event){
         System.out.println("init new entity");
         main.create_entity(Integer.parseInt(positionX.getText()), Integer.parseInt(positionY.getText()));
+    }
+
+    public void deleteEntity(ActionEvent actionEvent) {
+        main.Entities.clear();
+    }
+
+    public void printEntity(ActionEvent actionEvent) {
+        main.Entities.forEach(En -> {System.err.println(En.toString());});
     }
 }
