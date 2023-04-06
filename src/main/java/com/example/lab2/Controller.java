@@ -31,6 +31,7 @@ public class Controller implements Initializable {
     }
 
     public void deleteEntity(ActionEvent actionEvent) {
+        main.root.getChildren().clear();
         main.Entities.clear();
     }
 

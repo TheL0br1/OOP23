@@ -1,5 +1,6 @@
 package com.example.lab2;
 
+import javafx.scene.canvas.Canvas;
 import javafx.scene.image.Image;
 
 enum Action {
@@ -19,9 +20,11 @@ public class Small_biter {
     private Action action;
     private static final int MaxSpeed;
 
-    private final static  String name = "Small_byter";
-   // private final Image spriteImage = new Image(getClass().getResource("main/sprites/Small_biter.png").toExternalForm());
+    public Canvas canvas;
 
+    private final static  String name = "Small_byter";
+    private final Image spriteImage = new Image(getClass().getResource("Small_biter.png").toExternalForm());
+    private Sprite sprite;
     static{
         count = 0;
         MaxSpeed = 100;
@@ -33,6 +36,12 @@ public class Small_biter {
         action = Action.NEUTRAL;
         id = count;
         count++;
+        canvas = new Canvas(250,200);
+        canvas.setLayoutX(posX);
+        canvas.setLayoutY(posY);
+        main.root.getChildren().add(canvas);
+        sprite = new Sprite(spriteImage, 130, 80, 1, posX, posY, Integer.toString(id));
+        sprite.render(canvas);
 
     }
     public Small_biter() {
@@ -69,6 +78,9 @@ public class Small_biter {
     public int getId(){
         return id;
     }
+    public Sprite getSprite(){
+        return sprite;
+    }
     public void move(int t){
         move(t, directionR);
     }
@@ -83,7 +95,7 @@ public class Small_biter {
     }
     public String toString()
     {
-        return name + ", located at: " + this.position.X + " - X, " + this.position.Y + " - Y";
+        return name + ", located at: " + this.position.X + " - X, " + this.position.Y + " - Y. My id: " + this.id;
     }
     static private class Position {
         public int X = 0 ;

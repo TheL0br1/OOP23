@@ -17,13 +17,15 @@ public class Sprite {
     private double xPos;
     private double yPos;
 
-    public Sprite(Image spriteSheet, int frameWidth, int frameHeight, int numFrames, double xPos, double yPos) {
+    private String name;
+    public Sprite(Image spriteSheet, int frameWidth, int frameHeight, int numFrames, double xPos, double yPos, String name) {
         this.spriteSheet = spriteSheet;
         this.frameWidth = frameWidth;
         this.frameHeight = frameHeight;
         this.numFrames = numFrames;
         this.xPos = xPos;
         this.yPos = yPos;
+        this.name = name;
     }
 
     public void update() {
@@ -31,13 +33,15 @@ public class Sprite {
     }
     public void render(Canvas canvas) {
         GraphicsContext gc = canvas.getGraphicsContext2D();
-        gc.clearRect(0, 0, main.CANVAS_WIDTH, main.CANVAS_HEIGHT);
+        //gc.clearRect(0, 0, main.CANVAS_WIDTH, main.CANVAS_HEIGHT);
         this.render(gc);
     }
 
     private void render(GraphicsContext gc) {
-        int x = currentFrame * frameWidth;
+         int x = currentFrame * frameWidth;
         int y = 0;
-        gc.drawImage(spriteSheet, x, y, frameWidth, frameHeight, xPos, yPos, frameWidth, frameHeight);
+        gc.fillText(name, frameWidth/2+20, 10);
+
+        gc.drawImage(spriteSheet, x, y, frameWidth, frameHeight, 0, 0, frameWidth, frameHeight);
     }
 }
