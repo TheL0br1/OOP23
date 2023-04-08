@@ -12,7 +12,7 @@ public class initMicro {
         Parent root = FXMLLoader.load(main.class.getResource("sample.fxml"));
         window = new Stage();
         window.initModality(Modality.APPLICATION_MODAL);
-        window.setTitle("Створіть новий корабель");
+        window.setTitle("Створіть новий об'єкт");
         scene = new Scene(root, 440, 358);
         window.setScene(scene);
         window.showAndWait();

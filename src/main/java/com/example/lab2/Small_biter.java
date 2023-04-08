@@ -22,8 +22,8 @@ public class Small_biter {
 
     public Canvas canvas;
 
-    private final static  String name = "Small_byter";
-    private final Image spriteImage = new Image(getClass().getResource("Small_biter.png").toExternalForm());
+    private final static  String name = "unitlvl1";
+    private final Image spriteImage = new Image(getClass().getResource("unitlvl1.png").toExternalForm());
     private Sprite sprite;
     static{
         count = 0;
@@ -40,7 +40,9 @@ public class Small_biter {
         canvas.setLayoutX(posX);
         canvas.setLayoutY(posY);
         main.root.getChildren().add(canvas);
-        sprite = new Sprite(spriteImage, 130, 80, 1, posX, posY, name + " " +Integer.toString(id));
+        canvas.setOnMouseClicked(event -> main.root.getChildren().remove(canvas));
+
+        sprite = new Sprite(spriteImage, 130, 300, 1, posX, posY, name + " " +Integer.toString(id));
         sprite.render(canvas);
 
     }
