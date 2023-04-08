@@ -40,7 +40,7 @@ public class Small_biter {
         canvas.setLayoutX(posX);
         canvas.setLayoutY(posY);
         main.root.getChildren().add(canvas);
-        sprite = new Sprite(spriteImage, 130, 80, 1, posX, posY, Integer.toString(id));
+        sprite = new Sprite(spriteImage, 130, 80, 1, posX, posY, name + " " +Integer.toString(id));
         sprite.render(canvas);
 
     }
