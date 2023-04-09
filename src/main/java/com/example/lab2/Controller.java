@@ -44,8 +44,8 @@ public class Controller implements Initializable {
         main.Entities.forEach(En -> {
             main.root.getChildren().remove(En.canvas);
             Rectangle rect = new Rectangle(
-                    En.canvas.getLayoutX(),
-                    En.canvas.getLayoutY(),
+                    En.canvas.getLayoutX()+ En.canvas.getTranslateX(),
+                    En.canvas.getLayoutY()+ En.canvas.getTranslateY(),
                     En.canvas.getWidth(),
                     En.canvas.getHeight());
             rect.setFill(null);

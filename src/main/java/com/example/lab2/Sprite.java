@@ -3,11 +3,9 @@ package com.example.lab2;
 
 
 
-import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.image.Image;
 import javafx.scene.paint.Color;
-import javafx.scene.shape.Rectangle;
 
 
 public class Sprite {
@@ -15,14 +13,14 @@ public class Sprite {
     private int frameWidth;
     private int frameHeight;
 
-    private unit1lvl entity;
+    private genin entity;
     private int currentFrame;
     private int numFrames;
     private double xPos;
     private double yPos;
 
     private String name;
-    public Sprite(unit1lvl entity, int frameHeight, int numFrames, double xPos, double yPos) {
+    public Sprite(genin entity, int frameHeight, int numFrames, double xPos, double yPos) {
         this.entity = entity;
         this.spriteSheet = entity.getImage();
         this.frameWidth = (int)entity.getImage().getWidth();

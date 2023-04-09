@@ -11,7 +11,7 @@ enum Action {
     NEUTRAL,
     RUN
 }
-public class unit1lvl {
+public class genin {
 
 
 
@@ -34,7 +34,7 @@ public class unit1lvl {
     public Canvas canvas;
 
     private String name;
-    private final Image spriteImage = new Image(getClass().getResource("unitlvl1.png").toExternalForm());
+    private final Image spriteImage = new Image(getClass().getResource("genin.png").toExternalForm());
     private Sprite sprite;
     static{
         count = 0;
@@ -43,7 +43,7 @@ public class unit1lvl {
         maxHealth = 1000;
         System.out.println("Class statis initialization");
     }
-    public unit1lvl(String name, int posX, int posY, int health, int damage) {
+    public genin(String name, int posX, int posY, int health, int damage) {
         position.X = posX;
         position.Y = posY;
         this.name = name;
@@ -52,7 +52,7 @@ public class unit1lvl {
         this.health = health;
         this.damage = damage;
         count++;
-        canvas = new Canvas(153,320);
+        canvas = new Canvas(spriteImage.getWidth(),spriteImage.getHeight()+40);
         canvas.setLayoutX(posX);
         canvas.setLayoutY(posY);
         main.root.getChildren().add(canvas);
@@ -67,8 +67,8 @@ public class unit1lvl {
             if(event.isPrimaryButtonDown()) {
                 main.root.getChildren().remove(canvas);
                 Rectangle rect = new Rectangle(
-                        canvas.getLayoutX(),
-                        canvas.getLayoutY(),
+                        canvas.getLayoutX()+ canvas.getTranslateX(),
+                        canvas.getLayoutY()+ canvas.getTranslateY(),
                         canvas.getWidth(),
                         canvas.getHeight());
                 rect.setFill(null);
@@ -88,6 +88,7 @@ public class unit1lvl {
                 position.Y = (int)event.getY();
                 canvas.setTranslateX(canvas.getTranslateX() + offsetX);
                 canvas.setTranslateY(canvas.getTranslateY() + offsetY);
+
             }
         });
         canvas.setOnMouseReleased(event -> {
@@ -98,7 +99,7 @@ public class unit1lvl {
 
     }
 
-    public unit1lvl() {
+    public genin() {
         this("Small_byter", 0,0, maxHealth, maxDamage);
     }
     public String getName(){
@@ -154,7 +155,7 @@ public class unit1lvl {
         position.Y = (int)(t * Math.sin(dir));
 
     }
-    public boolean equals(unit1lvl a, unit1lvl b){
+    public boolean equals(genin a, genin b){
         return a == b;
     }
     public String toString()

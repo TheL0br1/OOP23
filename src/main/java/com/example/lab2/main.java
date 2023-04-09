@@ -20,7 +20,7 @@ public class main extends Application {
 
     public static final int CANVAS_WIDTH;
     public static final int CANVAS_HEIGHT;
-    public static ArrayList<unit1lvl> Entities = new ArrayList<unit1lvl>();
+    public static ArrayList<genin> Entities = new ArrayList<genin>();
     public static Image spriteImage;
 
     public static Stage stage;
@@ -35,7 +35,7 @@ public class main extends Application {
         System.out.println("static metod initializated");
     }
     public static void create_entity(String name,int x, int y, int health, int damage){
-        Entities.add( new unit1lvl(name,x,y,health, damage));
+        Entities.add( new genin(name,x,y,health, damage));
     }
     @Override
     public void start(Stage stage) throws Exception {
@@ -56,7 +56,7 @@ public class main extends Application {
         scene.setOnKeyPressed(new EventHandler<KeyEvent>() {
             @Override
             public void handle(KeyEvent event) {
-                for ( unit1lvl biter: main.Entities ){
+                for ( genin biter: main.Entities ){
                     biter.getSprite().render();
                 }
                 {
