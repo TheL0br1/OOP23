@@ -7,12 +7,10 @@ import javafx.scene.Group;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.image.Image;
-import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.paint.Color;
 import javafx.stage.Screen;
 import javafx.stage.Stage;
-import javafx.scene.canvas.Canvas;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -22,7 +20,7 @@ public class main extends Application {
 
     public static final int CANVAS_WIDTH;
     public static final int CANVAS_HEIGHT;
-    public static ArrayList<Small_biter> Entities = new ArrayList<Small_biter>();
+    public static ArrayList<unit1lvl> Entities = new ArrayList<unit1lvl>();
     public static Image spriteImage;
 
     public static Stage stage;
@@ -36,15 +34,15 @@ public class main extends Application {
         in =  new Scanner(System.in);
         System.out.println("static metod initializated");
     }
-    public static void create_entity(int x, int y){
-        Entities.add( new Small_biter(x,y));
+    public static void create_entity(String name,int x, int y, int health, int damage){
+        Entities.add( new unit1lvl(name,x,y,health, damage));
     }
     @Override
     public void start(Stage stage) throws Exception {
         main.stage = stage;
         stage.setWidth(main.CANVAS_WIDTH);
         stage.setHeight(main.CANVAS_HEIGHT);
-        Parent root1 = FXMLLoader.load(getClass().getResource("sample.fxml"));
+        Parent root1 = FXMLLoader.load(main.class.getResource("sample.fxml"));
         stage.setTitle("Hello World");
         Scene input = new Scene(root1,main.CANVAS_HEIGHT,main.CANVAS_WIDTH);
 
@@ -58,12 +56,13 @@ public class main extends Application {
         scene.setOnKeyPressed(new EventHandler<KeyEvent>() {
             @Override
             public void handle(KeyEvent event) {
-                for ( Small_biter biter: main.Entities ){
-                    biter.getSprite().render(biter.canvas);
+                for ( unit1lvl biter: main.Entities ){
+                    biter.getSprite().render();
                 }
                 {
                 switch (event.getCode()) {
                     case INSERT:
+
                         if (event.isControlDown()) {
                             try {
                                 System.out.println("handler");
