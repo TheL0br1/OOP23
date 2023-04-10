@@ -11,7 +11,7 @@ enum Action {
     NEUTRAL,
     RUN
 }
-public class genin {
+public class Small_biter {
 
 
 
@@ -34,7 +34,7 @@ public class genin {
     public Canvas canvas;
 
     private String name;
-    private final Image spriteImage = new Image(getClass().getResource("genin.png").toExternalForm());
+    private final Image spriteImage = new Image(getClass().getResource("Small_biter.png").toExternalForm());
     private Sprite sprite;
     static{
         count = 0;
@@ -43,7 +43,7 @@ public class genin {
         maxHealth = 1000;
         System.out.println("Class statis initialization");
     }
-    public genin(String name, int posX, int posY, int health, int damage) {
+    public Small_biter(String name, int posX, int posY, int health, int damage) {
         position.X = posX;
         position.Y = posY;
         this.name = name;
@@ -99,7 +99,7 @@ public class genin {
 
     }
 
-    public genin() {
+    public Small_biter() {
         this("Small_byter", 0,0, maxHealth, maxDamage);
     }
     public String getName(){
@@ -155,7 +155,7 @@ public class genin {
         position.Y = (int)(t * Math.sin(dir));
 
     }
-    public boolean equals(genin a, genin b){
+    public boolean equals(Small_biter a, Small_biter b){
         return a == b;
     }
     public String toString()

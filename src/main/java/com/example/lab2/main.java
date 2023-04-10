@@ -16,11 +16,12 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Scanner;
 //52, 13, 17, 26, 40
+//39,77,91,11,25
 public class main extends Application {
 
     public static final int CANVAS_WIDTH;
     public static final int CANVAS_HEIGHT;
-    public static ArrayList<genin> Entities = new ArrayList<genin>();
+    public static ArrayList<Small_biter> Entities = new ArrayList<Small_biter>();
     public static Image spriteImage;
 
     public static Stage stage;
@@ -35,7 +36,7 @@ public class main extends Application {
         System.out.println("static metod initializated");
     }
     public static void create_entity(String name,int x, int y, int health, int damage){
-        Entities.add( new genin(name,x,y,health, damage));
+        Entities.add( new Small_biter(name,x,y,health, damage));
     }
     @Override
     public void start(Stage stage) throws Exception {
@@ -56,7 +57,7 @@ public class main extends Application {
         scene.setOnKeyPressed(new EventHandler<KeyEvent>() {
             @Override
             public void handle(KeyEvent event) {
-                for ( genin biter: main.Entities ){
+                for ( Small_biter biter: main.Entities ){
                     biter.getSprite().render();
                 }
                 {

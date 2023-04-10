@@ -13,14 +13,14 @@ public class Sprite {
     private int frameWidth;
     private int frameHeight;
 
-    private genin entity;
+    private Small_biter entity;
     private int currentFrame;
     private int numFrames;
     private double xPos;
     private double yPos;
 
     private String name;
-    public Sprite(genin entity, int frameHeight, int numFrames, double xPos, double yPos) {
+    public Sprite(Small_biter entity, int frameHeight, int numFrames, double xPos, double yPos) {
         this.entity = entity;
         this.spriteSheet = entity.getImage();
         this.frameWidth = (int)entity.getImage().getWidth();
