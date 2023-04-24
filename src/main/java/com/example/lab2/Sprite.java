@@ -6,6 +6,8 @@ package com.example.lab2;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.image.Image;
 import javafx.scene.paint.Color;
+import javafx.scene.canvas.Canvas;
+
 
 
 public class Sprite {
@@ -13,7 +15,9 @@ public class Sprite {
     private int frameWidth;
     private int frameHeight;
 
+
     private Small_biter entity;
+
     private int currentFrame;
     private int numFrames;
     private double xPos;
@@ -30,7 +34,6 @@ public class Sprite {
         this.yPos = yPos;
         this.name = entity.getName();
 
-    }
 
     public void update() {
         currentFrame = (currentFrame + 1) % numFrames;
@@ -51,3 +54,4 @@ public class Sprite {
         gc.drawImage(spriteSheet, x, y, frameWidth, frameHeight, 0, 40, frameWidth, frameHeight);
     }
 }
+
