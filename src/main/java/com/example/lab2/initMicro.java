@@ -9,7 +9,7 @@ public class initMicro {
     public static Stage window=null;
     public static Scene scene;
     public static void display() throws IOException {
-        Parent root = FXMLLoader.load(main.class.getResource("sample.fxml"));
+        Parent root = FXMLLoader.load(main.class.getResource("initMicro.fxml"));
         window = new Stage();
         window.initModality(Modality.APPLICATION_MODAL);
         window.setTitle("Створіть новий об'єкт");
