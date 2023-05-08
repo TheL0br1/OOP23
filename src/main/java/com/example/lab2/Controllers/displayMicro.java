@@ -1,8 +1,10 @@
-package com.example.lab2;
+package com.example.lab2.Controllers;
 
+import com.example.lab2.Objects.Object;
+import com.example.lab2.Objects.microObjects.smallBiter;
+import com.example.lab2.main;
 import javafx.fxml.FXML;
 import javafx.scene.control.TextField;
-import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 
 import java.io.IOException;
@@ -14,7 +16,7 @@ public class displayMicro{
     public TextField armor;
     public TextField health;
     public TextField damage;
-    public TextField test2;
+    public TextField name;
     private Object object;
     public void changeHp(MouseEvent ignoredMouseEvent) {
         object.e.setHealth(Integer.parseInt(health.getText()));
@@ -23,6 +25,10 @@ public class displayMicro{
 
     public void changeArmor(MouseEvent ignoredMouseEvent) {
        // entity.setHealth(Integer.parseInt(health.getText()));
+    }
+    public void changeName(MouseEvent ignoredMouseEvent) {
+        object.e.setName(name.getText());
+        name.setPromptText(object.e.getName());
 
     }
 
@@ -40,7 +46,7 @@ public class displayMicro{
     }
     public void deepCopyObject() throws IOException, ClassNotFoundException {
         smallBiter a = smallBiter.deepCopy(object.e);
-        main.create_entity(a.getName(),0,0,a.getHealth(),a.getDamage());
+        main.createEntity(a.getName(),0,0,a.getHealth(),a.getDamage());
     }
 
 }

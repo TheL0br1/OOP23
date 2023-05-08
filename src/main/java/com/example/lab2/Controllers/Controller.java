@@ -1,16 +1,14 @@
-package com.example.lab2;
+package com.example.lab2.Controllers;
 
+import com.example.lab2.main;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
-import javafx.scene.layout.BorderPane;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
 
 import java.net.URL;
-import java.util.Collection;
 import java.util.ResourceBundle;
 
 
@@ -33,7 +31,7 @@ public class Controller implements Initializable {
     @FXML
     private void createEntity(ActionEvent event){
         System.out.println("init new entity");
-        main.create_entity(name.getText(),
+        main.createEntity(name.getText(),
                 Integer.parseInt(positionX.getText()),
                 Integer.parseInt(positionY.getText()),
                 Integer.parseInt(health.getText()),
@@ -41,22 +39,10 @@ public class Controller implements Initializable {
     }
 
     public void deleteEntity(ActionEvent actionEvent) {
-        main.Entities.forEach(En -> {
-            main.root.getChildren().remove(En.getCanvas());
-            Rectangle rect = new Rectangle(
-                    En.getCanvas().getLayoutX()+ En.getCanvas().getTranslateX(),
-                    En.getCanvas().getLayoutY()+ En.getCanvas().getTranslateY(),
-                    En.getCanvas().getWidth(),
-                    En.getCanvas().getHeight());
-            rect.setFill(null);
-            rect.setStroke(Color.RED);
-            rect.setStrokeWidth(3);
-            main.root.getChildren().add(rect);
-
-
-
-        });
-        main.Entities.clear();
+        main.deleteEntities();
+    }
+    public void changeActiveAll(ActionEvent actionEvent){
+        main.changeEntityActive();
     }
 
     public void printEntity(ActionEvent actionEvent) {

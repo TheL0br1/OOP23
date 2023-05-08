@@ -1,4 +1,4 @@
-package com.example.lab2;
+package com.example.lab2.Objects.microObjects;
 
 import java.io.*;
 
@@ -15,7 +15,7 @@ public class smallBiter implements Serializable {
 
     private static int count;
     private double directionR = 0;
-    private double speed = 0;
+    private double speed = 50;
     private final int id;
     private Action action;
 
@@ -34,7 +34,7 @@ public class smallBiter implements Serializable {
                 ", health=" + health +
                 ", damage=" + damage +
                 ", active=" + active +
-                ", name='" + name + '\'' +
+                ", name='" + getName() + '\'' +
                 '}';
     }
 
@@ -53,7 +53,7 @@ public class smallBiter implements Serializable {
     }
 
     public smallBiter(String name, int health, int damage) {
-        this.name = name;
+        this.setName(name);
         setAction(Action.NEUTRAL);
         setActive(true);
         id = count;
@@ -161,5 +161,9 @@ public class smallBiter implements Serializable {
 
     public void setSpeed(double speed) {
         this.speed = speed;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 }

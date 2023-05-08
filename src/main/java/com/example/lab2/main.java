@@ -1,10 +1,14 @@
 package com.example.lab2;
 
+import com.example.lab2.Controllers.initMicro;
+import com.example.lab2.Objects.Object;
+import com.example.lab2.Objects.microObjects.smallBiter;
 import javafx.animation.AnimationTimer;
 import javafx.application.Application;
 import javafx.scene.Group;
 import javafx.scene.Scene;
 import javafx.scene.paint.Color;
+import javafx.scene.shape.Rectangle;
 import javafx.stage.Screen;
 import javafx.stage.Stage;
 
@@ -32,16 +36,44 @@ public class main extends Application {
         in = new Scanner(System.in);
         System.out.println("static metod initializated");
     }
+    public static void moveAll(double directionR){
+        Entities.forEach(En->{
+            En.move(directionR);
+        });
+    }
     public static void renderAll(){
         Entities.forEach(En->{
             En.getSprite().render();
         });
     }
-    public static void create_entity(String name, int x, int y, int health, int damage) {
+    public static void createEntity(String name, int x, int y, int health, int damage) {
         Object temp = new Object(new smallBiter(name,health, damage),x,y);
         Entities.add(temp);
         System.out.println(temp.e.toString());
     }
+    public static void changeEntityActive()
+    {
+        Entities.forEach(En->{
+            En.getSprite().changeActive();
+        });
+    }
+    public static void deleteEntities(){
+        Entities.forEach(En -> {
+            root.getChildren().remove(En.getCanvas());
+            Rectangle rect = new Rectangle(
+                    En.getCanvas().getLayoutX()+ En.getCanvas().getTranslateX(),
+                    En.getCanvas().getLayoutY()+ En.getCanvas().getTranslateY(),
+                    En.getCanvas().getWidth(),
+                    En.getCanvas().getHeight());
+            rect.setFill(null);
+            rect.setStroke(Color.RED);
+            rect.setStrokeWidth(3);
+            root.getChildren().add(rect);
+
+        });
+       Entities.clear();
+    }
+
 
     @Override
     public void start(Stage stage) {
@@ -78,7 +110,22 @@ public class main extends Application {
                             }
                         }
                         break;
-                    case P:
+                    case DELETE:
+                        main.deleteEntities();
+                        break;
+                    case UP:
+                        main.moveAll(Math.PI/2);
+                        break;
+                    case DOWN:
+                        main.moveAll(Math.PI*1.5);
+                        break;
+                    case LEFT:
+                        main.moveAll(Math.PI*0);
+                        break;
+                    case RIGHT:
+                        main.moveAll(Math.PI);
+                        break;
+
                 }
             }
         });

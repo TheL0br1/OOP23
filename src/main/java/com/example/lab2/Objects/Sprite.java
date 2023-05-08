@@ -1,9 +1,11 @@
 
-package com.example.lab2;
+package com.example.lab2.Objects;
 
 
 
+import com.example.lab2.Objects.Object;
 import javafx.scene.canvas.GraphicsContext;
+import javafx.scene.effect.ColorAdjust;
 import javafx.scene.image.Image;
 import javafx.scene.paint.Color;
 
@@ -16,7 +18,7 @@ public class Sprite implements Serializable {
     private int frameHeight;
 
 
-    private  transient Object object;
+    private Object object;
 
     private int currentFrame;
     private int numFrames;
@@ -53,6 +55,17 @@ public class Sprite implements Serializable {
         gc.fillRect(0,20, (double)object.e.getHealth()/object.e.maxHealth * frameWidth, (double)20 );
 
         gc.drawImage(spriteSheet, x, y, frameWidth, frameHeight, 0, 40, frameWidth, frameHeight);
+    }
+    public void changeActive(){
+        GraphicsContext gc = object.getCanvas().getGraphicsContext2D();
+        if(object.isActive()) {
+            ColorAdjust grayScale = new ColorAdjust();
+            grayScale.setSaturation(-1.0);
+            gc.setEffect(grayScale);
+        }else{
+            gc.setEffect(null);
+        }
+        render();
     }
 }
 

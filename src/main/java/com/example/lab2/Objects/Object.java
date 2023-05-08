@@ -1,12 +1,13 @@
-package com.example.lab2;
+package com.example.lab2.Objects;
 
+import com.example.lab2.Controllers.displayMicro;
+import com.example.lab2.main;
+import com.example.lab2.Objects.microObjects.smallBiter;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.image.Image;
-import javafx.scene.paint.Color;
-import javafx.scene.shape.Rectangle;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 
@@ -37,25 +38,16 @@ public class Object {
         main.root.getChildren().add(getCanvas());
 
         getCanvas().setOnMousePressed(event -> {
+            if (event.isPrimaryButtonDown()) {
+                getSprite().changeActive();
+                active = !active;
+            }
             if(!isActive()) { return; }
             if (event.isSecondaryButtonDown()) { // Перевірка нажаття правої кнопки миші
                 getPosition().X = (int) event.getX();
                 getPosition().Y = (int) event.getY();
                 isDragging = true;
 
-            }
-            if (event.isPrimaryButtonDown()) {
-                main.root.getChildren().remove(getCanvas());
-                Rectangle rect = new Rectangle(
-                        getCanvas().getLayoutX() + getCanvas().getTranslateX(),
-                        getCanvas().getLayoutY() + getCanvas().getTranslateY(),
-                        getCanvas().getWidth(),
-                        getCanvas().getHeight());
-                rect.setFill(null);
-                rect.setStroke(Color.RED);
-                rect.setStrokeWidth(3);
-                main.root.getChildren().add(rect);
-                main.Entities.remove(this);
             }
             if(event.isMiddleButtonDown()){
                 FXMLLoader loader = new FXMLLoader(getClass().getResource("displayMicro.fxml"));
@@ -96,14 +88,12 @@ public class Object {
         setSprite(new Sprite(this, 320, 1, 0, 0));
     }
 
-    public void move(int t, double dir) {
-
-        getPosition().X = (int) (t * Math.cos(dir) * e.getSpeed());
-        getPosition().Y = (int) (t * Math.sin(dir) * e.getSpeed());
-
+    public void move(double dir) {
+        getCanvas().setTranslateX(getCanvas().getTranslateX() - (int) (Math.cos(dir) * e.getSpeed()));
+        getCanvas().setTranslateY(getCanvas().getTranslateY() - (int) (Math.sin(dir) * e.getSpeed()));
     }
-    public void move(int t) {
-        move(t, e.getDirectionR());
+    public void move() {
+        move(e.getDirectionR());
     }
     public Position getPosition() {
         return position;

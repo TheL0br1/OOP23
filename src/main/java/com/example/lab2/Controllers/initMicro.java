@@ -1,4 +1,5 @@
-package com.example.lab2;
+package com.example.lab2.Controllers;
+import com.example.lab2.main;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
