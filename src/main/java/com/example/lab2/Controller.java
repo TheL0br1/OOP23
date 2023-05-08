@@ -42,12 +42,12 @@ public class Controller implements Initializable {
 
     public void deleteEntity(ActionEvent actionEvent) {
         main.Entities.forEach(En -> {
-            main.root.getChildren().remove(En.canvas);
+            main.root.getChildren().remove(En.getCanvas());
             Rectangle rect = new Rectangle(
-                    En.canvas.getLayoutX()+ En.canvas.getTranslateX(),
-                    En.canvas.getLayoutY()+ En.canvas.getTranslateY(),
-                    En.canvas.getWidth(),
-                    En.canvas.getHeight());
+                    En.getCanvas().getLayoutX()+ En.getCanvas().getTranslateX(),
+                    En.getCanvas().getLayoutY()+ En.getCanvas().getTranslateY(),
+                    En.getCanvas().getWidth(),
+                    En.getCanvas().getHeight());
             rect.setFill(null);
             rect.setStroke(Color.RED);
             rect.setStrokeWidth(3);

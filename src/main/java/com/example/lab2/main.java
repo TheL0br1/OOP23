@@ -1,5 +1,6 @@
 package com.example.lab2;
 
+import javafx.animation.AnimationTimer;
 import javafx.application.Application;
 import javafx.scene.Group;
 import javafx.scene.Scene;
@@ -17,7 +18,7 @@ public class main extends Application {
 
     public static final int CANVAS_WIDTH;
     public static final int CANVAS_HEIGHT;
-    public static ArrayList<smallBiter> Entities = new ArrayList<>();
+    public static ArrayList<Object> Entities = new ArrayList<>();
 
     public static Stage stage;
     public static Scene scene;
@@ -31,9 +32,15 @@ public class main extends Application {
         in = new Scanner(System.in);
         System.out.println("static metod initializated");
     }
-
+    public static void renderAll(){
+        Entities.forEach(En->{
+            En.getSprite().render();
+        });
+    }
     public static void create_entity(String name, int x, int y, int health, int damage) {
-        Entities.add(new smallBiter(name, x, y, health, damage));
+        Object temp = new Object(new smallBiter(name,health, damage),x,y);
+        Entities.add(temp);
+        System.out.println(temp.e.toString());
     }
 
     @Override
@@ -41,17 +48,23 @@ public class main extends Application {
         main.stage = stage;
         stage.setWidth(main.CANVAS_WIDTH);
         stage.setHeight(main.CANVAS_HEIGHT);
-        stage.setTitle("Hello World");
+        stage.setTitle("джава - залупа");
 
+        AnimationTimer timer = new AnimationTimer() {
+            @Override
+            public void handle(long now) {
+                renderAll(); // Вызываем метод обновления спрайтов
+            }
+        };
 
+        // Запускаем таймер
+        timer.start();
         root = new Group();
         scene = new Scene(root, Color.WHITE);
 
         stage.setScene(scene);
-        scene.setOnKeyPressed(event -> {
-            for (smallBiter biter : main.Entities) {
-                biter.getSprite().render();
-            }
+        scene.setOnKeyPressed(event ->
+        {
             {
                 switch (event.getCode()) {
                     case INSERT:
@@ -65,6 +78,7 @@ public class main extends Application {
                             }
                         }
                         break;
+                    case P:
                 }
             }
         });
@@ -72,7 +86,7 @@ public class main extends Application {
 
     }
 
-    public main(String[] args) {
+    public static void main(String[] args) {
         launch();
     }
 }

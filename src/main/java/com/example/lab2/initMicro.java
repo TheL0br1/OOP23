@@ -13,7 +13,7 @@ public class initMicro {
         window = new Stage();
         window.initModality(Modality.APPLICATION_MODAL);
         window.setTitle("Створіть новий об'єкт");
-        scene = new Scene(root, 440, 358);
+        scene = new Scene(root);
         window.setScene(scene);
         window.showAndWait();
     }

@@ -1,10 +1,5 @@
 package com.example.lab2;
 
-import javafx.scene.canvas.Canvas;
-import javafx.scene.image.Image;
-import javafx.scene.paint.Color;
-import javafx.scene.shape.Rectangle;
-
 import java.io.*;
 
 
@@ -19,7 +14,6 @@ public class smallBiter implements Serializable {
 
 
     private static int count;
-    private Position position = new Position(0, 0);
     private double directionR = 0;
     private double speed = 0;
     private final int id;
@@ -31,15 +25,24 @@ public class smallBiter implements Serializable {
     private int health;
     private int damage;
 
+    public String toString() {
+        return "smallBiter{" +
+                "directionR=" + directionR +
+                ", speed=" + speed +
+                ", id=" + id +
+                ", action=" + action +
+                ", health=" + health +
+                ", damage=" + damage +
+                ", active=" + active +
+                ", name='" + name + '\'' +
+                '}';
+    }
+
     private boolean active;
     private static final int MaxSpeed;
-    private boolean isDragging = false;
-
-    public Canvas canvas;
 
     private String name;
-    private final Image spriteImage = new Image(getClass().getResource("Small_biter.png").toExternalForm());
-    private Sprite sprite;
+
 
     static {
         count = 0;
@@ -49,98 +52,34 @@ public class smallBiter implements Serializable {
         System.out.println("Class statis initialization");
     }
 
-    public smallBiter(String name, int posX, int posY, int health, int damage) {
-        position.X = posX;
-        position.Y = posY;
+    public smallBiter(String name, int health, int damage) {
         this.name = name;
-        action = Action.NEUTRAL;
-        active = true;
+        setAction(Action.NEUTRAL);
+        setActive(true);
         id = count;
-        this.health = health;
-        this.damage = damage;
+        this.setHealth(health);
+        this.setDamage(damage);
         count++;
-        canvas = new Canvas(spriteImage.getWidth(), spriteImage.getHeight() + 40);
-        canvas.setLayoutX(posX);
-        canvas.setLayoutY(posY);
-        main.root.getChildren().add(canvas);
-
-        canvas.setOnMousePressed(event -> {
-            if(!active) { return; }
-            if (event.isSecondaryButtonDown()) { // Перевірка нажаття правої кнопки миші
-                position.X = (int) event.getX();
-                position.Y = (int) event.getY();
-                isDragging = true;
-
-            }
-            if (event.isPrimaryButtonDown()) {
-                main.root.getChildren().remove(canvas);
-                Rectangle rect = new Rectangle(
-                        canvas.getLayoutX() + canvas.getTranslateX(),
-                        canvas.getLayoutY() + canvas.getTranslateY(),
-                        canvas.getWidth(),
-                        canvas.getHeight());
-                rect.setFill(null);
-                rect.setStroke(Color.RED);
-                rect.setStrokeWidth(3);
-                main.root.getChildren().add(rect);
-                main.Entities.remove(this);
-            }
-        });
-
-        canvas.setOnMouseDragged(event -> {
-            if(!active) { return; }
-
-            if (isDragging) {
-                // Перевірка нажаття правої кнопки миші
-                double offsetX = (event.getX() - position.X) / 1.5;
-                double offsetY = (event.getY() - position.Y) / 1.5;
-                position.X = (int) event.getX();
-                position.Y = (int) event.getY();
-                canvas.setTranslateX(canvas.getTranslateX() + offsetX);
-                canvas.setTranslateY(canvas.getTranslateY() + offsetY);
-
-            }
-        });
-        canvas.setOnMouseReleased(event -> {
-            if(!active) { return; }
-            isDragging = false;
-        });
-        sprite = new Sprite(this, 320, 1, 0, 0);
-        sprite.render();
-
     }
-
+    public smallBiter(smallBiter a){
+        this(a.getName(), a.getHealth(), a.getDamage());
+    }
     public smallBiter() {
-        this("Small_byter", 0, 0, maxHealth, maxDamage);
+        this("Small_byter", maxHealth, maxDamage);
     }
 
     public String getName() {
         return name;
     }
 
-    public Position getPosition() {
-        return position;
-    }
 
-    public void setPosition(int x, int y) {
-        position.X = x;
-        position.Y = y;
-    }
-
-    public void setPositionX(int y) {
-        setPosition(position.X, y);
-    }
-
-    public void setPositionY(int x) {
-        setPosition(x, position.Y);
-    }
 
     public void setDirection(double degreeR) {
-        directionR = degreeR;
+        setDirectionR(degreeR);
     }
 
     public double getDirection() {
-        return directionR;
+        return getDirectionR();
     }
 
     public void setAction(Action action) {
@@ -155,9 +94,7 @@ public class smallBiter implements Serializable {
         return id;
     }
 
-    public Sprite getSprite() {
-        return sprite;
-    }
+
 
     public int getDamage() {
         return damage;
@@ -167,31 +104,17 @@ public class smallBiter implements Serializable {
         return health;
     }
 
-    public Image getImage() {
-        return spriteImage;
-    }
 
-    public void move(int t) {
-        move(t, directionR);
-    }
 
-    public void move(int t, double dir) {
 
-        position.X = (int) (t * Math.cos(dir) * speed);
-        position.Y = (int) (t * Math.sin(dir) * speed);
-
-    }
-
-    public smallBiter deepCopy(smallBiter prototype) throws IOException, ClassNotFoundException {
+    static public smallBiter deepCopy(smallBiter prototype) throws IOException, ClassNotFoundException {
 
         ByteArrayOutputStream bos = new ByteArrayOutputStream();
         ObjectOutputStream out = new ObjectOutputStream(bos);
         out.writeObject(prototype);
         out.flush();
-
         ObjectInputStream in = new ObjectInputStream(new ByteArrayInputStream(bos.toByteArray()));
-        return (smallBiter) in.readObject();
-
+        return ((smallBiter)in.readObject());
 
     }
 
@@ -199,20 +122,44 @@ public class smallBiter implements Serializable {
         return a == b;
     }
 
-    public String toString() {
-        return name + ", located at: " + this.position.X + " - X, " + this.position.Y + " - Y. My id: " + this.id;
+
+
+
+
+    public double getDirectionR() {
+        return directionR;
     }
 
-    static private class Position {
-        public int X = 0;
-        public int Y = 0;
-
-        public Position(int x, int y) {
-            X = x;
-            Y = y;
-        }
-
-        // standard getters and setters
+    public void setDirectionR(double directionR) {
+        this.directionR = directionR;
     }
 
+    public Action getAction() {
+        return action;
+    }
+
+    public void setHealth(int health) {
+        this.health = health;
+    }
+
+    public void setDamage(int damage) {
+        this.damage = damage;
+    }
+
+    public boolean isActive() {
+        return active;
+    }
+
+    public void setActive(boolean active) {
+        this.active = active;
+    }
+
+
+    public double getSpeed() {
+        return speed;
+    }
+
+    public void setSpeed(double speed) {
+        this.speed = speed;
+    }
 }
