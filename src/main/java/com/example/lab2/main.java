@@ -7,6 +7,8 @@ import javafx.animation.AnimationTimer;
 import javafx.application.Application;
 import javafx.scene.Group;
 import javafx.scene.Scene;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
 import javafx.stage.Screen;
@@ -23,7 +25,7 @@ public class main extends Application {
     public static final int CANVAS_WIDTH;
     public static final int CANVAS_HEIGHT;
     public static ArrayList<Object> Entities = new ArrayList<>();
-
+    //public static ClassLoader classLoader = main.class.getClassLoader();
     public static Stage stage;
     public static Scene scene;
 
@@ -34,35 +36,36 @@ public class main extends Application {
         CANVAS_WIDTH = (int) Screen.getPrimary().getBounds().getWidth();
         CANVAS_HEIGHT = (int) (Screen.getPrimary().getBounds().getHeight());
         in = new Scanner(System.in);
-        System.out.println("static metod initializated");
+        System.out.println("static method initialized");
     }
-    public static void moveAll(double directionR){
-        Entities.forEach(En->{
-            En.move(directionR);
-        });
+
+    public static void moveAll(double directionR) {
+        Entities.forEach(En -> En.move(directionR));
     }
-    public static void renderAll(){
-        Entities.forEach(En->{
-            En.getSprite().render();
-        });
+
+    public static void renderAll() {
+        Entities.forEach(En -> En.getSprite().render());
     }
-    public static void createEntity(String name, int x, int y, int health, int damage) {
-        Object temp = new Object(new smallBiter(name,health, damage),x,y);
+
+    public static void createEntity(String name, int x, int y, int health, int damage, int armor) {
+        Object temp = new Object(new smallBiter(name, health, damage, armor), x, y);
         Entities.add(temp);
         System.out.println(temp.e.toString());
     }
-    public static void changeEntityActive()
-    {
-        Entities.forEach(En->{
+
+    public static void changeEntityActive() {
+        Entities.forEach(En -> {
             En.getSprite().changeActive();
+            En.setActive(!En.isActive());
         });
     }
-    public static void deleteEntities(){
+
+    public static void deleteEntities() {
         Entities.forEach(En -> {
             root.getChildren().remove(En.getCanvas());
             Rectangle rect = new Rectangle(
-                    En.getCanvas().getLayoutX()+ En.getCanvas().getTranslateX(),
-                    En.getCanvas().getLayoutY()+ En.getCanvas().getTranslateY(),
+                    En.getCanvas().getLayoutX() + En.getCanvas().getTranslateX(),
+                    En.getCanvas().getLayoutY() + En.getCanvas().getTranslateY(),
                     En.getCanvas().getWidth(),
                     En.getCanvas().getHeight());
             rect.setFill(null);
@@ -71,7 +74,7 @@ public class main extends Application {
             root.getChildren().add(rect);
 
         });
-       Entities.clear();
+        Entities.clear();
     }
 
 
@@ -81,6 +84,9 @@ public class main extends Application {
         stage.setWidth(main.CANVAS_WIDTH);
         stage.setHeight(main.CANVAS_HEIGHT);
         stage.setTitle("джава - залупа");
+        Image image = new Image(getClass().getResourceAsStream("steamEngine.png"), 300, 600, true, true);
+        ImageView imageView = new ImageView(image);
+
 
         AnimationTimer timer = new AnimationTimer() {
             @Override
@@ -92,6 +98,7 @@ public class main extends Application {
         // Запускаем таймер
         timer.start();
         root = new Group();
+        root.getChildren().add(imageView);
         scene = new Scene(root, Color.WHITE);
 
         stage.setScene(scene);
@@ -100,7 +107,6 @@ public class main extends Application {
             {
                 switch (event.getCode()) {
                     case INSERT:
-
                         if (event.isControlDown()) {
                             try {
                                 System.out.println("initMicro display");
@@ -111,21 +117,43 @@ public class main extends Application {
                         }
                         break;
                     case DELETE:
-                        main.deleteEntities();
+                        if (event.isControlDown()) {
+                            System.out.println("delete all entities from DELETE+CTRL button");
+                            main.deleteEntities();
+                            break;
+                        }
                         break;
                     case UP:
-                        main.moveAll(Math.PI/2);
+                        if (event.isControlDown()) {
+                            root.setTranslateY(root.getTranslateY() - 10);
+                            break;
+                        }
+                        main.moveAll(Math.PI / 2);
                         break;
                     case DOWN:
-                        main.moveAll(Math.PI*1.5);
+                        if (event.isControlDown()) {
+                            root.setTranslateY(root.getTranslateY() + 10);
+                            break;
+                        }
+                        main.moveAll(Math.PI * 1.5);
                         break;
                     case LEFT:
-                        main.moveAll(Math.PI*0);
+                        if (event.isControlDown()) {
+                            root.setTranslateX(root.getTranslateX() - 10);
+                            break;
+                        }
+                        main.moveAll(Math.PI * 0);
                         break;
                     case RIGHT:
+                        if (event.isControlDown()) {
+                            root.setTranslateX(root.getTranslateX() + 10);
+                            break;
+                        }
                         main.moveAll(Math.PI);
                         break;
-
+                    case ESCAPE:
+                        main.changeEntityActive();
+                        break;
                 }
             }
         });

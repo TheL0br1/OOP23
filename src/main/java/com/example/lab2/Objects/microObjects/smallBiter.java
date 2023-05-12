@@ -19,11 +19,53 @@ public class smallBiter implements Serializable {
     private final int id;
     private Action action;
 
+
+
+    private int armor;
     public final static int maxHealth;
     public final static int maxDamage;
+    public final static int maxArmor;
 
     private int health;
     private int damage;
+
+
+
+    private boolean active;
+    private static final int MaxSpeed;
+
+    private String name;
+
+
+    static {
+        count = 0;
+        MaxSpeed = 100;
+        maxDamage = 100;
+        maxHealth = 1000;
+        maxArmor = 2000;
+        System.out.println("Class statis initialization");
+    }
+
+    public smallBiter(String name, int health, int damage, int armor) {
+        this.setName(name);
+        this.setAction(Action.NEUTRAL);
+        this.setArmor(armor);
+        setActive(true);
+        id = count;
+        this.setHealth(health);
+        this.setDamage(damage);
+        count++;
+    }
+    public smallBiter(smallBiter a){
+        this(a.getName(), a.getHealth(), a.getDamage(),a.getArmor());
+    }
+    public smallBiter() {
+        this("Small_byter", maxHealth, maxDamage, maxArmor);
+    }
+
+    public String getName() {
+        return name;
+    }
 
     public String toString() {
         return "smallBiter{" +
@@ -37,42 +79,6 @@ public class smallBiter implements Serializable {
                 ", name='" + getName() + '\'' +
                 '}';
     }
-
-    private boolean active;
-    private static final int MaxSpeed;
-
-    private String name;
-
-
-    static {
-        count = 0;
-        MaxSpeed = 100;
-        maxDamage = 100;
-        maxHealth = 1000;
-        System.out.println("Class statis initialization");
-    }
-
-    public smallBiter(String name, int health, int damage) {
-        this.setName(name);
-        setAction(Action.NEUTRAL);
-        setActive(true);
-        id = count;
-        this.setHealth(health);
-        this.setDamage(damage);
-        count++;
-    }
-    public smallBiter(smallBiter a){
-        this(a.getName(), a.getHealth(), a.getDamage());
-    }
-    public smallBiter() {
-        this("Small_byter", maxHealth, maxDamage);
-    }
-
-    public String getName() {
-        return name;
-    }
-
-
 
     public void setDirection(double degreeR) {
         setDirectionR(degreeR);
@@ -104,7 +110,13 @@ public class smallBiter implements Serializable {
         return health;
     }
 
+    public int getArmor() {
+        return armor;
+    }
 
+    public void setArmor(int armor) {
+        this.armor = armor;
+    }
 
 
     static public smallBiter deepCopy(smallBiter prototype) throws IOException, ClassNotFoundException {

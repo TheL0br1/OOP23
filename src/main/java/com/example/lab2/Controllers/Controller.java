@@ -5,8 +5,6 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.TextField;
-import javafx.scene.paint.Color;
-import javafx.scene.shape.Rectangle;
 
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -22,30 +20,31 @@ public class Controller implements Initializable {
     public TextField name;
 
 
-
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        System.out.println("Controler.initialize");
+        System.out.println("Controller.initialize");
 
     }
+
     @FXML
-    private void createEntity(ActionEvent event){
+    private void createEntity(ActionEvent ignoredEvent) {
         System.out.println("init new entity");
         main.createEntity(name.getText(),
                 Integer.parseInt(positionX.getText()),
                 Integer.parseInt(positionY.getText()),
                 Integer.parseInt(health.getText()),
-                Integer.parseInt(damage.getText()));
+                Integer.parseInt(damage.getText()), 0);
     }
 
-    public void deleteEntity(ActionEvent actionEvent) {
+    public void deleteEntity(ActionEvent ignoredActionEvent) {
         main.deleteEntities();
     }
-    public void changeActiveAll(ActionEvent actionEvent){
+
+    public void changeActiveAll(ActionEvent ignoredActionEvent) {
         main.changeEntityActive();
     }
 
-    public void printEntity(ActionEvent actionEvent) {
+    public void printEntity(ActionEvent ignoredActionEvent) {
         main.Entities.forEach(En -> System.err.println(En.toString()));
     }
 }

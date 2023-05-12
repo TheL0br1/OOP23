@@ -21,7 +21,7 @@ public class Object {
     private boolean isDragging = false;
     private boolean active;
 
-    private final Image spriteImage = new Image(getClass().getResource("smallBiter.png").toExternalForm());
+    private final Image spriteImage = new Image(main.class.getResource("smallBiter.png").toExternalForm());
     private Sprite sprite;
     private Canvas canvas;
     public Object(smallBiter e){
@@ -29,7 +29,7 @@ public class Object {
     }
     public Object(smallBiter e, int posX, int posY){
         this.e=e;
-        setCanvas(new Canvas(getImage().getWidth(), getImage().getHeight() + 40));
+        setCanvas(new Canvas(getImage().getWidth(), getImage().getHeight() + 100));
         getPosition().X = posX;
         getPosition().Y = posY;
         active=true;
@@ -50,7 +50,7 @@ public class Object {
 
             }
             if(event.isMiddleButtonDown()){
-                FXMLLoader loader = new FXMLLoader(getClass().getResource("displayMicro.fxml"));
+                FXMLLoader loader = new FXMLLoader(main.class.getResource("displayMicro.fxml"));
                 loader.setController(new displayMicro(this));
                 Parent root = null;
                 try {
@@ -89,6 +89,7 @@ public class Object {
     }
 
     public void move(double dir) {
+        if(!active) return;
         getCanvas().setTranslateX(getCanvas().getTranslateX() - (int) (Math.cos(dir) * e.getSpeed()));
         getCanvas().setTranslateY(getCanvas().getTranslateY() - (int) (Math.sin(dir) * e.getSpeed()));
     }
