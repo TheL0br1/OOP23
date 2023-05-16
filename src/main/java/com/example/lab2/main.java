@@ -2,6 +2,10 @@ package com.example.lab2;
 
 import com.example.lab2.Controllers.initMicro;
 import com.example.lab2.Objects.Object;
+import com.example.lab2.Objects.Position;
+import com.example.lab2.Objects.macroObjects.macro1;
+import com.example.lab2.Objects.macroObjects.macro2;
+import com.example.lab2.Objects.macroObjects.macroBase;
 import com.example.lab2.Objects.microObjects.smallBiter;
 import javafx.animation.AnimationTimer;
 import javafx.application.Application;
@@ -9,6 +13,7 @@ import javafx.scene.Group;
 import javafx.scene.Scene;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
 import javafx.stage.Screen;
@@ -25,7 +30,7 @@ public class main extends Application {
     public static final int CANVAS_WIDTH;
     public static final int CANVAS_HEIGHT;
     public static ArrayList<Object> Entities = new ArrayList<>();
-    //public static ClassLoader classLoader = main.class.getClassLoader();
+    public static ArrayList<macroBase> macroObjects = new ArrayList<>();
     public static Stage stage;
     public static Scene scene;
 
@@ -44,7 +49,21 @@ public class main extends Application {
     }
 
     public static void renderAll() {
+
         Entities.forEach(En -> En.getSprite().render());
+        macroObjects.forEach(macro->{
+            macro.draw();
+        });
+        for (Object En: Entities) {
+            for(macroBase macro: macroObjects)
+            {
+                if(En.getCanvas().getBoundsInParent().intersects(
+                        macro.getCanvas().getBoundsInParent())){
+                    macro.addEntity(En.e);
+                    macro.giveArmor(En.e);
+                }
+            }
+        }
     }
 
     public static void createEntity(String name, int x, int y, int health, int damage, int armor) {
@@ -84,9 +103,6 @@ public class main extends Application {
         stage.setWidth(main.CANVAS_WIDTH);
         stage.setHeight(main.CANVAS_HEIGHT);
         stage.setTitle("джава - залупа");
-        Image image = new Image(getClass().getResourceAsStream("steamEngine.png"), 300, 600, true, true);
-        ImageView imageView = new ImageView(image);
-
 
         AnimationTimer timer = new AnimationTimer() {
             @Override
@@ -98,7 +114,6 @@ public class main extends Application {
         // Запускаем таймер
         timer.start();
         root = new Group();
-        root.getChildren().add(imageView);
         scene = new Scene(root, Color.WHITE);
 
         stage.setScene(scene);
@@ -157,6 +172,12 @@ public class main extends Application {
                 }
             }
         });
+        macro1 a = new macro1(new Position(100,200));
+        macro2 b = new macro2(new Position(600,200));
+
+        macroObjects.add(a);
+        macroObjects.add(b);
+
         stage.show();
 
     }

@@ -19,8 +19,6 @@ public class Object {
 
     private Position position = new Position(0, 0);
     private boolean isDragging = false;
-    private boolean active;
-
     private final Image spriteImage = new Image(main.class.getResource("smallBiter.png").toExternalForm());
     private Sprite sprite;
     private Canvas canvas;
@@ -32,7 +30,7 @@ public class Object {
         setCanvas(new Canvas(getImage().getWidth(), getImage().getHeight() + 100));
         getPosition().X = posX;
         getPosition().Y = posY;
-        active=true;
+        e.setActive(true);
         getCanvas().setLayoutX(posX);
         getCanvas().setLayoutY(posY);
         main.root.getChildren().add(getCanvas());
@@ -40,7 +38,7 @@ public class Object {
         getCanvas().setOnMousePressed(event -> {
             if (event.isPrimaryButtonDown()) {
                 getSprite().changeActive();
-                active = !active;
+                e.setActive(!e.isActive());
             }
             if(!isActive()) { return; }
             if (event.isSecondaryButtonDown()) { // Перевірка нажаття правої кнопки миші
@@ -89,7 +87,7 @@ public class Object {
     }
 
     public void move(double dir) {
-        if(!active) return;
+        if(!e.isActive()) return;
         getCanvas().setTranslateX(getCanvas().getTranslateX() - (int) (Math.cos(dir) * e.getSpeed()));
         getCanvas().setTranslateY(getCanvas().getTranslateY() - (int) (Math.sin(dir) * e.getSpeed()));
     }
@@ -107,11 +105,11 @@ public class Object {
     }
 
     public boolean isActive() {
-        return active;
+        return e.isActive();
     }
 
     public void setActive(boolean active) {
-        this.active = active;
+        this.e.setActive(active);
     }
 
     public Image getImage() {
@@ -134,16 +132,5 @@ public class Object {
         this.canvas = canvas;
     }
 
-    static private class Position implements Serializable {
-        public int X = 0;
-        public int Y = 0;
-
-        public Position(int x, int y) {
-            X = x;
-            Y = y;
-        }
-
-        // standard getters and setters
-    }
 
 }
