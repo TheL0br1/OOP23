@@ -12,7 +12,7 @@ enum Action {
     RUN
 }
 
-public class smallBiter implements Serializable, Comparable<smallBiter>, Cloneable {
+public class micro1 implements Serializable, Comparable<micro1>, Cloneable {
 
 
     private static int count;
@@ -48,7 +48,7 @@ public class smallBiter implements Serializable, Comparable<smallBiter>, Cloneab
         System.out.println("Class statis initialization");
     }
 
-    public smallBiter(String name, int health, int damage, int armor) throws IOException {
+    public micro1(String name, int health, int damage, int armor) throws IOException {
         this.setName(name);
         this.setAction(Action.NEUTRAL);
         this.setArmor(armor);
@@ -57,14 +57,16 @@ public class smallBiter implements Serializable, Comparable<smallBiter>, Cloneab
         this.setHealth(health);
         this.setDamage(damage);
         count++;
-        main.writer.write("Added new micro: " + this.toString()+"\n");
+        main.writer.write("Added new micro: " + this.toString() + "\n");
         main.writer.flush();
 
     }
-    public smallBiter(smallBiter a) throws IOException {
-        this(a.getName(), a.getHealth(), a.getDamage(),a.getArmor());
+
+    public micro1(micro1 a) throws IOException {
+        this(a.getName(), a.getHealth(), a.getDamage(), a.getArmor());
     }
-    public smallBiter() throws IOException {
+
+    public micro1() throws IOException {
         this("Small_byter", maxHealth, maxDamage, maxArmor);
     }
 
@@ -110,24 +112,24 @@ public class smallBiter implements Serializable, Comparable<smallBiter>, Cloneab
         this.armor = armor;
     }
 
-    static public smallBiter clone(smallBiter prototype) throws IOException, ClassNotFoundException {
+    static public micro1 clone(micro1 prototype) throws IOException, ClassNotFoundException {
 
         ByteArrayOutputStream bos = new ByteArrayOutputStream();
         ObjectOutputStream out = new ObjectOutputStream(bos);
         out.writeObject(prototype);
         out.flush();
         ObjectInputStream in = new ObjectInputStream(new ByteArrayInputStream(bos.toByteArray()));
-        return ((smallBiter)in.readObject());
+        return ((micro1) in.readObject());
 
     }
 
-    public boolean equals(smallBiter a, smallBiter b) {
+    public boolean equals(micro1 a, micro1 b) {
         return a == b;
     }
 
     @Override
     public String toString() {
-        return "smallBiter{" +
+        return "micro1{" +
                 "directionR=" + directionR +
                 ", speed=" + speed +
                 ", id=" + id +
@@ -184,7 +186,7 @@ public class smallBiter implements Serializable, Comparable<smallBiter>, Cloneab
     }
 
     @Override
-    public int compareTo(smallBiter o) {
+    public int compareTo(micro1 o) {
         return Integer.compare(this.getId(), o.getId());
     }
 

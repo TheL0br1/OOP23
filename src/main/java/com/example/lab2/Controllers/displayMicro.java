@@ -1,7 +1,7 @@
 package com.example.lab2.Controllers;
 
 import com.example.lab2.Objects.Object;
-import com.example.lab2.Objects.microObjects.smallBiter;
+import com.example.lab2.Objects.microObjects.micro1;
 import com.example.lab2.main;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -62,7 +62,7 @@ public class displayMicro implements Initializable {
         damage.setPromptText(Integer.toString(object.e.getDamage()));
     }
     public void deepCopyObject() throws IOException, ClassNotFoundException {
-        smallBiter a = smallBiter.clone(object.e);
+        micro1 a = micro1.clone(object.e);
         main.createEntity(a.getName(),0,0,a.getHealth(),a.getDamage(),a.getArmor());
     }
 

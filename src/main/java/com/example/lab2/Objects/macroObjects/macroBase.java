@@ -1,7 +1,7 @@
 package com.example.lab2.Objects.macroObjects;
 
 import com.example.lab2.Objects.Position;
-import com.example.lab2.Objects.microObjects.smallBiter;
+import com.example.lab2.Objects.microObjects.micro1;
 import com.example.lab2.main;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
@@ -11,7 +11,7 @@ import javafx.scene.paint.Color;
 import java.util.ArrayList;
 
 abstract public class macroBase {
-    private ArrayList<smallBiter> entities;
+    private ArrayList<micro1> entities;
     private Position position;
     private int armor=10000;
 
@@ -38,7 +38,7 @@ abstract public class macroBase {
     public void draw(){
         GraphicsContext gc = getCanvas().getGraphicsContext2D();
         gc.clearRect(0, 0, getCanvas().getWidth(), getCanvas().getHeight());
-        gc.fillText(this.getClass().getName(), 10, 10);
+        gc.fillText(this.getClass().getSimpleName(), 10, 10);
         gc.setFill(Color.GRAY);
         gc.fillRect(0, 15, (double)armor/(10000*getMultiplication()) * getCanvas().getWidth(), (double) 22);
         gc.drawImage(getImage(), 0, 25);
@@ -48,12 +48,14 @@ abstract public class macroBase {
     public Canvas getCanvas() {
         return canvas;
     }
-    public void giveArmor(smallBiter en){
-        if(getArmor()>0 && en.isActive() && isContains(en)){
-            en.setArmor(en.getArmor()+speedTransmission);
-            setArmor(getArmor()-speedTransmission);
+
+    public void giveArmor(micro1 en) {
+        if (getArmor() > 0 && en.isActive() && isContains(en)) {
+            en.setArmor(en.getArmor() + speedTransmission);
+            setArmor(getArmor() - speedTransmission);
         }
     }
+
     public void setCanvas(Canvas canvas) {
         this.canvas = canvas;
     }
@@ -68,15 +70,17 @@ abstract public class macroBase {
     }
 
 
-    public void addEntity(smallBiter ent){
+    public void addEntity(micro1 ent) {
         this.entities.add(ent);
     }
-    public void removeEntity(smallBiter ent) {
+
+    public void removeEntity(micro1 ent) {
         this.entities.remove(ent);
     }
-    public boolean isContains(smallBiter ent) {
-        for (smallBiter a: this.entities) {
-            if(a.equals(ent)){
+
+    public boolean isContains(micro1 ent) {
+        for (micro1 a : this.entities) {
+            if (a.equals(ent)) {
                 return true;
             }
         }

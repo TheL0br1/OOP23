@@ -2,7 +2,6 @@ package com.example.lab2.Controllers;
 
 import com.example.lab2.Objects.Object;
 import com.example.lab2.Objects.macroObjects.macroBase;
-import com.example.lab2.Objects.microObjects.smallBiter;
 import com.example.lab2.main;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;

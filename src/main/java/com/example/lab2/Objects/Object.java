@@ -1,10 +1,9 @@
 package com.example.lab2.Objects;
 
 import com.example.lab2.Controllers.displayMicro;
+import com.example.lab2.Objects.microObjects.micro1;
 import com.example.lab2.main;
-import com.example.lab2.Objects.microObjects.smallBiter;
 import javafx.fxml.FXMLLoader;
-import javafx.geometry.Pos;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.canvas.Canvas;
@@ -13,22 +12,23 @@ import javafx.stage.Modality;
 import javafx.stage.Stage;
 
 import java.io.IOException;
-import java.io.Serializable;
 
 public class Object {
-    public smallBiter e;
+    private final Image spriteImage = new Image(main.class.getResourceAsStream("micro1.jpg"), 100, 0, true, true);
 
     private Position position = new Position(0, 0);
     private boolean isDragging = false;
-    private final Image spriteImage = new Image(main.class.getResource("smallBiter.png").toExternalForm());
+    public micro1 e;
     private Sprite sprite;
     private Canvas canvas;
     private Position dragPosition = new Position(0,0);
-    public Object(smallBiter e){
-        this(e,0,0);
+
+    public Object(micro1 e) {
+        this(e, 0, 0);
     }
-    public Object(smallBiter e, int posX, int posY){
-        this.e=e;
+
+    public Object(micro1 e, int posX, int posY) {
+        this.e = e;
         setCanvas(new Canvas(getImage().getWidth(), getImage().getHeight() + 100));
         getPosition().X = posX;
         getPosition().Y = posY;

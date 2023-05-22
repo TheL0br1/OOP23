@@ -1,0 +1,12 @@
+Added new micro: smallBiter{directionR=0.0, speed=50.0, id=0, action=NEUTRAL, armor=0, health=0, damage=90, active=true, name='90'}
+Move micro: Object, located at: 50 - X, 0 - Y. My id: 0. Dir: 3.141592653589793
+Move micro: Object, located at: 100 - X, 0 - Y. My id: 0. Dir: 3.141592653589793
+Move micro: Object, located at: 150 - X, 0 - Y. My id: 0. Dir: 3.141592653589793
+Move micro: Object, located at: 200 - X, 0 - Y. My id: 0. Dir: 3.141592653589793
+Move micro: Object, located at: 250 - X, 0 - Y. My id: 0. Dir: 3.141592653589793
+Move micro: Object, located at: 250 - X, 50 - Y. My id: 0. Dir: 4.71238898038469
+Move micro: Object, located at: 250 - X, 100 - Y. My id: 0. Dir: 4.71238898038469
+Move micro: Object, located at: 300 - X, 100 - Y. My id: 0. Dir: 3.141592653589793
+Move micro: Object, located at: 350 - X, 100 - Y. My id: 0. Dir: 3.141592653589793
+Move micro: Object, located at: 400 - X, 100 - Y. My id: 0. Dir: 3.141592653589793
+Move micro: Object, located at: 450 - X, 100 - Y. My id: 0. Dir: 3.141592653589793

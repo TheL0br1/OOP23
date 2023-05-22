@@ -7,7 +7,7 @@ import com.example.lab2.Objects.macroObjects.macro1;
 import com.example.lab2.Objects.macroObjects.macro2;
 import com.example.lab2.Objects.macroObjects.macro3;
 import com.example.lab2.Objects.macroObjects.macroBase;
-import com.example.lab2.Objects.microObjects.smallBiter;
+import com.example.lab2.Objects.microObjects.micro1;
 import javafx.animation.AnimationTimer;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -82,7 +82,7 @@ public class main extends Application {
     }
 
     public static void createEntity(String name, int x, int y, int health, int damage, int armor) throws IOException {
-        Object temp = new Object(new smallBiter(name, health, damage, armor), x, y);
+        Object temp = new Object(new micro1(name, health, damage, armor), x, y);
         Entities.add(temp);
         System.out.println(temp.e.toString());
     }
