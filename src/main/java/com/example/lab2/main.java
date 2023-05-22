@@ -5,20 +5,23 @@ import com.example.lab2.Objects.Object;
 import com.example.lab2.Objects.Position;
 import com.example.lab2.Objects.macroObjects.macro1;
 import com.example.lab2.Objects.macroObjects.macro2;
+import com.example.lab2.Objects.macroObjects.macro3;
 import com.example.lab2.Objects.macroObjects.macroBase;
 import com.example.lab2.Objects.microObjects.smallBiter;
 import javafx.animation.AnimationTimer;
 import javafx.application.Application;
+import javafx.fxml.FXMLLoader;
 import javafx.scene.Group;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.image.Image;
-import javafx.scene.image.ImageView;
-import javafx.scene.input.MouseEvent;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
+import javafx.stage.Modality;
 import javafx.stage.Screen;
 import javafx.stage.Stage;
 
+import java.io.BufferedWriter;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -36,37 +39,49 @@ public class main extends Application {
 
     public static Group root;
     public static Scanner in;
+    public static BufferedWriter writer;
 
     static {
         CANVAS_WIDTH = (int) Screen.getPrimary().getBounds().getWidth();
         CANVAS_HEIGHT = (int) (Screen.getPrimary().getBounds().getHeight());
         in = new Scanner(System.in);
         System.out.println("static method initialized");
+        try {
+            writer = new BufferedWriter(new FileWriter("log.txt"));
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
     }
 
     public static void moveAll(double directionR) {
-        Entities.forEach(En -> En.move(directionR));
+        Entities.forEach(En -> {
+            try {
+                En.move(directionR);
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
+        });
     }
 
     public static void renderAll() {
 
         Entities.forEach(En -> En.getSprite().render());
-        macroObjects.forEach(macro->{
-            macro.draw();
-        });
+        macroObjects.forEach(macroBase::draw);
         for (Object En: Entities) {
             for(macroBase macro: macroObjects)
             {
                 if(En.getCanvas().getBoundsInParent().intersects(
                         macro.getCanvas().getBoundsInParent())){
-                    macro.addEntity(En.e);
+                    if(!macro.isContains(En.e)){
+                        macro.addEntity(En.e);
+                    }
                     macro.giveArmor(En.e);
                 }
             }
         }
     }
 
-    public static void createEntity(String name, int x, int y, int health, int damage, int armor) {
+    public static void createEntity(String name, int x, int y, int health, int damage, int armor) throws IOException {
         Object temp = new Object(new smallBiter(name, health, damage, armor), x, y);
         Entities.add(temp);
         System.out.println(temp.e.toString());
@@ -77,11 +92,19 @@ public class main extends Application {
             En.getSprite().changeActive();
             En.setActive(!En.isActive());
         });
+
     }
 
     public static void deleteEntities() {
         Entities.forEach(En -> {
             root.getChildren().remove(En.getCanvas());
+            try {
+                writer.write("Delete micro: " + En.toString()+"\n");
+                main.writer.flush();
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
+
             Rectangle rect = new Rectangle(
                     En.getCanvas().getLayoutX() + En.getCanvas().getTranslateX(),
                     En.getCanvas().getLayoutY() + En.getCanvas().getTranslateY(),
@@ -121,7 +144,7 @@ public class main extends Application {
         {
             {
                 switch (event.getCode()) {
-                    case INSERT:
+                    case INSERT -> {
                         if (event.isControlDown()) {
                             try {
                                 System.out.println("initMicro display");
@@ -130,53 +153,71 @@ public class main extends Application {
                                 e.printStackTrace();
                             }
                         }
-                        break;
-                    case DELETE:
+                    }
+                    case DELETE -> {
                         if (event.isControlDown()) {
                             System.out.println("delete all entities from DELETE+CTRL button");
                             main.deleteEntities();
-                            break;
                         }
-                        break;
-                    case UP:
+                    }
+                    case UP -> {
                         if (event.isControlDown()) {
                             root.setTranslateY(root.getTranslateY() - 10);
                             break;
                         }
                         main.moveAll(Math.PI / 2);
-                        break;
-                    case DOWN:
+                    }
+                    case DOWN -> {
                         if (event.isControlDown()) {
                             root.setTranslateY(root.getTranslateY() + 10);
                             break;
                         }
                         main.moveAll(Math.PI * 1.5);
-                        break;
-                    case LEFT:
+                    }
+                    case LEFT -> {
                         if (event.isControlDown()) {
                             root.setTranslateX(root.getTranslateX() - 10);
                             break;
                         }
                         main.moveAll(Math.PI * 0);
-                        break;
-                    case RIGHT:
+                    }
+                    case RIGHT -> {
                         if (event.isControlDown()) {
                             root.setTranslateX(root.getTranslateX() + 10);
                             break;
                         }
                         main.moveAll(Math.PI);
-                        break;
-                    case ESCAPE:
-                        main.changeEntityActive();
-                        break;
+                    }
+                    case ESCAPE -> main.changeEntityActive();
+                    case Q -> {
+                        if (event.isControlDown()) {
+                            FXMLLoader loader = new FXMLLoader(main.class.getResource("queryMenu.fxml"));
+                            Parent rootQuery;
+
+                            try {
+                                rootQuery = loader.load();
+                            } catch (IOException e) {
+                                throw new RuntimeException(e);
+                            }
+                            Stage window = new Stage();
+                            window.initModality(Modality.APPLICATION_MODAL);
+                            window.setTitle("Запити");
+                            Scene scene = new Scene(rootQuery);
+                            window.setScene(scene);
+                            window.showAndWait();
+                        }
+                    }
                 }
             }
         });
-        macro1 a = new macro1(new Position(100,200));
-        macro2 b = new macro2(new Position(600,200));
+        macro1 a = new macro1(new Position(0,0));
+        macro2 b = new macro2(new Position(900,500));
+        macro3 c = new macro3(new Position(900,0));
+
 
         macroObjects.add(a);
         macroObjects.add(b);
+        macroObjects.add(c);
 
         stage.show();
 

@@ -11,7 +11,7 @@ import javafx.scene.paint.Color;
 import java.util.ArrayList;
 
 abstract public class macroBase {
-    private ArrayList<smallBiter> entities = new ArrayList<>();
+    private ArrayList<smallBiter> entities;
     private Position position;
     private int armor=10000;
 
@@ -27,6 +27,7 @@ abstract public class macroBase {
         this.speedTransmission*=getMultiplication();
         this.image = image;
         this.position = position;
+        this.entities = new ArrayList<>();
         setCanvas(new Canvas(image.getWidth(), image.getHeight()+50));
         getCanvas().setLayoutX(position.X);
         getCanvas().setLayoutY(position.Y);
@@ -35,11 +36,11 @@ abstract public class macroBase {
 
     }
     public void draw(){
-        GraphicsContext gc = canvas.getGraphicsContext2D();
+        GraphicsContext gc = getCanvas().getGraphicsContext2D();
         gc.clearRect(0, 0, getCanvas().getWidth(), getCanvas().getHeight());
         gc.fillText(this.getClass().getName(), 10, 10);
         gc.setFill(Color.GRAY);
-        gc.fillRect(0, 15, (double)armor/10000 * canvas.getWidth(), (double) 22);
+        gc.fillRect(0, 15, (double)armor/(10000*getMultiplication()) * getCanvas().getWidth(), (double) 22);
         gc.drawImage(getImage(), 0, 25);
     }
 
@@ -48,9 +49,9 @@ abstract public class macroBase {
         return canvas;
     }
     public void giveArmor(smallBiter en){
-        if(getArmor()>0 && en.isActive()){
+        if(getArmor()>0 && en.isActive() && isContains(en)){
             en.setArmor(en.getArmor()+speedTransmission);
-            armor-=speedTransmission;
+            setArmor(getArmor()-speedTransmission);
         }
     }
     public void setCanvas(Canvas canvas) {
@@ -68,18 +69,18 @@ abstract public class macroBase {
 
 
     public void addEntity(smallBiter ent){
-        entities.add(ent);
+        this.entities.add(ent);
     }
     public void removeEntity(smallBiter ent) {
-        entities.remove(ent);
+        this.entities.remove(ent);
     }
     public boolean isContains(smallBiter ent) {
-        for (smallBiter a: entities) {
+        for (smallBiter a: this.entities) {
             if(a.equals(ent)){
                 return true;
             }
         }
-        return true;
+        return false;
     }
 
     public int getArmor() {

@@ -1,13 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.canvas.Canvas?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
 
-<AnchorPane xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane prefHeight="337.0" prefWidth="328.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.lab2.Controllers.displayMicro">
     <children>
-        <Group />
-      <GridPane alignment="CENTER" layoutX="-1.0" minHeight="200.0" minWidth="293.0" prefHeight="200.0" prefWidth="293.0" AnchorPane.bottomAnchor="100.0" AnchorPane.leftAnchor="-1.0" AnchorPane.rightAnchor="1.0" AnchorPane.topAnchor="0.0">
+      <GridPane alignment="CENTER" layoutX="14.0" minHeight="200.0" minWidth="293.0" prefHeight="214.0" prefWidth="293.0">
         <columnConstraints>
           <ColumnConstraints hgrow="SOMETIMES" maxWidth="62.0" minWidth="10.0" prefWidth="62.0" />
           <ColumnConstraints hgrow="SOMETIMES" maxWidth="63.0" minWidth="10.0" prefWidth="63.0" />
@@ -34,6 +38,7 @@
             <Button mnemonicParsing="false" onMouseClicked="#changeName" text="змінити" GridPane.columnIndex="2" GridPane.rowIndex="3" />
          </children>
       </GridPane>
-      <Button layoutX="78.0" layoutY="213.0" mnemonicParsing="false" onAction="#deepCopyObject" prefHeight="35.0" prefWidth="135.0" text="Створити копію" />
+      <Button layoutX="97.0" layoutY="214.0" mnemonicParsing="false" onAction="#deepCopyObject" prefHeight="35.0" prefWidth="135.0" text="Створити копію" />
+      <Canvas fx:id="canvas" height="35.0" layoutX="72.0" layoutY="266.0" width="89.0" />
     </children>
 </AnchorPane>

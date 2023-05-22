@@ -1,5 +1,7 @@
 package com.example.lab2.Objects.microObjects;
 
+import com.example.lab2.main;
+
 import java.io.*;
 
 
@@ -10,7 +12,7 @@ enum Action {
     RUN
 }
 
-public class smallBiter implements Serializable {
+public class smallBiter implements Serializable, Comparable<smallBiter>, Cloneable {
 
 
     private static int count;
@@ -46,7 +48,7 @@ public class smallBiter implements Serializable {
         System.out.println("Class statis initialization");
     }
 
-    public smallBiter(String name, int health, int damage, int armor) {
+    public smallBiter(String name, int health, int damage, int armor) throws IOException {
         this.setName(name);
         this.setAction(Action.NEUTRAL);
         this.setArmor(armor);
@@ -55,29 +57,19 @@ public class smallBiter implements Serializable {
         this.setHealth(health);
         this.setDamage(damage);
         count++;
+        main.writer.write("Added new micro: " + this.toString()+"\n");
+        main.writer.flush();
+
     }
-    public smallBiter(smallBiter a){
+    public smallBiter(smallBiter a) throws IOException {
         this(a.getName(), a.getHealth(), a.getDamage(),a.getArmor());
     }
-    public smallBiter() {
+    public smallBiter() throws IOException {
         this("Small_byter", maxHealth, maxDamage, maxArmor);
     }
 
     public String getName() {
         return name;
-    }
-
-    public String toString() {
-        return "smallBiter{" +
-                "directionR=" + directionR +
-                ", speed=" + speed +
-                ", id=" + id +
-                ", action=" + action +
-                ", health=" + health +
-                ", damage=" + damage +
-                ", active=" + active +
-                ", name='" + getName() + '\'' +
-                '}';
     }
 
     public void setDirection(double degreeR) {
@@ -118,8 +110,7 @@ public class smallBiter implements Serializable {
         this.armor = armor;
     }
 
-
-    static public smallBiter deepCopy(smallBiter prototype) throws IOException, ClassNotFoundException {
+    static public smallBiter clone(smallBiter prototype) throws IOException, ClassNotFoundException {
 
         ByteArrayOutputStream bos = new ByteArrayOutputStream();
         ObjectOutputStream out = new ObjectOutputStream(bos);
@@ -134,7 +125,20 @@ public class smallBiter implements Serializable {
         return a == b;
     }
 
-
+    @Override
+    public String toString() {
+        return "smallBiter{" +
+                "directionR=" + directionR +
+                ", speed=" + speed +
+                ", id=" + id +
+                ", action=" + action +
+                ", armor=" + armor +
+                ", health=" + health +
+                ", damage=" + damage +
+                ", active=" + active +
+                ", name='" + name + '\'' +
+                '}';
+    }
 
 
 
@@ -178,4 +182,12 @@ public class smallBiter implements Serializable {
     public void setName(String name) {
         this.name = name;
     }
+
+    @Override
+    public int compareTo(smallBiter o) {
+        return Integer.compare(this.getId(), o.getId());
+    }
+
+
+
 }

@@ -4,6 +4,7 @@ import com.example.lab2.Controllers.displayMicro;
 import com.example.lab2.main;
 import com.example.lab2.Objects.microObjects.smallBiter;
 import javafx.fxml.FXMLLoader;
+import javafx.geometry.Pos;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.canvas.Canvas;
@@ -22,6 +23,7 @@ public class Object {
     private final Image spriteImage = new Image(main.class.getResource("smallBiter.png").toExternalForm());
     private Sprite sprite;
     private Canvas canvas;
+    private Position dragPosition = new Position(0,0);
     public Object(smallBiter e){
         this(e,0,0);
     }
@@ -42,23 +44,24 @@ public class Object {
             }
             if(!isActive()) { return; }
             if (event.isSecondaryButtonDown()) { // Перевірка нажаття правої кнопки миші
-                getPosition().X = (int) event.getX();
-                getPosition().Y = (int) event.getY();
+                dragPosition.X = (int) event.getX();
+                dragPosition.Y = (int) event.getY();
                 isDragging = true;
 
             }
             if(event.isMiddleButtonDown()){
                 FXMLLoader loader = new FXMLLoader(main.class.getResource("displayMicro.fxml"));
-                loader.setController(new displayMicro(this));
                 Parent root = null;
                 try {
                     root = loader.load();
-                } catch (IOException exc) {
-                    throw new RuntimeException(exc);
+                } catch (IOException ex) {
+                    throw new RuntimeException(ex);
                 }
+                displayMicro controller =loader.getController();
+                controller.setObject(this);
                 Stage window = new Stage();
                 window.initModality(Modality.APPLICATION_MODAL);
-                window.setTitle("Створіть новий об'єкт");
+                window.setTitle("Змініть данний мікрооб'єкт");
                 Scene scene = new Scene(root);
                 window.setScene(scene);
                 window.showAndWait();
@@ -70,12 +73,17 @@ public class Object {
 
             if (isDragging) {
                 // Перевірка нажаття правої кнопки миші
-                double offsetX = (event.getX() - getPosition().X) / 1.5;
-                double offsetY = (event.getY() - getPosition().Y) / 1.5;
-                getPosition().X = (int) event.getX();
-                getPosition().Y = (int) event.getY();
-                getCanvas().setTranslateX(getCanvas().getTranslateX() + offsetX);
-                getCanvas().setTranslateY(getCanvas().getTranslateY() + offsetY);
+                getPosition().X = (int) (event.getSceneX()- dragPosition.X);
+                getPosition().Y = (int) (event.getSceneY()- dragPosition.Y);
+                getCanvas().setLayoutX((int) event.getSceneX()-dragPosition.X);
+                getCanvas().setLayoutY((int) event.getSceneY()-dragPosition.Y);
+                try {
+                    main.writer.write("Move micro: " + this.toString()+"\n" );
+                    main.writer.flush();
+                } catch (IOException ex) {
+                    throw new RuntimeException(ex);
+                }
+
 
             }
         });
@@ -86,12 +94,17 @@ public class Object {
         setSprite(new Sprite(this, 320, 1, 0, 0));
     }
 
-    public void move(double dir) {
+    public void move(double dir) throws IOException {
         if(!e.isActive()) return;
         getCanvas().setTranslateX(getCanvas().getTranslateX() - (int) (Math.cos(dir) * e.getSpeed()));
         getCanvas().setTranslateY(getCanvas().getTranslateY() - (int) (Math.sin(dir) * e.getSpeed()));
+        getPosition().X = (int) getCanvas().getTranslateX();
+        getPosition().Y = (int) getCanvas().getTranslateY();
+        main.writer.write("Move micro: " + this.toString()+". Dir: " + Double.toString(dir)+"\n" );
+        main.writer.flush();
+
     }
-    public void move() {
+    public void move() throws IOException {
         move(e.getDirectionR());
     }
     public Position getPosition() {
