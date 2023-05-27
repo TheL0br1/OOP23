@@ -2,7 +2,6 @@
 package com.example.lab2.Objects;
 
 
-import com.example.lab2.Objects.Object;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.effect.ColorAdjust;
 import javafx.scene.image.Image;
@@ -48,6 +47,7 @@ public class Sprite implements Serializable {
         gc.clearRect(0, 0, object.getCanvas().getWidth(), object.getCanvas().getHeight());
         int x = currentFrame * frameWidth;
         int y = 0;
+        gc.setFill(Color.BLACK);
         gc.fillText(object.e.getName(), 0, 10);
 
         gc.setFill(Color.GREEN);

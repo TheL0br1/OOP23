@@ -3,10 +3,10 @@ package com.example.lab2;
 import com.example.lab2.Controllers.initMicro;
 import com.example.lab2.Objects.Object;
 import com.example.lab2.Objects.Position;
-import com.example.lab2.Objects.macroObjects.macro1;
-import com.example.lab2.Objects.macroObjects.macro2;
-import com.example.lab2.Objects.macroObjects.macro3;
 import com.example.lab2.Objects.macroObjects.macroBase;
+import com.example.lab2.Objects.macroObjects.nuclearReactor;
+import com.example.lab2.Objects.macroObjects.steamEngine;
+import com.example.lab2.Objects.macroObjects.steamTurbine;
 import com.example.lab2.Objects.microObjects.micro1;
 import javafx.animation.AnimationTimer;
 import javafx.application.Application;
@@ -125,7 +125,7 @@ public class main extends Application {
         main.stage = stage;
         stage.setWidth(main.CANVAS_WIDTH);
         stage.setHeight(main.CANVAS_HEIGHT);
-        stage.setTitle("джава - залупа");
+        stage.setTitle("OOP LAB3");
 
         AnimationTimer timer = new AnimationTimer() {
             @Override
@@ -210,9 +210,9 @@ public class main extends Application {
                 }
             }
         });
-        macro1 a = new macro1(new Position(0,0));
-        macro2 b = new macro2(new Position(900,500));
-        macro3 c = new macro3(new Position(900,0));
+        steamEngine a = new steamEngine(new Position(0, 0));
+        steamTurbine b = new steamTurbine(new Position(900, 500));
+        nuclearReactor c = new nuclearReactor(new Position(900, 0));
 
 
         macroObjects.add(a);

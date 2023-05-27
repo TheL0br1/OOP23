@@ -4,14 +4,16 @@ import com.example.lab2.Objects.Position;
 import com.example.lab2.main;
 import javafx.scene.image.Image;
 
-public class macro1 extends macroBase{
+public class steamEngine extends macroBase {
     private static Image image = new Image(main.class.getResourceAsStream("macro1.jpg"), 200, 00, true, true);
     private static double multiplication = 1.0;
-    protected macro1(Position position, Image image1) {
+
+    protected steamEngine(Position position, Image image1) {
         super(position, image1);
     }
-    public macro1(Position position){
-        this(position,image);
+
+    public steamEngine(Position position) {
+        this(position, image);
     }
 
     public double getMultiplication() {

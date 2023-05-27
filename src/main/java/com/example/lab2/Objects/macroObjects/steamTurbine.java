@@ -4,18 +4,22 @@ import com.example.lab2.Objects.Position;
 import com.example.lab2.main;
 import javafx.scene.image.Image;
 
-public class macro3 extends macro2{
-    private static double multiplication = 3;
-    private static Image image = new Image(main.class.getResourceAsStream("macro3.jpg"), 200, 0, true, true);
+public class steamTurbine extends steamEngine {
+    private static Image image = new Image(main.class.getResourceAsStream("macro2.jpg"), 200, 0, true, true);
+    private static double multiplication = 2;
 
-    public macro3(Position position) {
-        super(position);
+    public steamTurbine(Position position) {
+        super(position, image);
     }
+
     public double getMultiplication() {
         return multiplication;
     }
+
+
     @Override
     Image getImage() {
         return image;
     }
+
 }
