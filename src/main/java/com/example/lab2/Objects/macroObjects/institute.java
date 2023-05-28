@@ -4,22 +4,20 @@ import com.example.lab2.Objects.Position;
 import com.example.lab2.main;
 import javafx.scene.image.Image;
 
-public class steamTurbine extends steamEngine {
-    private static Image image = new Image(main.class.getResourceAsStream("macro2.jpg"), 200, 0, true, true);
-    private static double multiplication = 2;
+public class institute extends valley {
+    private static double multiplication = 3;
+    private static Image image = new Image(main.class.getResourceAsStream("institute.png"), 200, 0, true, true);
 
-    public steamTurbine(Position position) {
-        super(position, image);
+    public institute(Position position) {
+        super(position);
     }
 
     public double getMultiplication() {
         return multiplication;
     }
 
-
     @Override
     Image getImage() {
         return image;
     }
-
 }

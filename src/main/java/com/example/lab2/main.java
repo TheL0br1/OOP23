@@ -3,11 +3,11 @@ package com.example.lab2;
 import com.example.lab2.Controllers.initMicro;
 import com.example.lab2.Objects.Object;
 import com.example.lab2.Objects.Position;
+import com.example.lab2.Objects.macroObjects.institute;
 import com.example.lab2.Objects.macroObjects.macroBase;
-import com.example.lab2.Objects.macroObjects.nuclearReactor;
-import com.example.lab2.Objects.macroObjects.steamEngine;
-import com.example.lab2.Objects.macroObjects.steamTurbine;
-import com.example.lab2.Objects.microObjects.micro1;
+import com.example.lab2.Objects.macroObjects.metro;
+import com.example.lab2.Objects.macroObjects.valley;
+import com.example.lab2.Objects.microObjects.soldier;
 import javafx.animation.AnimationTimer;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -82,7 +82,7 @@ public class main extends Application {
     }
 
     public static void createEntity(String name, int x, int y, int health, int damage, int armor) throws IOException {
-        Object temp = new Object(new micro1(name, health, damage, armor), x, y);
+        Object temp = new Object(new soldier(name, health, damage, armor), x, y);
         Entities.add(temp);
         System.out.println(temp.e.toString());
     }
@@ -210,9 +210,9 @@ public class main extends Application {
                 }
             }
         });
-        steamEngine a = new steamEngine(new Position(0, 0));
-        steamTurbine b = new steamTurbine(new Position(900, 500));
-        nuclearReactor c = new nuclearReactor(new Position(900, 0));
+        metro a = new metro(new Position(0, 0));
+        valley b = new valley(new Position(900, 500));
+        institute c = new institute(new Position(900, 0));
 
 
         macroObjects.add(a);

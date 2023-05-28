@@ -1,7 +1,7 @@
 package com.example.lab2.Objects.macroObjects;
 
 import com.example.lab2.Objects.Position;
-import com.example.lab2.Objects.microObjects.micro1;
+import com.example.lab2.Objects.microObjects.soldier;
 import com.example.lab2.main;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
@@ -11,7 +11,7 @@ import javafx.scene.paint.Color;
 import java.util.ArrayList;
 
 abstract public class macroBase {
-    private ArrayList<micro1> entities;
+    private ArrayList<soldier> entities;
     private Position position;
     private int armor=10000;
 
@@ -49,7 +49,7 @@ abstract public class macroBase {
         return canvas;
     }
 
-    public void giveArmor(micro1 en) {
+    public void giveArmor(soldier en) {
         if (getArmor() > 0 && en.isActive() && isContains(en)) {
             en.setArmor(en.getArmor() + speedTransmission);
             setArmor(getArmor() - speedTransmission);
@@ -70,16 +70,16 @@ abstract public class macroBase {
     }
 
 
-    public void addEntity(micro1 ent) {
+    public void addEntity(soldier ent) {
         this.entities.add(ent);
     }
 
-    public void removeEntity(micro1 ent) {
+    public void removeEntity(soldier ent) {
         this.entities.remove(ent);
     }
 
-    public boolean isContains(micro1 ent) {
-        for (micro1 a : this.entities) {
+    public boolean isContains(soldier ent) {
+        for (soldier a : this.entities) {
             if (a.equals(ent)) {
                 return true;
             }

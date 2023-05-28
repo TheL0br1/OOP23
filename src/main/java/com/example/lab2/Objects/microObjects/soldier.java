@@ -12,7 +12,7 @@ enum Action {
     RUN
 }
 
-public class micro1 implements Serializable, Comparable<micro1>, Cloneable {
+public class soldier implements Serializable, Comparable<soldier>, Cloneable {
 
 
     private static int count;
@@ -48,7 +48,7 @@ public class micro1 implements Serializable, Comparable<micro1>, Cloneable {
         System.out.println("Class statis initialization");
     }
 
-    public micro1(String name, int health, int damage, int armor) throws IOException {
+    public soldier(String name, int health, int damage, int armor) throws IOException {
         this.setName(name);
         this.setAction(Action.NEUTRAL);
         this.setArmor(armor);
@@ -62,11 +62,11 @@ public class micro1 implements Serializable, Comparable<micro1>, Cloneable {
 
     }
 
-    public micro1(micro1 a) throws IOException {
+    public soldier(soldier a) throws IOException {
         this(a.getName(), a.getHealth(), a.getDamage(), a.getArmor());
     }
 
-    public micro1() throws IOException {
+    public soldier() throws IOException {
         this("Small_byter", maxHealth, maxDamage, maxArmor);
     }
 
@@ -112,24 +112,24 @@ public class micro1 implements Serializable, Comparable<micro1>, Cloneable {
         this.armor = armor;
     }
 
-    static public micro1 clone(micro1 prototype) throws IOException, ClassNotFoundException {
+    static public soldier clone(soldier prototype) throws IOException, ClassNotFoundException {
 
         ByteArrayOutputStream bos = new ByteArrayOutputStream();
         ObjectOutputStream out = new ObjectOutputStream(bos);
         out.writeObject(prototype);
         out.flush();
         ObjectInputStream in = new ObjectInputStream(new ByteArrayInputStream(bos.toByteArray()));
-        return ((micro1) in.readObject());
+        return ((soldier) in.readObject());
 
     }
 
-    public boolean equals(micro1 a, micro1 b) {
+    public boolean equals(soldier a, soldier b) {
         return a == b;
     }
 
     @Override
     public String toString() {
-        return "micro1{" +
+        return "soldier{" +
                 "directionR=" + directionR +
                 ", speed=" + speed +
                 ", id=" + id +
@@ -186,7 +186,7 @@ public class micro1 implements Serializable, Comparable<micro1>, Cloneable {
     }
 
     @Override
-    public int compareTo(micro1 o) {
+    public int compareTo(soldier o) {
         return Integer.compare(this.getId(), o.getId());
     }
 

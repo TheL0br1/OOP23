@@ -1,7 +1,7 @@
 package com.example.lab2.Objects;
 
 import com.example.lab2.Controllers.displayMicro;
-import com.example.lab2.Objects.microObjects.micro1;
+import com.example.lab2.Objects.microObjects.soldier;
 import com.example.lab2.main;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -14,20 +14,20 @@ import javafx.stage.Stage;
 import java.io.IOException;
 
 public class Object {
-    private final Image spriteImage = new Image(main.class.getResourceAsStream("micro1.jpg"), 100, 0, true, true);
+    private final Image spriteImage = new Image(main.class.getResourceAsStream("soldier.png"), 100, 0, true, true);
 
     private Position position = new Position(0, 0);
     private boolean isDragging = false;
-    public micro1 e;
+    public soldier e;
     private Sprite sprite;
     private Canvas canvas;
     private Position dragPosition = new Position(0,0);
 
-    public Object(micro1 e) {
+    public Object(soldier e) {
         this(e, 0, 0);
     }
 
-    public Object(micro1 e, int posX, int posY) {
+    public Object(soldier e, int posX, int posY) {
         this.e = e;
         setCanvas(new Canvas(getImage().getWidth(), getImage().getHeight() + 100));
         getPosition().X = posX;
