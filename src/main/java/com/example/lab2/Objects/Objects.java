@@ -1,10 +1,9 @@
 package com.example.lab2.Objects;
 
 import com.example.lab2.Controllers.displayMicro;
-import com.example.lab2.main;
 import com.example.lab2.Objects.microObjects.smallBiter;
+import com.example.lab2.main;
 import javafx.fxml.FXMLLoader;
-import javafx.geometry.Pos;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.canvas.Canvas;
@@ -13,9 +12,8 @@ import javafx.stage.Modality;
 import javafx.stage.Stage;
 
 import java.io.IOException;
-import java.io.Serializable;
 
-public class Object {
+public class Objects {
     public smallBiter e;
 
     private Position position = new Position(0, 0);
@@ -23,12 +21,14 @@ public class Object {
     private final Image spriteImage = new Image(main.class.getResource("smallBiter.png").toExternalForm());
     private Sprite sprite;
     private Canvas canvas;
-    private Position dragPosition = new Position(0,0);
-    public Object(smallBiter e){
-        this(e,0,0);
+    private Position dragPosition = new Position(0, 0);
+
+    public Objects(smallBiter e) {
+        this(e, 0, 0);
     }
-    public Object(smallBiter e, int posX, int posY){
-        this.e=e;
+
+    public Objects(smallBiter e, int posX, int posY) {
+        this.e = e;
         setCanvas(new Canvas(getImage().getWidth(), getImage().getHeight() + 100));
         getPosition().X = posX;
         getPosition().Y = posY;
@@ -88,10 +88,12 @@ public class Object {
             }
         });
         getCanvas().setOnMouseReleased(event -> {
-            if(!isActive()) { return; }
+            if (!isActive()) {
+                return;
+            }
             isDragging = false;
         });
-        setSprite(new Sprite(this, 320, 1, 0, 0));
+        setSprite(new Sprite(this, 1, 0, 0));
     }
 
     public void move(double dir) throws IOException {
@@ -111,7 +113,7 @@ public class Object {
         return position;
     }
     public String toString() {
-        return "Object" + ", located at: " + this.getPosition().X + " - X, " + this.getPosition().Y + " - Y. My id: " + e.getId();
+        return "Objects" + ", located at: " + this.getPosition().X + " - X, " + this.getPosition().Y + " - Y. My id: " + e.getId();
     }
     public void setPosition(Position position) {
         this.position = position;

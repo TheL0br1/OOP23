@@ -1,26 +1,39 @@
+
 package com.example.lab2;
 
+
 import com.example.lab2.Controllers.initMicro;
-import com.example.lab2.Objects.Object;
+import com.example.lab2.Objects.Objects;
 import com.example.lab2.Objects.Position;
-import com.example.lab2.Objects.macroObjects.macro1;
-import com.example.lab2.Objects.macroObjects.macro2;
-import com.example.lab2.Objects.macroObjects.macro3;
 import com.example.lab2.Objects.macroObjects.macroBase;
+import com.example.lab2.Objects.macroObjects.nuclearReactor;
+import com.example.lab2.Objects.macroObjects.steamEngine;
+import com.example.lab2.Objects.macroObjects.steamTurbine;
 import com.example.lab2.Objects.microObjects.smallBiter;
 import javafx.animation.AnimationTimer;
 import javafx.application.Application;
+import javafx.embed.swing.SwingFXUtils;
 import javafx.fxml.FXMLLoader;
+import javafx.geometry.Pos;
 import javafx.scene.Group;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.canvas.Canvas;
+import javafx.scene.canvas.GraphicsContext;
+import javafx.scene.control.Button;
+import javafx.scene.image.Image;
+import javafx.scene.image.WritableImage;
+import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.HBox;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
 import javafx.stage.Modality;
 import javafx.stage.Screen;
 import javafx.stage.Stage;
 
+import javax.imageio.ImageIO;
 import java.io.BufferedWriter;
+import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -32,12 +45,17 @@ public class main extends Application {
 
     public static final int CANVAS_WIDTH;
     public static final int CANVAS_HEIGHT;
-    public static ArrayList<Object> Entities = new ArrayList<>();
+    public static ArrayList<Objects> Entities = new ArrayList<>();
     public static ArrayList<macroBase> macroObjects = new ArrayList<>();
     public static Stage stage;
     public static Scene scene;
+    public static Canvas miniMapCanvas;
+    public static BorderPane minimap;
 
-    public static Group root;
+    public static Group mainRoot = new Group();
+    public static Group menu = new Group();
+
+    public static Group root = new Group();
     public static Scanner in;
     public static BufferedWriter writer;
 
@@ -63,16 +81,15 @@ public class main extends Application {
         });
     }
 
-    public static void renderAll() {
+    private static void renderAll() {
 
         Entities.forEach(En -> En.getSprite().render());
         macroObjects.forEach(macroBase::draw);
-        for (Object En: Entities) {
-            for(macroBase macro: macroObjects)
-            {
-                if(En.getCanvas().getBoundsInParent().intersects(
-                        macro.getCanvas().getBoundsInParent())){
-                    if(!macro.isContains(En.e)){
+        for (Objects En : Entities) {
+            for (macroBase macro : macroObjects) {
+                if (En.getCanvas().getBoundsInParent().intersects(
+                        macro.getCanvas().getBoundsInParent())) {
+                    if (!macro.isContains(En.e)) {
                         macro.addEntity(En.e);
                     }
                     macro.giveArmor(En.e);
@@ -81,8 +98,28 @@ public class main extends Application {
         }
     }
 
+    private static void serializeImage() {
+        File file = new File("image.png");
+
+        Image spriteImage = new Image(file.getAbsolutePath(), 200, 100, true, true);
+
+        GraphicsContext gc = miniMapCanvas.getGraphicsContext2D();
+        gc.drawImage(spriteImage, 0, 0);
+
+        WritableImage snapshot = new WritableImage((int) stage.getWidth(), (int) stage.getHeight());
+        miniMapCanvas.setVisible(false);
+        root.getScene().snapshot(snapshot);
+        miniMapCanvas.setVisible(true);
+        try {
+            ImageIO.write(SwingFXUtils.fromFXImage(snapshot, null), "png", file);
+        } catch (IOException e) {
+            System.err.println("Error saving image: " + e.getMessage());
+        }
+    }
+
+
     public static void createEntity(String name, int x, int y, int health, int damage, int armor) throws IOException {
-        Object temp = new Object(new smallBiter(name, health, damage, armor), x, y);
+        Objects temp = new Objects(new smallBiter(name, health, damage, armor), x, y);
         Entities.add(temp);
         System.out.println(temp.e.toString());
     }
@@ -125,7 +162,7 @@ public class main extends Application {
         main.stage = stage;
         stage.setWidth(main.CANVAS_WIDTH);
         stage.setHeight(main.CANVAS_HEIGHT);
-        stage.setTitle("джава - залупа");
+        stage.setTitle("lab3 Barasiy");
 
         AnimationTimer timer = new AnimationTimer() {
             @Override
@@ -133,12 +170,44 @@ public class main extends Application {
                 renderAll(); // Вызываем метод обновления спрайтов
             }
         };
+        AnimationTimer timer2 = new AnimationTimer() {
+            private long lastUpdate = 0;
+
+            @Override
+            public void handle(long now) {
+                if (now - lastUpdate >= 99_999_999_9L) {
+                    lastUpdate = now;
+                    serializeImage();
+                }
+            }
+        };
+        timer2.start();
 
         // Запускаем таймер
         timer.start();
-        root = new Group();
-        scene = new Scene(root, Color.WHITE);
+        miniMapCanvas = new Canvas(200, 200);
+        miniMapCanvas.setLayoutY(400);
 
+        GraphicsContext gc = miniMapCanvas.getGraphicsContext2D();
+
+        // Задаем цвет и рисуем прямоугольник на миникарте
+
+        // Создаем кнопки для нижней панели
+        Button zoomInButton = new Button("Zoom In");
+        Button zoomOutButton = new Button("Zoom Out");
+
+        // Создаем контейнер HBox для размещения кнопок
+        HBox buttonContainer = new HBox(10);
+        buttonContainer.setAlignment(Pos.CENTER);
+        buttonContainer.getChildren().addAll(zoomInButton, zoomOutButton);
+
+        // Создаем BorderPane для размещения миникарты и нижней панели
+        BorderPane minimap = new BorderPane();
+
+        menu.getChildren().add(miniMapCanvas);
+        mainRoot.getChildren().add(menu);
+        mainRoot.getChildren().add(root);
+        scene = new Scene(mainRoot, Color.WHITE);
         stage.setScene(scene);
         scene.setOnKeyPressed(event ->
         {
@@ -210,9 +279,9 @@ public class main extends Application {
                 }
             }
         });
-        macro1 a = new macro1(new Position(0,0));
-        macro2 b = new macro2(new Position(900,500));
-        macro3 c = new macro3(new Position(900,0));
+        steamEngine a = new steamEngine(new Position(0, 0));
+        steamTurbine b = new steamTurbine(new Position(900, 500));
+        nuclearReactor c = new nuclearReactor(new Position(900, 0));
 
 
         macroObjects.add(a);

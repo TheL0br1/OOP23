@@ -38,7 +38,7 @@ abstract public class macroBase {
     public void draw(){
         GraphicsContext gc = getCanvas().getGraphicsContext2D();
         gc.clearRect(0, 0, getCanvas().getWidth(), getCanvas().getHeight());
-        gc.fillText(this.getClass().getName(), 10, 10);
+        gc.fillText(this.getClass().getSimpleName(), 10, 10);
         gc.setFill(Color.GRAY);
         gc.fillRect(0, 15, (double)armor/(10000*getMultiplication()) * getCanvas().getWidth(), (double) 22);
         gc.drawImage(getImage(), 0, 25);

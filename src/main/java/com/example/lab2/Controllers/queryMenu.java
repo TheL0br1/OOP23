@@ -1,8 +1,7 @@
 package com.example.lab2.Controllers;
 
-import com.example.lab2.Objects.Object;
+import com.example.lab2.Objects.Objects;
 import com.example.lab2.Objects.macroObjects.macroBase;
-import com.example.lab2.Objects.microObjects.smallBiter;
 import com.example.lab2.main;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -47,7 +46,7 @@ public class queryMenu implements Initializable {
 
     public void searchMicro(MouseEvent mouseEvent) {
         resultSearch.clear();
-        for (Object en : main.Entities) {
+        for (Objects en : main.Entities) {
             if (isActiveB != en.isActive()) {
                 continue;
             }

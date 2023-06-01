@@ -1,6 +1,6 @@
 package com.example.lab2.Controllers;
 
-import com.example.lab2.Objects.Object;
+import com.example.lab2.Objects.Objects;
 import com.example.lab2.Objects.microObjects.smallBiter;
 import com.example.lab2.main;
 import javafx.fxml.FXML;
@@ -23,34 +23,34 @@ public class displayMicro implements Initializable {
     public TextField damage;
     public TextField name;
     public Canvas canvas = new Canvas();
-    private Object object;
+    private Objects objects;
     public void changeHp(MouseEvent ignoredMouseEvent) {
-        object.e.setHealth(Integer.parseInt(health.getText()));
-        health.setPromptText(Integer.toString(object.e.getHealth()));
+        objects.e.setHealth(Integer.parseInt(health.getText()));
+        health.setPromptText(Integer.toString(objects.e.getHealth()));
     }
 
     public void changeArmor(MouseEvent ignoredMouseEvent) {
        // entity.setHealth(Integer.parseInt(health.getText()));
-        object.e.setArmor(Integer.parseInt(armor.getText()));
+        objects.e.setArmor(Integer.parseInt(armor.getText()));
         armor.setPromptText(armor.getText());
     }
+
     public void changeName(MouseEvent ignoredMouseEvent) {
-        object.e.setName(name.getText());
-        name.setPromptText(object.e.getName());
+        objects.e.setName(name.getText());
+        name.setPromptText(objects.e.getName());
 
     }
 
 
-
-
-    public void setObject(Object object){
-        this.object = object;
-        canvas.setWidth(object.getImage().getWidth());
-        canvas.setHeight(object.getImage().getHeight());
+    public void setObject(Objects objects) {
+        this.objects = objects;
+        canvas.setWidth(objects.getImage().getWidth());
+        canvas.setHeight(objects.getImage().getHeight());
 
         GraphicsContext gc = canvas.getGraphicsContext2D();
-        gc.drawImage(object.getImage(), 0,0);
+        gc.drawImage(objects.getImage(), 0, 0);
     }
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         System.out.println("displayMicro.initialize");
@@ -58,11 +58,11 @@ public class displayMicro implements Initializable {
     }
 
     public void changeDamage(MouseEvent ignoredMouseEvent) {
-        object.e.setDamage(Integer.parseInt(damage.getText()));
-        damage.setPromptText(Integer.toString(object.e.getDamage()));
+        objects.e.setDamage(Integer.parseInt(damage.getText()));
+        damage.setPromptText(Integer.toString(objects.e.getDamage()));
     }
     public void deepCopyObject() throws IOException, ClassNotFoundException {
-        smallBiter a = smallBiter.clone(object.e);
+        smallBiter a = smallBiter.clone(objects.e);
         main.createEntity(a.getName(),0,0,a.getHealth(),a.getDamage(),a.getArmor());
     }
 
