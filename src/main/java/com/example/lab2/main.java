@@ -12,32 +12,24 @@ import com.example.lab2.Objects.macroObjects.steamTurbine;
 import com.example.lab2.Objects.microObjects.smallBiter;
 import javafx.animation.AnimationTimer;
 import javafx.application.Application;
-import javafx.embed.swing.SwingFXUtils;
 import javafx.fxml.FXMLLoader;
-import javafx.geometry.Pos;
 import javafx.scene.Group;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
-import javafx.scene.control.Button;
-import javafx.scene.image.Image;
-import javafx.scene.image.WritableImage;
 import javafx.scene.layout.BorderPane;
-import javafx.scene.layout.HBox;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
 import javafx.stage.Modality;
-import javafx.stage.Screen;
 import javafx.stage.Stage;
 
-import javax.imageio.ImageIO;
 import java.io.BufferedWriter;
-import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Scanner;
+
 
 //52, 13, 17, 26, 40
 //39,77,91,11,25
@@ -50,18 +42,21 @@ public class main extends Application {
     public static Stage stage;
     public static Scene scene;
     public static Canvas miniMapCanvas;
+    public static BorderPane menu = new BorderPane();
     public static BorderPane minimap;
 
     public static Group mainRoot = new Group();
-    public static Group menu = new Group();
+    private static double zoom;
+
 
     public static Group root = new Group();
     public static Scanner in;
     public static BufferedWriter writer;
 
     static {
-        CANVAS_WIDTH = (int) Screen.getPrimary().getBounds().getWidth();
-        CANVAS_HEIGHT = (int) (Screen.getPrimary().getBounds().getHeight());
+        zoom = 1;
+        CANVAS_WIDTH = 1280;
+        CANVAS_HEIGHT = 2 * 720;
         in = new Scanner(System.in);
         System.out.println("static method initialized");
         try {
@@ -99,22 +94,14 @@ public class main extends Application {
     }
 
     private static void serializeImage() {
-        File file = new File("image.png");
 
-        Image spriteImage = new Image(file.getAbsolutePath(), 200, 100, true, true);
-
+        menu.setVisible(false);
         GraphicsContext gc = miniMapCanvas.getGraphicsContext2D();
-        gc.drawImage(spriteImage, 0, 0);
-
-        WritableImage snapshot = new WritableImage((int) stage.getWidth(), (int) stage.getHeight());
-        miniMapCanvas.setVisible(false);
-        root.getScene().snapshot(snapshot);
-        miniMapCanvas.setVisible(true);
-        try {
-            ImageIO.write(SwingFXUtils.fromFXImage(snapshot, null), "png", file);
-        } catch (IOException e) {
-            System.err.println("Error saving image: " + e.getMessage());
-        }
+        gc.drawImage(stage.getScene().snapshot(null), 5, 0, 200 - 5, 260);
+        gc.setStroke(Color.RED);
+        gc.setLineWidth(5.0);
+        gc.strokeRect(0, 0, miniMapCanvas.getWidth(), miniMapCanvas.getHeight());
+        menu.setVisible(true);
     }
 
 
@@ -162,6 +149,8 @@ public class main extends Application {
         main.stage = stage;
         stage.setWidth(main.CANVAS_WIDTH);
         stage.setHeight(main.CANVAS_HEIGHT);
+        stage.setY(0);
+        stage.setX(0);
         stage.setTitle("lab3 Barasiy");
 
         AnimationTimer timer = new AnimationTimer() {
@@ -175,7 +164,7 @@ public class main extends Application {
 
             @Override
             public void handle(long now) {
-                if (now - lastUpdate >= 99_999_999_9L) {
+                if (now - lastUpdate >= 99_999_999_9L / 5) {
                     lastUpdate = now;
                     serializeImage();
                 }
@@ -185,30 +174,27 @@ public class main extends Application {
 
         // Запускаем таймер
         timer.start();
-        miniMapCanvas = new Canvas(200, 200);
-        miniMapCanvas.setLayoutY(400);
+        miniMapCanvas = new Canvas(200, 260);
+        // miniMapCanvas.setLayoutY(800);
 
-        GraphicsContext gc = miniMapCanvas.getGraphicsContext2D();
 
-        // Задаем цвет и рисуем прямоугольник на миникарте
-
-        // Создаем кнопки для нижней панели
-        Button zoomInButton = new Button("Zoom In");
-        Button zoomOutButton = new Button("Zoom Out");
-
-        // Создаем контейнер HBox для размещения кнопок
-        HBox buttonContainer = new HBox(10);
-        buttonContainer.setAlignment(Pos.CENTER);
-        buttonContainer.getChildren().addAll(zoomInButton, zoomOutButton);
-
-        // Создаем BorderPane для размещения миникарты и нижней панели
         BorderPane minimap = new BorderPane();
-
-        menu.getChildren().add(miniMapCanvas);
+        menu.setTop(miniMapCanvas);
         mainRoot.getChildren().add(menu);
         mainRoot.getChildren().add(root);
-        scene = new Scene(mainRoot, Color.WHITE);
-        stage.setScene(scene);
+
+        scene = new Scene(mainRoot, CANVAS_WIDTH, CANVAS_HEIGHT, Color.WHITE);
+        menu.setLayoutY(CANVAS_HEIGHT / 2 - miniMapCanvas.getHeight() - 30);
+
+        scene.setOnScroll(event -> {
+            double delta = event.getDeltaY();
+            root.translateZProperty().set(root.getTranslateZ() + delta);
+        });
+        scene.setOnMouseClicked(mouseEvent -> {
+            System.out.println("x: " + mouseEvent.getSceneX());
+            System.out.println("y: " + mouseEvent.getSceneY());
+
+        });
         scene.setOnKeyPressed(event ->
         {
             {
@@ -282,7 +268,7 @@ public class main extends Application {
         steamEngine a = new steamEngine(new Position(0, 0));
         steamTurbine b = new steamTurbine(new Position(900, 500));
         nuclearReactor c = new nuclearReactor(new Position(900, 0));
-
+        stage.setScene(scene);
 
         macroObjects.add(a);
         macroObjects.add(b);
