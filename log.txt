@@ -1,0 +1,1 @@
+Added new micro: smallBiter{directionR=0.0, speed=50.0, id=0, action=NEUTRAL, armor=2000, health=1000, damage=100, active=true, name='Small_byter'}

@@ -9,6 +9,7 @@ import com.example.lab2.Objects.macroObjects.macroBase;
 import com.example.lab2.Objects.macroObjects.nuclearReactor;
 import com.example.lab2.Objects.macroObjects.steamEngine;
 import com.example.lab2.Objects.macroObjects.steamTurbine;
+import com.example.lab2.Objects.microObjects.mediumBiter;
 import com.example.lab2.Objects.microObjects.smallBiter;
 import javafx.animation.AnimationTimer;
 import javafx.application.Application;
@@ -18,7 +19,6 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
-import javafx.scene.image.Image;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
@@ -53,6 +53,8 @@ public class main extends Application {
     public static Group root = new Group();
     public static Scanner in;
     public static BufferedWriter writer;
+    private static double relivateX;
+    private static double relivateY;
 
     static {
         zoom = 1;
@@ -92,16 +94,23 @@ public class main extends Application {
                 }
             }
         }
+        menu.toFront();
     }
 
     private static void serializeImage() {
 
         menu.setVisible(false);
         GraphicsContext gc = miniMapCanvas.getGraphicsContext2D();
-        gc.drawImage(stage.getScene().snapshot(null), 5, 0, 200 - 5, 260);
+        gc.clearRect(0, 0, miniMapCanvas.getWidth(), miniMapCanvas.getHeight());
+        gc.drawImage(stage.getScene().snapshot(null), 5, 5, 200 - 5, 260 - 5);
         gc.setStroke(Color.RED);
         gc.setLineWidth(5.0);
-        gc.strokeRect(0, 0, miniMapCanvas.getWidth(), miniMapCanvas.getHeight() - 40);
+        gc.strokeRect(0, 0, miniMapCanvas.getWidth(), miniMapCanvas.getHeight());
+        gc.setStroke(Color.GRAY);
+        gc.setLineWidth(3);
+        double x = -relivateX * stage.getX();
+        double y = relivateY * stage.getY();
+        gc.strokeRect(-relivateX * stage.getX(), -relivateY * stage.getY(), 80, 60);
         menu.setVisible(true);
     }
 
@@ -146,7 +155,7 @@ public class main extends Application {
 
 
     @Override
-    public void start(Stage stage) {
+    public void start(Stage stage) throws IOException {
         main.stage = stage;
         stage.setWidth(main.CANVAS_WIDTH);
         stage.setHeight(main.CANVAS_HEIGHT);
@@ -179,7 +188,7 @@ public class main extends Application {
 
         // Запускаем таймер
         timer.start();
-        miniMapCanvas = new Canvas(200, 300);
+        miniMapCanvas = new Canvas(200, 260);
 
 
         menu.setTop(miniMapCanvas);
@@ -187,8 +196,21 @@ public class main extends Application {
         mainRoot.getChildren().add(root);
 
         scene = new Scene(mainRoot, CANVAS_WIDTH, CANVAS_HEIGHT, Color.WHITE);
-        menu.setLayoutY(CANVAS_HEIGHT / 5 - miniMapCanvas.getHeight() - 30 + 40);
-
+        menu.setLayoutY(CANVAS_HEIGHT / 5 - miniMapCanvas.getHeight() - 30);
+        miniMapCanvas.setOnMouseClicked(mouseEvent -> {
+            double x = mouseEvent.getX() / relivateX;
+            double y = mouseEvent.getY() / relivateY;
+            if (x > CANVAS_WIDTH - CANVAS_WIDTH / 2.5) {
+                x = CANVAS_WIDTH - CANVAS_WIDTH / 2.5;
+            }
+            if (y > CANVAS_HEIGHT - CANVAS_HEIGHT / 5) {
+                y = CANVAS_HEIGHT - CANVAS_HEIGHT / 5;
+            }
+            stage.setX(-x);
+            stage.setY(-y);
+            menu.setTranslateX(x);
+            menu.setTranslateY(y);
+        });
         scene.setOnScroll(event -> {
             double delta = event.getDeltaY();
             root.translateZProperty().set(root.getTranslateZ() + delta);
@@ -219,40 +241,40 @@ public class main extends Application {
                         }
                     }
                     case DOWN -> {
-                        if (event.isControlDown() && stage.getY() - 40 > -CANVAS_HEIGHT + 720) {
-                            stage.setY(stage.getY() - 40);
-                            Image bottle = new Image(main.class.getResourceAsStream("bottle.png"), 25, 80, true, true);
-                            GraphicsContext gc = miniMapCanvas.getGraphicsContext2D();
-                            gc.drawImage(bottle, 60, 220, 85, 300);
-                            menu.setTranslateY(menu.getTranslateY() + 40);
+                        if (event.isControlDown() && stage.getY() - 20 > -CANVAS_HEIGHT + 720) {
+                            stage.setY(stage.getY() - 20);
+                            menu.setTranslateY(menu.getTranslateY() + 20);
 
                             break;
                         }
-                        main.moveAll(Math.PI / 2);
+                        // main.moveAll(Math.PI / 2);
                     }
                     case UP -> {
-                        if (event.isControlDown() && stage.getY() + 15 < -0 + 15) {
+                        if (event.isControlDown() && stage.getY() + 15 < 15) {
                             menu.setTranslateY(menu.getTranslateY() - 15);
 
                             stage.setY(stage.getY() + 15);
 
                             break;
                         }
-                        main.moveAll(Math.PI * 1.5);
+                        //   main.moveAll(Math.PI * 1.5);
                     }
                     case LEFT -> {
-                        if (event.isControlDown() && root.getTranslateX() - 10 > 0) {
-                            root.setTranslateX(root.getTranslateX() - 10);
+                        if (event.isControlDown() && stage.getX() + 15 < 0) {
+                            menu.setTranslateX(menu.getTranslateX() - 15);
+                            //   main.moveAll(Math.PI * 0);
+                            stage.setX(stage.getX() + 15);
                             break;
                         }
-                        main.moveAll(Math.PI * 0);
                     }
                     case RIGHT -> {
-                        if (event.isControlDown() && root.getTranslateX() + 10 + 1280 < CANVAS_WIDTH) {
-                            root.setTranslateX(root.getTranslateX() + 10);
+                        if (event.isControlDown() && stage.getX() - 15 > -CANVAS_WIDTH + CANVAS_WIDTH / 2.5) {
+
+                            menu.setTranslateX(menu.getTranslateX() + 15);
+                            //  main.moveAll(Math.PI);
+                            stage.setX(stage.getX() - 15);
                             break;
                         }
-                        main.moveAll(Math.PI);
                     }
                     case ESCAPE -> main.changeEntityActive();
                     case Q -> {
@@ -280,11 +302,19 @@ public class main extends Application {
         steamTurbine b = new steamTurbine(new Position(900, 500));
         nuclearReactor c = new nuclearReactor(new Position(900, 10));
         stage.setScene(scene);
-
+        relivateX = miniMapCanvas.getWidth() / CANVAS_WIDTH;
+        relivateY = miniMapCanvas.getHeight() / CANVAS_HEIGHT;
         macroObjects.add(a);
         macroObjects.add(b);
         macroObjects.add(c);
+        mediumBiter a1 = new mediumBiter();
+        try {
+            smallBiter a2 = smallBiter.clone(a1);
+            System.out.println(a2 instanceof mediumBiter);
 
+        } catch (ClassNotFoundException e) {
+            throw new RuntimeException(e);
+        }
 
         stage.show();
 
