@@ -2,7 +2,7 @@ package com.example.kursova.Controllers;
 
 import com.example.kursova.Additional.MyFunctions;
 import com.example.kursova.Objects.Objects;
-import com.example.kursova.Objects.microObjects.smallBiter;
+import com.example.kursova.Objects.microObjects.ikra;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.canvas.Canvas;
@@ -62,7 +62,7 @@ public class displayMicro implements Initializable {
         damage.setPromptText(Integer.toString(objects.e.getDamage()));
     }
     public void deepCopyObject() throws IOException, ClassNotFoundException {
-        smallBiter a = smallBiter.clone(objects.e);
+        ikra a = ikra.clone(objects.e);
         MyFunctions.createEntity(a.getClass().getSimpleName(), a.getName(), 0, 0, a.getHealth(), a.getDamage(), a.getArmor());
     }
 

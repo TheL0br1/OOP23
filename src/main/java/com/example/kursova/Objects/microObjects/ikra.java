@@ -12,7 +12,7 @@ enum Action {
     RUN
 }
 
-public class smallBiter implements Serializable, Comparable<smallBiter>, Cloneable {
+public class ikra implements Serializable, Comparable<ikra>, Cloneable {
 
 
     private static int count;
@@ -48,7 +48,7 @@ public class smallBiter implements Serializable, Comparable<smallBiter>, Cloneab
         System.out.println("Class statis initialization");
     }
 
-    public smallBiter(String name, int health, int damage, int armor) throws IOException {
+    public ikra(String name, int health, int damage, int armor) throws IOException {
         this.setName(name);
         this.setAction(Action.NEUTRAL);
         this.setArmor(armor);
@@ -57,14 +57,16 @@ public class smallBiter implements Serializable, Comparable<smallBiter>, Cloneab
         this.setHealth(health);
         this.setDamage(damage);
         count++;
-        main.writer.write("Added new micro: " + this.toString()+"\n");
+        main.writer.write("Added new micro: " + this + "\n");
         main.writer.flush();
 
     }
-    public smallBiter(smallBiter a) throws IOException {
-        this(a.getName(), a.getHealth(), a.getDamage(),a.getArmor());
+
+    public ikra(ikra a) throws IOException {
+        this(a.getName(), a.getHealth(), a.getDamage(), a.getArmor());
     }
-    public smallBiter() throws IOException {
+
+    public ikra() throws IOException {
         this("Small_byter", maxHealth, maxDamage, maxArmor);
     }
 
@@ -110,24 +112,24 @@ public class smallBiter implements Serializable, Comparable<smallBiter>, Cloneab
         this.armor = armor;
     }
 
-    static public smallBiter clone(smallBiter prototype) throws IOException, ClassNotFoundException {
+    static public ikra clone(ikra prototype) throws IOException, ClassNotFoundException {
 
         ByteArrayOutputStream bos = new ByteArrayOutputStream();
         ObjectOutputStream out = new ObjectOutputStream(bos);
         out.writeObject(prototype);
         out.flush();
         ObjectInputStream in = new ObjectInputStream(new ByteArrayInputStream(bos.toByteArray()));
-        return ((smallBiter)in.readObject());
+        return ((ikra) in.readObject());
 
     }
 
-    public boolean equals(smallBiter a, smallBiter b) {
+    public boolean equals(ikra a, ikra b) {
         return a == b;
     }
 
     @Override
     public String toString() {
-        return "smallBiter{" +
+        return "ikra{" +
                 "directionR=" + directionR +
                 ", speed=" + speed +
                 ", id=" + id +
@@ -184,7 +186,7 @@ public class smallBiter implements Serializable, Comparable<smallBiter>, Cloneab
     }
 
     @Override
-    public int compareTo(smallBiter o) {
+    public int compareTo(ikra o) {
         return Integer.compare(this.getId(), o.getId());
     }
 

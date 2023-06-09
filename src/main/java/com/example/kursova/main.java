@@ -5,11 +5,11 @@ import com.example.kursova.Controllers.initMicro;
 import com.example.kursova.Objects.Objects;
 import com.example.kursova.Objects.Position;
 import com.example.kursova.Objects.macroObjects.macroBase;
-import com.example.kursova.Objects.macroObjects.nuclearReactor;
-import com.example.kursova.Objects.macroObjects.steamEngine;
-import com.example.kursova.Objects.macroObjects.steamTurbine;
-import com.example.kursova.Objects.microObjects.mediumBiter;
-import com.example.kursova.Objects.microObjects.smallBiter;
+import com.example.kursova.Objects.macroObjects.obmil;
+import com.example.kursova.Objects.macroObjects.perekat;
+import com.example.kursova.Objects.macroObjects.pleso;
+import com.example.kursova.Objects.microObjects.ikra;
+import com.example.kursova.Objects.microObjects.malok;
 import javafx.animation.AnimationTimer;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -239,19 +239,19 @@ public class main extends Application {
         scene.setOnKeyPressed(event -> {
             extracted(stage, event);
         });
-        steamEngine a = new steamEngine(new Position(0, 10));
-        steamTurbine b = new steamTurbine(new Position(900, 500));
-        nuclearReactor c = new nuclearReactor(new Position(900, 10));
+        obmil a = new obmil(new Position(0, 10));
+        perekat b = new perekat(new Position(900, 500));
+        pleso c = new pleso(new Position(900, 10));
         stage.setScene(scene);
         relateX = miniMapCanvas.getWidth() / rect.getWidth();
         relateY = miniMapCanvas.getHeight() / rect.getHeight();
         macroObjects.add(a);
         macroObjects.add(b);
         macroObjects.add(c);
-        mediumBiter a1 = new mediumBiter();
+        malok a1 = new malok();
         try {
-            smallBiter a2 = smallBiter.clone(a1);
-            System.out.println(a2 instanceof mediumBiter);
+            ikra a2 = ikra.clone(a1);
+            System.out.println(a2 instanceof malok);
 
         } catch (ClassNotFoundException e) {
             throw new RuntimeException(e);

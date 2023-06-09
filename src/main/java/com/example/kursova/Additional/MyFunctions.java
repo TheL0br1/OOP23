@@ -2,9 +2,9 @@ package com.example.kursova.Additional;
 
 import com.example.kursova.Objects.Objects;
 import com.example.kursova.Objects.macroObjects.macroBase;
-import com.example.kursova.Objects.microObjects.bigBiter;
-import com.example.kursova.Objects.microObjects.mediumBiter;
-import com.example.kursova.Objects.microObjects.smallBiter;
+import com.example.kursova.Objects.microObjects.fish;
+import com.example.kursova.Objects.microObjects.ikra;
+import com.example.kursova.Objects.microObjects.malok;
 import com.example.kursova.main;
 import javafx.animation.AnimationTimer;
 import javafx.scene.SnapshotParameters;
@@ -23,14 +23,14 @@ public class MyFunctions {
     public static void createEntity(String type, String name, int x, int y, int health, int damage, int armor) throws IOException {
         Objects temp = null;
         switch (type) {
-            case "smallBiter":
-                temp = new Objects(new smallBiter(name, health, damage, armor), x, y);
+            case "ikra":
+                temp = new Objects(new ikra(name, health, damage, armor), x, y);
                 break;
-            case "mediumBiter":
-                temp = new Objects(new mediumBiter(name, health, damage, armor), x, y);
+            case "malok":
+                temp = new Objects(new malok(name, health, damage, armor), x, y);
                 break;
-            case "bigBiter":
-                temp = new Objects(new bigBiter(name, health, damage, armor), x, y);
+            case "fish":
+                temp = new Objects(new fish(name, health, damage, armor), x, y);
                 break;
         }
         if (temp == null) {

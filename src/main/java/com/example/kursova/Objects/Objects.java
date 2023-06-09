@@ -1,7 +1,7 @@
 package com.example.kursova.Objects;
 
 import com.example.kursova.Controllers.displayMicro;
-import com.example.kursova.Objects.microObjects.smallBiter;
+import com.example.kursova.Objects.microObjects.ikra;
 import com.example.kursova.main;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -14,7 +14,7 @@ import javafx.stage.Stage;
 import java.io.IOException;
 
 public class Objects {
-    public smallBiter e;
+    public ikra e;
 
     private Position position = new Position(0, 0);
     private boolean isDragging = false;
@@ -23,11 +23,11 @@ public class Objects {
     private Canvas canvas;
     private final Position dragPosition = new Position(0, 0);
 
-    public Objects(smallBiter e) {
+    public Objects(ikra e) {
         this(e, 0, 0);
     }
 
-    public Objects(smallBiter e, int posX, int posY) {
+    public Objects(ikra e, int posX, int posY) {
         this.e = e;
         String image = e.getClass().getSimpleName();
         spriteImage = new Image(main.class.getResource(e.getClass().getSimpleName() + ".png").toExternalForm());
@@ -46,8 +46,8 @@ public class Objects {
             }
             if(!isActive()) { return; }
             if (event.isSecondaryButtonDown()) { // Перевірка нажаття правої кнопки миші
-                dragPosition.X = (int) event.getX();
-                dragPosition.Y = (int) event.getY();
+                dragPosition.X = (int) ((int) event.getX() + main.root.getTranslateX());
+                dragPosition.Y = (int) ((int) event.getY() + main.root.getTranslateY());
                 isDragging = true;
 
             }
