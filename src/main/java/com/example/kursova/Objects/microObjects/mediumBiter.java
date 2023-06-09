@@ -1,4 +1,4 @@
-package com.example.lab2.Objects.microObjects;
+package com.example.kursova.Objects.microObjects;
 
 import java.io.IOException;
 

@@ -1,8 +1,8 @@
-package com.example.lab2.Objects.macroObjects;
+package com.example.kursova.Objects.macroObjects;
 
-import com.example.lab2.Objects.Position;
-import com.example.lab2.Objects.microObjects.smallBiter;
-import com.example.lab2.main;
+import com.example.kursova.Objects.Position;
+import com.example.kursova.Objects.microObjects.smallBiter;
+import com.example.kursova.main;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.image.Image;

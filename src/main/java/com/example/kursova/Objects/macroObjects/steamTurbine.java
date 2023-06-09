@@ -1,7 +1,7 @@
-package com.example.lab2.Objects.macroObjects;
+package com.example.kursova.Objects.macroObjects;
 
-import com.example.lab2.Objects.Position;
-import com.example.lab2.main;
+import com.example.kursova.Objects.Position;
+import com.example.kursova.main;
 import javafx.scene.image.Image;
 
 public class steamTurbine extends steamEngine {

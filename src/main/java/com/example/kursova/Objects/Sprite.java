@@ -1,5 +1,5 @@
 
-package com.example.lab2.Objects;
+package com.example.kursova.Objects;
 
 
 import javafx.scene.canvas.GraphicsContext;

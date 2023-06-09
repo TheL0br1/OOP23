@@ -1,6 +1,6 @@
-package com.example.lab2.Objects.microObjects;
+package com.example.kursova.Objects.microObjects;
 
-import com.example.lab2.main;
+import com.example.kursova.main;
 
 import java.io.*;
 

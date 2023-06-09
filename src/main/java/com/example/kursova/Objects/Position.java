@@ -1,4 +1,4 @@
-package com.example.lab2.Objects;
+package com.example.kursova.Objects;
 
 import java.io.Serializable;
 

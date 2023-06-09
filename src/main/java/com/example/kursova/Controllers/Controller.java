@@ -1,9 +1,11 @@
-package com.example.lab2.Controllers;
+package com.example.kursova.Controllers;
 
-import com.example.lab2.main;
+import com.example.kursova.Additional.MyFunctions;
+import com.example.kursova.main;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.TextField;
 
 import java.io.IOException;
@@ -19,29 +21,31 @@ public class Controller implements Initializable {
     public TextField positionY;
 
     public TextField name;
-
+    public ChoiceBox typeChoice;
 
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         System.out.println("Controller.initialize");
+        typeChoice.getItems().addAll("smallBiter", "mediumBiter", "bigBiter");
+
 
     }
     @FXML
     private void createEntity(ActionEvent ignoredEvent) throws IOException {
         System.out.println("init new entity");
-        main.createEntity(name.getText(),
+        MyFunctions.createEntity(typeChoice.getValue().toString(), name.getText(),
                 Integer.parseInt(positionX.getText()),
                 Integer.parseInt(positionY.getText()),
                 Integer.parseInt(health.getText()),
-                Integer.parseInt(damage.getText()),0);
+                Integer.parseInt(damage.getText()), 0);
     }
 
     public void deleteEntity(ActionEvent ignoredActionEvent) {
-        main.deleteEntities();
+        MyFunctions.deleteEntities();
     }
     public void changeActiveAll(ActionEvent ignoredActionEvent){
-        main.changeEntityActive();
+        MyFunctions.changeEntityActive();
     }
 
     public void printEntity(ActionEvent ignoredActionEvent) {

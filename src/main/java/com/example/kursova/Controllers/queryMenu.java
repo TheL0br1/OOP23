@@ -1,8 +1,8 @@
-package com.example.lab2.Controllers;
+package com.example.kursova.Controllers;
 
-import com.example.lab2.Objects.Objects;
-import com.example.lab2.Objects.macroObjects.macroBase;
-import com.example.lab2.main;
+import com.example.kursova.Objects.Objects;
+import com.example.kursova.Objects.macroObjects.macroBase;
+import com.example.kursova.main;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;

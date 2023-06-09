@@ -1,8 +1,8 @@
-package com.example.lab2.Controllers;
+package com.example.kursova.Controllers;
 
-import com.example.lab2.Objects.Objects;
-import com.example.lab2.Objects.microObjects.smallBiter;
-import com.example.lab2.main;
+import com.example.kursova.Additional.MyFunctions;
+import com.example.kursova.Objects.Objects;
+import com.example.kursova.Objects.microObjects.smallBiter;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.canvas.Canvas;
@@ -63,7 +63,7 @@ public class displayMicro implements Initializable {
     }
     public void deepCopyObject() throws IOException, ClassNotFoundException {
         smallBiter a = smallBiter.clone(objects.e);
-        main.createEntity(a.getName(),0,0,a.getHealth(),a.getDamage(),a.getArmor());
+        MyFunctions.createEntity(a.getClass().getSimpleName(), a.getName(), 0, 0, a.getHealth(), a.getDamage(), a.getArmor());
     }
 
 }

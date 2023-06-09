@@ -1,8 +1,8 @@
-package com.example.lab2.Objects;
+package com.example.kursova.Objects;
 
-import com.example.lab2.Controllers.displayMicro;
-import com.example.lab2.Objects.microObjects.smallBiter;
-import com.example.lab2.main;
+import com.example.kursova.Controllers.displayMicro;
+import com.example.kursova.Objects.microObjects.smallBiter;
+import com.example.kursova.main;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -18,7 +18,7 @@ public class Objects {
 
     private Position position = new Position(0, 0);
     private boolean isDragging = false;
-    private final Image spriteImage = new Image(main.class.getResource("smallBiter.png").toExternalForm());
+    private Image spriteImage;
     private Sprite sprite;
     private Canvas canvas;
     private Position dragPosition = new Position(0, 0);
@@ -29,6 +29,8 @@ public class Objects {
 
     public Objects(smallBiter e, int posX, int posY) {
         this.e = e;
+        String image = e.getClass().getSimpleName();
+        spriteImage = new Image(main.class.getResource(e.getClass().getSimpleName() + ".png").toExternalForm());
         setCanvas(new Canvas(getImage().getWidth(), getImage().getHeight() + 100));
         getPosition().X = posX;
         getPosition().Y = posY;
@@ -79,7 +81,6 @@ public class Objects {
                 getCanvas().setLayoutY((int) event.getSceneY()-dragPosition.Y);
                 try {
                     main.writer.write("Move micro: " + this.toString()+"\n" );
-                    main.writer.flush();
                 } catch (IOException ex) {
                     throw new RuntimeException(ex);
                 }
@@ -97,13 +98,13 @@ public class Objects {
     }
 
     public void move(double dir) throws IOException {
-        if(!e.isActive()) return;
-        getCanvas().setTranslateX(getCanvas().getTranslateX() - (int) (Math.cos(dir) * e.getSpeed()));
-        getCanvas().setTranslateY(getCanvas().getTranslateY() - (int) (Math.sin(dir) * e.getSpeed()));
-        getPosition().X = (int) getCanvas().getTranslateX();
-        getPosition().Y = (int) getCanvas().getTranslateY();
-        main.writer.write("Move micro: " + this.toString()+". Dir: " + Double.toString(dir)+"\n" );
-        main.writer.flush();
+        if (!e.isActive()) return;
+        getCanvas().setLayoutX(getCanvas().getLayoutX() - (int) (Math.cos(dir) * e.getSpeed()));
+        getCanvas().setLayoutY(getCanvas().getLayoutY() - (int) (Math.sin(dir) * e.getSpeed()));
+        getPosition().X = (int) getCanvas().getLayoutX();
+        getPosition().Y = (int) getCanvas().getLayoutY();
+        main.writer.write("Move micro: " + this.toString() + ". Dir: " + Double.toString(dir) + "\n");
+
 
     }
     public void move() throws IOException {
