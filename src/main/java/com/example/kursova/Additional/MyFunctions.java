@@ -13,8 +13,13 @@ import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
 
 import java.io.IOException;
+import java.util.ArrayList;
 
 public class MyFunctions {
+
+
+    public static ArrayList<AnimationTimer> timers = new ArrayList<>();
+
     public static void createEntity(String type, String name, int x, int y, int health, int damage, int armor) throws IOException {
         Objects temp = null;
         switch (type) {
@@ -133,14 +138,24 @@ public class MyFunctions {
         main.menu.setVisible(true);
     }
 
-    public static void moveRandom() {
+    public static void deleteMove() {
+        timers.forEach(timer -> {
+            timer.stop();
+        });
+        timers.clear();
+    }
 
-        AnimationTimer timer = new AnimationTimer() {
+    public static void moveRandom() {
+        timers.forEach(animationTimer -> {
+            animationTimer.stop();
+        });
+        timers.clear();
+        timers.add(new AnimationTimer() {
             private long lastUpdate = 0;
 
             @Override
             public void handle(long now) {
-                if (now - lastUpdate >= 99_999_999_9L / 2) {
+                if (now - lastUpdate >= 99_999_999_9L / 3) {
                     lastUpdate = now;
 
                     main.Entities.forEach(En -> {
@@ -153,8 +168,12 @@ public class MyFunctions {
                     });
                 }
             }
-        };
-        timer.start();
+        });
+        for (AnimationTimer timer : timers) {
+            timer.start();
+
+        }
+
     }
 
     public static void moveToMacro() {

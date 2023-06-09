@@ -175,6 +175,9 @@ public class main extends Application {
                 MyFunctions.moveRandom();
             }
             case F2 -> {
+                MyFunctions.deleteMove();
+            }
+            case F3 -> {
                 MyFunctions.moveToMacro();
             }
         }
