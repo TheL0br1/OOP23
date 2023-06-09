@@ -18,10 +18,10 @@ public class Objects {
 
     private Position position = new Position(0, 0);
     private boolean isDragging = false;
-    private Image spriteImage;
+    private final Image spriteImage;
     private Sprite sprite;
     private Canvas canvas;
-    private Position dragPosition = new Position(0, 0);
+    private final Position dragPosition = new Position(0, 0);
 
     public Objects(smallBiter e) {
         this(e, 0, 0);
@@ -80,7 +80,7 @@ public class Objects {
                 getCanvas().setLayoutX((int) event.getSceneX()-dragPosition.X);
                 getCanvas().setLayoutY((int) event.getSceneY()-dragPosition.Y);
                 try {
-                    main.writer.write("Move micro: " + this.toString()+"\n" );
+                    main.writer.write("Move micro: " + this +"\n" );
                 } catch (IOException ex) {
                     throw new RuntimeException(ex);
                 }
@@ -101,9 +101,21 @@ public class Objects {
         if (!e.isActive()) return;
         getCanvas().setLayoutX(getCanvas().getLayoutX() - (int) (Math.cos(dir) * e.getSpeed()));
         getCanvas().setLayoutY(getCanvas().getLayoutY() - (int) (Math.sin(dir) * e.getSpeed()));
+        if (getCanvas().getLayoutX() < 0) {
+            getCanvas().setLayoutX(0);
+        }
+        if (getCanvas().getLayoutY() < 0) {
+            getCanvas().setLayoutY(0);
+        }
+        if (getCanvas().getLayoutY() > 3000) {
+            getCanvas().setLayoutY(3000);
+        }
+        if (getCanvas().getLayoutX() > 3000) {
+            getCanvas().setLayoutX(3000);
+        }
         getPosition().X = (int) getCanvas().getLayoutX();
         getPosition().Y = (int) getCanvas().getLayoutY();
-        main.writer.write("Move micro: " + this.toString() + ". Dir: " + Double.toString(dir) + "\n");
+        main.writer.write("Move micro: " + this + ". Dir: " + dir + "\n");
 
 
     }

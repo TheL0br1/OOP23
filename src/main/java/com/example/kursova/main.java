@@ -21,6 +21,7 @@ import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.paint.Color;
+import javafx.scene.shape.Rectangle;
 import javafx.stage.Modality;
 import javafx.stage.Screen;
 import javafx.stage.Stage;
@@ -58,8 +59,8 @@ public class main extends Application {
     public static Random random = new Random();
 
     static {
-        STAGE_WIDTH = (int) (2.5 * Screen.getPrimary().getBounds().getWidth());
-        STAGE_HEIGHT = (int) (5 * Screen.getPrimary().getBounds().getHeight());
+        STAGE_WIDTH = (int) (Screen.getPrimary().getBounds().getWidth());
+        STAGE_HEIGHT = (int) (Screen.getPrimary().getBounds().getHeight());
         in = new Scanner(System.in);
         System.out.println("static method initialized");
         try {
@@ -72,16 +73,15 @@ public class main extends Application {
     private static void extracted(Stage stage, MouseEvent mouseEvent) {
         double x = mouseEvent.getX() / relateX;
         double y = mouseEvent.getY() / relateY;
-        if (x > STAGE_WIDTH - STAGE_WIDTH / 2.5) {
-            x = STAGE_WIDTH - STAGE_WIDTH / 2.5;
+        if (x > 3000 - STAGE_WIDTH) {
+            x = 3000 - STAGE_WIDTH;
         }
-        if (y > STAGE_HEIGHT - STAGE_HEIGHT / 5) {
-            y = STAGE_HEIGHT - STAGE_HEIGHT / 5;
+        if (y > 3000 - STAGE_HEIGHT) {
+            y = 3000 - STAGE_HEIGHT;
         }
-        stage.setX(-x);
-        stage.setY(-y);
-        menu.setTranslateX(x);
-        menu.setTranslateY(y);
+        root.setTranslateX(-x);
+        root.setTranslateY(-y);
+
     }
 
     private static void extracted(Stage stage, KeyEvent event) {
@@ -103,9 +103,11 @@ public class main extends Application {
                 }
             }
             case DOWN -> {
-                if (event.isControlDown() && stage.getY() - 15 > -STAGE_HEIGHT + 720) {
-                    stage.setY(stage.getY() - 15);
-                    menu.setTranslateY(menu.getTranslateY() + 15);
+                if (event.isControlDown()) {
+                    //stage.setY(stage.getY() - 15);
+                    if (root.getTranslateY() + 15 < +15) {
+                        root.setTranslateY(root.getTranslateY() + 15);
+                    }
                     break;
                 }
                 if (!event.isControlDown()) {
@@ -113,9 +115,12 @@ public class main extends Application {
                 }
             }
             case UP -> {
-                if (event.isControlDown() && stage.getY() + 15 < 15) {
-                    menu.setTranslateY(menu.getTranslateY() - 15);
-                    stage.setY(stage.getY() + 15);
+                if (event.isControlDown()) {
+                    if (root.getTranslateY() - 15 > -3000 + STAGE_HEIGHT) {
+                        root.setTranslateY(root.getTranslateY() - 15);
+                    }
+
+                    //stage.setY(stage.getY() + 15);
                     break;
                 }
                 if (!event.isControlDown()) {
@@ -124,9 +129,11 @@ public class main extends Application {
 
             }
             case LEFT -> {
-                if (event.isControlDown() && stage.getX() + 15 < 0) {
-                    menu.setTranslateX(menu.getTranslateX() - 15);
-                    stage.setX(stage.getX() + 15);
+                if (event.isControlDown()) {
+                    if (root.getTranslateX() + 15 < +15) {
+                        root.setTranslateX(root.getTranslateX() + 15);
+
+                    }
                     break;
                 }
                 if (!event.isControlDown()) {
@@ -134,11 +141,11 @@ public class main extends Application {
                 }
             }
             case RIGHT -> {
-                if (event.isControlDown() && stage.getX() - 15 > -STAGE_WIDTH + STAGE_WIDTH / 2.5) {
+                if (event.isControlDown()) {
 
-                    menu.setTranslateX(menu.getTranslateX() + 15);
-                    //  main.moveAll(Math.PI);
-                    stage.setX(stage.getX() - 15);
+                    if (root.getTranslateX() - 15 > -3000 + STAGE_WIDTH) {
+                        root.setTranslateX(root.getTranslateX() - 15);
+                    }
                     break;
                 }
                 if (!event.isControlDown()) {
@@ -175,11 +182,12 @@ public class main extends Application {
 
     @Override
     public void start(Stage stage) throws IOException {
+        Rectangle rect = new Rectangle(3000, 3000, Color.WHITE);
         main.stage = stage;
+        root.getChildren().add(rect);
         stage.setWidth(main.STAGE_WIDTH);
         stage.setHeight(main.STAGE_HEIGHT);
-        stage.setY(0);
-        stage.setX(0);
+
         stage.setTitle("lab4 Barasiy");
 
         AnimationTimer timer = new AnimationTimer() {
@@ -208,7 +216,7 @@ public class main extends Application {
 
         // Запускаем таймер
         timer.start();
-        miniMapCanvas = new Canvas(200, 260);
+        miniMapCanvas = new Canvas(200, 200);
 
 
         menu.setTop(miniMapCanvas);
@@ -216,7 +224,7 @@ public class main extends Application {
         mainRoot.getChildren().add(root);
 
         scene = new Scene(mainRoot, STAGE_WIDTH, STAGE_HEIGHT, Color.WHITE);
-        menu.setLayoutY(STAGE_HEIGHT / 5 - miniMapCanvas.getHeight() - 30);
+        menu.setLayoutY(STAGE_HEIGHT - miniMapCanvas.getHeight() - 60);
         miniMapCanvas.setOnMouseClicked(mouseEvent -> {
             extracted(stage, mouseEvent);
         });
@@ -232,8 +240,8 @@ public class main extends Application {
         steamTurbine b = new steamTurbine(new Position(900, 500));
         nuclearReactor c = new nuclearReactor(new Position(900, 10));
         stage.setScene(scene);
-        relateX = miniMapCanvas.getWidth() / STAGE_WIDTH;
-        relateY = miniMapCanvas.getHeight() / STAGE_HEIGHT;
+        relateX = miniMapCanvas.getWidth() / rect.getWidth();
+        relateY = miniMapCanvas.getHeight() / rect.getHeight();
         macroObjects.add(a);
         macroObjects.add(b);
         macroObjects.add(c);

@@ -1,691 +1,395 @@
 Added new micro: smallBiter{directionR=0.0, speed=50.0, id=0, action=NEUTRAL, armor=2000, health=1000, damage=100, active=true, name='Small_byter'}
 Added new micro: smallBiter{directionR=0.0, speed=50.0, id=1, action=NEUTRAL, armor=0, health=90, damage=90, active=true, name='90'}
-Added new micro: smallBiter{directionR=0.0, speed=50.0, id=2, action=NEUTRAL, armor=305, health=90, damage=90, active=true, name='90'}
-Added new micro: smallBiter{directionR=0.0, speed=50.0, id=3, action=NEUTRAL, armor=315, health=102, damage=90, active=true, name='90'}
-Added new micro: smallBiter{directionR=0.0, speed=50.0, id=4, action=NEUTRAL, armor=330, health=138, damage=90, active=true, name='90'}
-Added new micro: smallBiter{directionR=0.0, speed=50.0, id=5, action=NEUTRAL, armor=340, health=174, damage=90, active=true, name='90'}
-Move micro: Objects, located at: 21 - X, -1 - Y. My id: 5
-Move micro: Objects, located at: 28 - X, -2 - Y. My id: 5
-Move micro: Objects, located at: 37 - X, -4 - Y. My id: 5
-Move micro: Objects, located at: 39 - X, -4 - Y. My id: 5
-Move micro: Objects, located at: 40 - X, -4 - Y. My id: 5
-Move micro: Objects, located at: 68 - X, -9 - Y. My id: 5
-Move micro: Objects, located at: 69 - X, -9 - Y. My id: 5
-Move micro: Objects, located at: 71 - X, -9 - Y. My id: 5
-Move micro: Objects, located at: 72 - X, -9 - Y. My id: 5
-Move micro: Objects, located at: 73 - X, -10 - Y. My id: 5
-Move micro: Objects, located at: 104 - X, -13 - Y. My id: 5
-Move micro: Objects, located at: 104 - X, -13 - Y. My id: 5
-Move micro: Objects, located at: 105 - X, -13 - Y. My id: 5
-Move micro: Objects, located at: 106 - X, -13 - Y. My id: 5
-Move micro: Objects, located at: 111 - X, -13 - Y. My id: 5
-Move micro: Objects, located at: 112 - X, -13 - Y. My id: 5
-Move micro: Objects, located at: 112 - X, -13 - Y. My id: 5
-Move micro: Objects, located at: 113 - X, -13 - Y. My id: 5
-Move micro: Objects, located at: 120 - X, -13 - Y. My id: 5
-Move micro: Objects, located at: 121 - X, -13 - Y. My id: 5
-Move micro: Objects, located at: 121 - X, -13 - Y. My id: 5
-Move micro: Objects, located at: 122 - X, -13 - Y. My id: 5
-Move micro: Objects, located at: 123 - X, -13 - Y. My id: 5
-Move micro: Objects, located at: 123 - X, -13 - Y. My id: 5
-Move micro: Objects, located at: 124 - X, -13 - Y. My id: 5
-Move micro: Objects, located at: 124 - X, -13 - Y. My id: 5
-Move micro: Objects, located at: 125 - X, -13 - Y. My id: 5
-Move micro: Objects, located at: 125 - X, -13 - Y. My id: 5
-Move micro: Objects, located at: 187 - X, -24 - Y. My id: 5
-Move micro: Objects, located at: 188 - X, -24 - Y. My id: 5
-Move micro: Objects, located at: 189 - X, -24 - Y. My id: 5
-Move micro: Objects, located at: 189 - X, -24 - Y. My id: 5
-Move micro: Objects, located at: 190 - X, -24 - Y. My id: 5
-Move micro: Objects, located at: 190 - X, -24 - Y. My id: 5
-Move micro: Objects, located at: 191 - X, -24 - Y. My id: 5
-Move micro: Objects, located at: 191 - X, -24 - Y. My id: 5
-Move micro: Objects, located at: 201 - X, -26 - Y. My id: 5
-Move micro: Objects, located at: 202 - X, -26 - Y. My id: 5
-Move micro: Objects, located at: 202 - X, -26 - Y. My id: 5
-Move micro: Objects, located at: 203 - X, -26 - Y. My id: 5
-Move micro: Objects, located at: 203 - X, -26 - Y. My id: 5
-Move micro: Objects, located at: 204 - X, -26 - Y. My id: 5
-Move micro: Objects, located at: 204 - X, -26 - Y. My id: 5
-Move micro: Objects, located at: 205 - X, -26 - Y. My id: 5
-Move micro: Objects, located at: 207 - X, -26 - Y. My id: 5
-Move micro: Objects, located at: 207 - X, -26 - Y. My id: 5
-Move micro: Objects, located at: 207 - X, -25 - Y. My id: 5
-Move micro: Objects, located at: 208 - X, -25 - Y. My id: 5
-Move micro: Objects, located at: 208 - X, -25 - Y. My id: 5
-Move micro: Objects, located at: 208 - X, -24 - Y. My id: 5
-Move micro: Objects, located at: 208 - X, -24 - Y. My id: 5
-Move micro: Objects, located at: 208 - X, -23 - Y. My id: 5
-Move micro: Objects, located at: 210 - X, -19 - Y. My id: 5
-Move micro: Objects, located at: 210 - X, -18 - Y. My id: 5
-Move micro: Objects, located at: 211 - X, -18 - Y. My id: 5
-Move micro: Objects, located at: 211 - X, -18 - Y. My id: 5
-Move micro: Objects, located at: 211 - X, -17 - Y. My id: 5
-Move micro: Objects, located at: 92 - X, 90 - Y. My id: 1
 Move micro: Objects, located at: 93 - X, 90 - Y. My id: 1
 Move micro: Objects, located at: 94 - X, 90 - Y. My id: 1
-Move micro: Objects, located at: 94 - X, 90 - Y. My id: 1
-Move micro: Objects, located at: 123 - X, 92 - Y. My id: 1
-Move micro: Objects, located at: 125 - X, 92 - Y. My id: 1
-Move micro: Objects, located at: 125 - X, 92 - Y. My id: 1
-Move micro: Objects, located at: 126 - X, 91 - Y. My id: 1
-Move micro: Objects, located at: -8 - X, 16 - Y. My id: 4
-Move micro: Objects, located at: -8 - X, 16 - Y. My id: 4
-Move micro: Objects, located at: -8 - X, 17 - Y. My id: 4
-Move micro: Objects, located at: -8 - X, 17 - Y. My id: 4
-Move micro: Objects, located at: -9 - X, 18 - Y. My id: 4
-Move micro: Objects, located at: -9 - X, 18 - Y. My id: 4
-Move micro: Objects, located at: -9 - X, 19 - Y. My id: 4
-Move micro: Objects, located at: -12 - X, 24 - Y. My id: 4
-Move micro: Objects, located at: -12 - X, 25 - Y. My id: 4
-Move micro: Objects, located at: -13 - X, 25 - Y. My id: 4
-Move micro: Objects, located at: -13 - X, 26 - Y. My id: 4
-Move micro: Objects, located at: -13 - X, 26 - Y. My id: 4
-Move micro: Objects, located at: -14 - X, 27 - Y. My id: 4
-Move micro: Objects, located at: -14 - X, 27 - Y. My id: 4
-Move micro: Objects, located at: -14 - X, 28 - Y. My id: 4
-Move micro: Objects, located at: -14 - X, 29 - Y. My id: 4
-Move micro: Objects, located at: -15 - X, 29 - Y. My id: 4
-Move micro: Objects, located at: -21 - X, 37 - Y. My id: 4
-Move micro: Objects, located at: -21 - X, 37 - Y. My id: 4
-Move micro: Objects, located at: -21 - X, 37 - Y. My id: 4
-Move micro: Objects, located at: -23 - X, 40 - Y. My id: 4
-Move micro: Objects, located at: -24 - X, 41 - Y. My id: 4
-Move micro: Objects, located at: -24 - X, 43 - Y. My id: 4
-Move micro: Objects, located at: -24 - X, 44 - Y. My id: 4
-Move micro: Objects, located at: -27 - X, 49 - Y. My id: 4
-Move micro: Objects, located at: -27 - X, 50 - Y. My id: 4
-Move micro: Objects, located at: -28 - X, 50 - Y. My id: 4
-Move micro: Objects, located at: -28 - X, 50 - Y. My id: 4
-Move micro: Objects, located at: -29 - X, 50 - Y. My id: 4
-Move micro: Objects, located at: -29 - X, 51 - Y. My id: 4
-Move micro: Objects, located at: -30 - X, 51 - Y. My id: 4
-Move micro: Objects, located at: -32 - X, 79 - Y. My id: 4
-Move micro: Objects, located at: -33 - X, 79 - Y. My id: 4
-Move micro: Objects, located at: -33 - X, 79 - Y. My id: 4
-Move micro: Objects, located at: -33 - X, 80 - Y. My id: 4
-Move micro: Objects, located at: -33 - X, 80 - Y. My id: 4
-Move micro: Objects, located at: -33 - X, 82 - Y. My id: 4
-Move micro: Objects, located at: -32 - X, 82 - Y. My id: 4
-Move micro: Objects, located at: -32 - X, 81 - Y. My id: 4
-Move micro: Objects, located at: -32 - X, 81 - Y. My id: 4
-Move micro: Objects, located at: -21 - X, 73 - Y. My id: 4
-Move micro: Objects, located at: -20 - X, 72 - Y. My id: 4
-Move micro: Objects, located at: -20 - X, 72 - Y. My id: 4
-Move micro: Objects, located at: -19 - X, 71 - Y. My id: 4
-Move micro: Objects, located at: -19 - X, 71 - Y. My id: 4
-Move micro: Objects, located at: -18 - X, 70 - Y. My id: 4
-Move micro: Objects, located at: -17 - X, 70 - Y. My id: 4
-Move micro: Objects, located at: -17 - X, 70 - Y. My id: 4
-Move micro: Objects, located at: -16 - X, 69 - Y. My id: 4
-Move micro: Objects, located at: -16 - X, 69 - Y. My id: 4
-Move micro: Objects, located at: -16 - X, 69 - Y. My id: 4
-Move micro: Objects, located at: -15 - X, 69 - Y. My id: 4
-Move micro: Objects, located at: -15 - X, 68 - Y. My id: 4
-Move micro: Objects, located at: -14 - X, 68 - Y. My id: 4
-Move micro: Objects, located at: -11 - X, 66 - Y. My id: 4
-Move micro: Objects, located at: -11 - X, 65 - Y. My id: 4
-Move micro: Objects, located at: -10 - X, 65 - Y. My id: 4
-Move micro: Objects, located at: -9 - X, 65 - Y. My id: 4
-Move micro: Objects, located at: -9 - X, 65 - Y. My id: 4
-Move micro: Objects, located at: -8 - X, 64 - Y. My id: 4
-Move micro: Objects, located at: -8 - X, 64 - Y. My id: 4
-Move micro: Objects, located at: -6 - X, 63 - Y. My id: 4
-Move micro: Objects, located at: -6 - X, 62 - Y. My id: 4
-Move micro: Objects, located at: -5 - X, 62 - Y. My id: 4
-Move micro: Objects, located at: -4 - X, 62 - Y. My id: 4
-Move micro: Objects, located at: -4 - X, 61 - Y. My id: 4
-Move micro: Objects, located at: -3 - X, 61 - Y. My id: 4
-Move micro: Objects, located at: -3 - X, 61 - Y. My id: 4
-Move micro: Objects, located at: -2 - X, 61 - Y. My id: 4
-Move micro: Objects, located at: -2 - X, 60 - Y. My id: 4
-Move micro: Objects, located at: 3 - X, 57 - Y. My id: 4
-Move micro: Objects, located at: -24 - X, 102 - Y. My id: 4
-Move micro: Objects, located at: -24 - X, 104 - Y. My id: 4
-Move micro: Objects, located at: -26 - X, 106 - Y. My id: 4
-Move micro: Objects, located at: -27 - X, 107 - Y. My id: 4
-Move micro: Objects, located at: -27 - X, 108 - Y. My id: 4
-Move micro: Objects, located at: -29 - X, 109 - Y. My id: 4
-Move micro: Objects, located at: -41 - X, 125 - Y. My id: 4
-Move micro: Objects, located at: -42 - X, 127 - Y. My id: 4
-Move micro: Objects, located at: -43 - X, 128 - Y. My id: 4
-Move micro: Objects, located at: -44 - X, 129 - Y. My id: 4
-Move micro: Objects, located at: -44 - X, 130 - Y. My id: 4
-Move micro: Objects, located at: -45 - X, 130 - Y. My id: 4
-Move micro: Objects, located at: -45 - X, 131 - Y. My id: 4
-Move micro: Objects, located at: -46 - X, 131 - Y. My id: 4
-Move micro: Objects, located at: -46 - X, 132 - Y. My id: 4
-Move micro: Objects, located at: -47 - X, 133 - Y. My id: 4
-Move micro: Objects, located at: -48 - X, 133 - Y. My id: 4
-Move micro: Objects, located at: -48 - X, 134 - Y. My id: 4
-Move micro: Objects, located at: -49 - X, 135 - Y. My id: 4
-Move micro: Objects, located at: -57 - X, 147 - Y. My id: 4
-Move micro: Objects, located at: -58 - X, 148 - Y. My id: 4
-Move micro: Objects, located at: -58 - X, 148 - Y. My id: 4
-Move micro: Objects, located at: -59 - X, 148 - Y. My id: 4
-Move micro: Objects, located at: -59 - X, 149 - Y. My id: 4
-Move micro: Objects, located at: -59 - X, 149 - Y. My id: 4
-Move micro: Objects, located at: -60 - X, 150 - Y. My id: 4
-Move micro: Objects, located at: -60 - X, 148 - Y. My id: 4
-Move micro: Objects, located at: -60 - X, 147 - Y. My id: 4
-Move micro: Objects, located at: -59 - X, 147 - Y. My id: 4
-Move micro: Objects, located at: -59 - X, 147 - Y. My id: 4
-Move micro: Objects, located at: -58 - X, 144 - Y. My id: 4
-Move micro: Objects, located at: -57 - X, 144 - Y. My id: 4
-Move micro: Objects, located at: -56 - X, 141 - Y. My id: 4
-Move micro: Objects, located at: -56 - X, 140 - Y. My id: 4
-Move micro: Objects, located at: -55 - X, 140 - Y. My id: 4
-Move micro: Objects, located at: -55 - X, 140 - Y. My id: 4
-Move micro: Objects, located at: -55 - X, 139 - Y. My id: 4
-Move micro: Objects, located at: -50 - X, 128 - Y. My id: 4
-Move micro: Objects, located at: -47 - X, 123 - Y. My id: 4
-Move micro: Objects, located at: -46 - X, 122 - Y. My id: 4
-Move micro: Objects, located at: -46 - X, 122 - Y. My id: 4
-Move micro: Objects, located at: -46 - X, 121 - Y. My id: 4
-Move micro: Objects, located at: -46 - X, 121 - Y. My id: 4
-Move micro: Objects, located at: -45 - X, 120 - Y. My id: 4
-Move micro: Objects, located at: -45 - X, 120 - Y. My id: 4
-Move micro: Objects, located at: -45 - X, 120 - Y. My id: 4
-Move micro: Objects, located at: -44 - X, 119 - Y. My id: 4
-Move micro: Objects, located at: -44 - X, 118 - Y. My id: 4
-Move micro: Objects, located at: -43 - X, 118 - Y. My id: 4
-Move micro: Objects, located at: -43 - X, 117 - Y. My id: 4
-Move micro: Objects, located at: -37 - X, 109 - Y. My id: 4
-Move micro: Objects, located at: -36 - X, 108 - Y. My id: 4
-Move micro: Objects, located at: -36 - X, 108 - Y. My id: 4
-Move micro: Objects, located at: -35 - X, 106 - Y. My id: 4
-Move micro: Objects, located at: -34 - X, 105 - Y. My id: 4
-Move micro: Objects, located at: -34 - X, 105 - Y. My id: 4
-Move micro: Objects, located at: -34 - X, 104 - Y. My id: 4
-Move micro: Objects, located at: -33 - X, 104 - Y. My id: 4
-Move micro: Objects, located at: -32 - X, 102 - Y. My id: 4
-Move micro: Objects, located at: -31 - X, 102 - Y. My id: 4
-Move micro: Objects, located at: -31 - X, 101 - Y. My id: 4
-Move micro: Objects, located at: -31 - X, 101 - Y. My id: 4
-Move micro: Objects, located at: -31 - X, 101 - Y. My id: 4
-Move micro: Objects, located at: -30 - X, 101 - Y. My id: 4
-Move micro: Objects, located at: -30 - X, 100 - Y. My id: 4
-Move micro: Objects, located at: -30 - X, 100 - Y. My id: 4
-Move micro: Objects, located at: -30 - X, 99 - Y. My id: 4
-Move micro: Objects, located at: -29 - X, 99 - Y. My id: 4
-Move micro: Objects, located at: -29 - X, 98 - Y. My id: 4
-Move micro: Objects, located at: -27 - X, 94 - Y. My id: 4
-Move micro: Objects, located at: -15 - X, 85 - Y. My id: 4
-Move micro: Objects, located at: -13 - X, 84 - Y. My id: 4
-Move micro: Objects, located at: -12 - X, 84 - Y. My id: 4
-Move micro: Objects, located at: -9 - X, 82 - Y. My id: 4
-Move micro: Objects, located at: -9 - X, 82 - Y. My id: 4
-Move micro: Objects, located at: -9 - X, 81 - Y. My id: 4
-Move micro: Objects, located at: -8 - X, 81 - Y. My id: 4
-Move micro: Objects, located at: -7 - X, 81 - Y. My id: 4
-Move micro: Objects, located at: -6 - X, 80 - Y. My id: 4
-Move micro: Objects, located at: -6 - X, 80 - Y. My id: 4
-Move micro: Objects, located at: 0 - X, 76 - Y. My id: 4
-Move micro: Objects, located at: -19 - X, 99 - Y. My id: 4
-Move micro: Objects, located at: -19 - X, 99 - Y. My id: 4
-Move micro: Objects, located at: -19 - X, 99 - Y. My id: 4
-Move micro: Objects, located at: -24 - X, 105 - Y. My id: 4
-Move micro: Objects, located at: -24 - X, 105 - Y. My id: 4
-Move micro: Objects, located at: -24 - X, 105 - Y. My id: 4
-Move micro: Objects, located at: 0 - X, 0 - Y. My id: 3
-Move micro: Objects, located at: 0 - X, -3 - Y. My id: 3
-Move micro: Objects, located at: 0 - X, -3 - Y. My id: 3
-Move micro: Objects, located at: 0 - X, -4 - Y. My id: 3
-Move micro: Objects, located at: 1 - X, -12 - Y. My id: 3
-Move micro: Objects, located at: 2 - X, -13 - Y. My id: 3
-Move micro: Objects, located at: 2 - X, -15 - Y. My id: 3
-Move micro: Objects, located at: 2 - X, -16 - Y. My id: 3
-Move micro: Objects, located at: 2 - X, -16 - Y. My id: 3
-Move micro: Objects, located at: 3 - X, -16 - Y. My id: 3
-Move micro: Objects, located at: 3 - X, -19 - Y. My id: 3
-Move micro: Objects, located at: 3 - X, -20 - Y. My id: 3
-Move micro: Objects, located at: 3 - X, -20 - Y. My id: 3
-Move micro: Objects, located at: 4 - X, -22 - Y. My id: 3
-Move micro: Objects, located at: 6 - X, -24 - Y. My id: 3
-Move micro: Objects, located at: 6 - X, -25 - Y. My id: 3
-Move micro: Objects, located at: 10 - X, -39 - Y. My id: 3
-Move micro: Objects, located at: 8 - X, -40 - Y. My id: 3
-Move micro: Objects, located at: 8 - X, -40 - Y. My id: 3
-Move micro: Objects, located at: 7 - X, -40 - Y. My id: 3
-Move micro: Objects, located at: 4 - X, -41 - Y. My id: 3
-Move micro: Objects, located at: 4 - X, -41 - Y. My id: 3
-Move micro: Objects, located at: 4 - X, -41 - Y. My id: 3
-Move micro: Objects, located at: 3 - X, -41 - Y. My id: 3
-Move micro: Objects, located at: 3 - X, -41 - Y. My id: 3
-Move micro: Objects, located at: 1 - X, -43 - Y. My id: 3
-Move micro: Objects, located at: 0 - X, -43 - Y. My id: 3
-Move micro: Objects, located at: 0 - X, -43 - Y. My id: 3
-Move micro: Objects, located at: -1 - X, -43 - Y. My id: 3
-Move micro: Objects, located at: -1 - X, -53 - Y. My id: 3
-Move micro: Objects, located at: -1 - X, -53 - Y. My id: 3
-Move micro: Objects, located at: -1 - X, -54 - Y. My id: 3
-Move micro: Objects, located at: 0 - X, -54 - Y. My id: 3
-Move micro: Objects, located at: 3 - X, -57 - Y. My id: 3
-Move micro: Objects, located at: 4 - X, -58 - Y. My id: 3
-Move micro: Objects, located at: 4 - X, -58 - Y. My id: 3
-Move micro: Objects, located at: 4 - X, -58 - Y. My id: 3
-Move micro: Objects, located at: 5 - X, -58 - Y. My id: 3
-Move micro: Objects, located at: 5 - X, -59 - Y. My id: 3
-Move micro: Objects, located at: 6 - X, -59 - Y. My id: 3
-Move micro: Objects, located at: 6 - X, -60 - Y. My id: 3
-Move micro: Objects, located at: 13 - X, -63 - Y. My id: 3
-Move micro: Objects, located at: 14 - X, -63 - Y. My id: 3
-Move micro: Objects, located at: 14 - X, -64 - Y. My id: 3
-Move micro: Objects, located at: 14 - X, -64 - Y. My id: 3
-Move micro: Objects, located at: 15 - X, -64 - Y. My id: 3
-Move micro: Objects, located at: 15 - X, -64 - Y. My id: 3
-Move micro: Objects, located at: 15 - X, -64 - Y. My id: 3
-Move micro: Objects, located at: 16 - X, -64 - Y. My id: 3
-Move micro: Objects, located at: 18 - X, -65 - Y. My id: 3
-Move micro: Objects, located at: 19 - X, -65 - Y. My id: 3
-Move micro: Objects, located at: 19 - X, -65 - Y. My id: 3
-Move micro: Objects, located at: 19 - X, -66 - Y. My id: 3
-Move micro: Objects, located at: 20 - X, -66 - Y. My id: 3
-Move micro: Objects, located at: 20 - X, -66 - Y. My id: 3
-Move micro: Objects, located at: 50 - X, -70 - Y. My id: 3
-Move micro: Objects, located at: 55 - X, -70 - Y. My id: 3
-Move micro: Objects, located at: 55 - X, -70 - Y. My id: 3
-Move micro: Objects, located at: 56 - X, -70 - Y. My id: 3
-Move micro: Objects, located at: 56 - X, -70 - Y. My id: 3
-Move micro: Objects, located at: 57 - X, -70 - Y. My id: 3
-Move micro: Objects, located at: 66 - X, -69 - Y. My id: 3
-Move micro: Objects, located at: 67 - X, -69 - Y. My id: 3
-Move micro: Objects, located at: 67 - X, -69 - Y. My id: 3
-Move micro: Objects, located at: 68 - X, -69 - Y. My id: 3
-Move micro: Objects, located at: 68 - X, -69 - Y. My id: 3
-Move micro: Objects, located at: 69 - X, -69 - Y. My id: 3
-Move micro: Objects, located at: 76 - X, -68 - Y. My id: 3
-Move micro: Objects, located at: 76 - X, -68 - Y. My id: 3
-Move micro: Objects, located at: 77 - X, -67 - Y. My id: 3
-Move micro: Objects, located at: 77 - X, -67 - Y. My id: 3
-Move micro: Objects, located at: 78 - X, -67 - Y. My id: 3
-Move micro: Objects, located at: 79 - X, -67 - Y. My id: 3
-Move micro: Objects, located at: 79 - X, -67 - Y. My id: 3
-Move micro: Objects, located at: 80 - X, -67 - Y. My id: 3
-Move micro: Objects, located at: 80 - X, -67 - Y. My id: 3
-Move micro: Objects, located at: 81 - X, -67 - Y. My id: 3
-Move micro: Objects, located at: 115 - X, -65 - Y. My id: 3
-Move micro: Objects, located at: 116 - X, -65 - Y. My id: 3
-Move micro: Objects, located at: 116 - X, -64 - Y. My id: 3
-Move micro: Objects, located at: 123 - X, -63 - Y. My id: 3
-Move micro: Objects, located at: 124 - X, -63 - Y. My id: 3
-Move micro: Objects, located at: 125 - X, -63 - Y. My id: 3
-Move micro: Objects, located at: 125 - X, -62 - Y. My id: 3
-Move micro: Objects, located at: 126 - X, -62 - Y. My id: 3
-Move micro: Objects, located at: 126 - X, -62 - Y. My id: 3
-Move micro: Objects, located at: 127 - X, -62 - Y. My id: 3
-Move micro: Objects, located at: 127 - X, -62 - Y. My id: 3
-Move micro: Objects, located at: 134 - X, -60 - Y. My id: 3
-Move micro: Objects, located at: 134 - X, -60 - Y. My id: 3
-Move micro: Objects, located at: 135 - X, -60 - Y. My id: 3
-Move micro: Objects, located at: 135 - X, -59 - Y. My id: 3
-Move micro: Objects, located at: 137 - X, -59 - Y. My id: 3
-Move micro: Objects, located at: 137 - X, -59 - Y. My id: 3
-Move micro: Objects, located at: 137 - X, -58 - Y. My id: 3
-Move micro: Objects, located at: 138 - X, -58 - Y. My id: 3
-Move micro: Objects, located at: 141 - X, -56 - Y. My id: 3
-Move micro: Objects, located at: 141 - X, -55 - Y. My id: 3
-Move micro: Objects, located at: 142 - X, -54 - Y. My id: 3
-Move micro: Objects, located at: 147 - X, -33 - Y. My id: 3
-Move micro: Objects, located at: 147 - X, -33 - Y. My id: 3
-Move micro: Objects, located at: 147 - X, -32 - Y. My id: 3
-Move micro: Objects, located at: 147 - X, -32 - Y. My id: 3
-Move micro: Objects, located at: 147 - X, -29 - Y. My id: 3
-Move micro: Objects, located at: 147 - X, -28 - Y. My id: 3
-Move micro: Objects, located at: 147 - X, -28 - Y. My id: 3
-Move micro: Objects, located at: 147 - X, -27 - Y. My id: 3
-Move micro: Objects, located at: 147 - X, -27 - Y. My id: 3
-Move micro: Objects, located at: 147 - X, -25 - Y. My id: 3
-Move micro: Objects, located at: 146 - X, -25 - Y. My id: 3
-Move micro: Objects, located at: 146 - X, -24 - Y. My id: 3
-Move micro: Objects, located at: 144 - X, -23 - Y. My id: 3
-Move micro: Objects, located at: 144 - X, -23 - Y. My id: 3
-Move micro: Objects, located at: 144 - X, -23 - Y. My id: 3
-Move micro: Objects, located at: 144 - X, -22 - Y. My id: 3
-Move micro: Objects, located at: 140 - X, -18 - Y. My id: 3
-Move micro: Objects, located at: 140 - X, -15 - Y. My id: 3
-Move micro: Objects, located at: 0 - X, -7 - Y. My id: 2
-Move micro: Objects, located at: -1 - X, -11 - Y. My id: 2
-Move micro: Objects, located at: -1 - X, -12 - Y. My id: 2
-Move micro: Objects, located at: -2 - X, -12 - Y. My id: 2
-Move micro: Objects, located at: -2 - X, -12 - Y. My id: 2
-Move micro: Objects, located at: -2 - X, -13 - Y. My id: 2
-Move micro: Objects, located at: -2 - X, -13 - Y. My id: 2
-Move micro: Objects, located at: -5 - X, -18 - Y. My id: 2
-Move micro: Objects, located at: -5 - X, -19 - Y. My id: 2
-Move micro: Objects, located at: -5 - X, -20 - Y. My id: 2
-Move micro: Objects, located at: -6 - X, -20 - Y. My id: 2
-Move micro: Objects, located at: -6 - X, -20 - Y. My id: 2
-Move micro: Objects, located at: -6 - X, -21 - Y. My id: 2
-Move micro: Objects, located at: -6 - X, -21 - Y. My id: 2
-Move micro: Objects, located at: -7 - X, -21 - Y. My id: 2
-Move micro: Objects, located at: -7 - X, -22 - Y. My id: 2
-Move micro: Objects, located at: -8 - X, -22 - Y. My id: 2
-Move micro: Objects, located at: -8 - X, -22 - Y. My id: 2
-Move micro: Objects, located at: -8 - X, -22 - Y. My id: 2
-Move micro: Objects, located at: -8 - X, -23 - Y. My id: 2
-Move micro: Objects, located at: -10 - X, -25 - Y. My id: 2
-Move micro: Objects, located at: -10 - X, -25 - Y. My id: 2
-Move micro: Objects, located at: -10 - X, -26 - Y. My id: 2
-Move micro: Objects, located at: -11 - X, -26 - Y. My id: 2
-Move micro: Objects, located at: -11 - X, -26 - Y. My id: 2
-Move micro: Objects, located at: -13 - X, -28 - Y. My id: 2
-Move micro: Objects, located at: -22 - X, -18 - Y. My id: 2
-Move micro: Objects, located at: -22 - X, -18 - Y. My id: 2
-Move micro: Objects, located at: -22 - X, -17 - Y. My id: 2
-Move micro: Objects, located at: -22 - X, -17 - Y. My id: 2
-Move micro: Objects, located at: -22 - X, -16 - Y. My id: 2
-Move micro: Objects, located at: -25 - X, 4 - Y. My id: 2
-Move micro: Objects, located at: -25 - X, 5 - Y. My id: 2
-Move micro: Objects, located at: -25 - X, 6 - Y. My id: 2
-Move micro: Objects, located at: -26 - X, 6 - Y. My id: 2
-Move micro: Objects, located at: -26 - X, 7 - Y. My id: 2
-Move micro: Objects, located at: -26 - X, 7 - Y. My id: 2
-Move micro: Objects, located at: -26 - X, 7 - Y. My id: 2
-Move micro: Objects, located at: -27 - X, 9 - Y. My id: 2
-Move micro: Objects, located at: -27 - X, 10 - Y. My id: 2
-Move micro: Objects, located at: -28 - X, 10 - Y. My id: 2
-Move micro: Objects, located at: -29 - X, 10 - Y. My id: 2
-Move micro: Objects, located at: -29 - X, 11 - Y. My id: 2
-Move micro: Objects, located at: -17 - X, 107 - Y. My id: 4
-Move micro: Objects, located at: 1 - X, 114 - Y. My id: 4
-Move micro: Objects, located at: 2 - X, 115 - Y. My id: 4
-Move micro: Objects, located at: 3 - X, 115 - Y. My id: 4
-Move micro: Objects, located at: 4 - X, 116 - Y. My id: 4
-Move micro: Objects, located at: 6 - X, 117 - Y. My id: 4
-Move micro: Objects, located at: 7 - X, 117 - Y. My id: 4
-Move micro: Objects, located at: 8 - X, 118 - Y. My id: 4
-Move micro: Objects, located at: 10 - X, 118 - Y. My id: 4
-Move micro: Objects, located at: 10 - X, 119 - Y. My id: 4
-Move micro: Objects, located at: 12 - X, 120 - Y. My id: 4
-Move micro: Objects, located at: 12 - X, 120 - Y. My id: 4
-Move micro: Objects, located at: 13 - X, 121 - Y. My id: 4
-Move micro: Objects, located at: 15 - X, 122 - Y. My id: 4
-Move micro: Objects, located at: 16 - X, 122 - Y. My id: 4
-Move micro: Objects, located at: 18 - X, 123 - Y. My id: 4
-Move micro: Objects, located at: 22 - X, 126 - Y. My id: 4
-Move micro: Objects, located at: 23 - X, 126 - Y. My id: 4
-Move micro: Objects, located at: 26 - X, 128 - Y. My id: 4
-Move micro: Objects, located at: 27 - X, 128 - Y. My id: 4
-Move micro: Objects, located at: 28 - X, 129 - Y. My id: 4
-Move micro: Objects, located at: 30 - X, 130 - Y. My id: 4
-Move micro: Objects, located at: 31 - X, 130 - Y. My id: 4
-Move micro: Objects, located at: 33 - X, 132 - Y. My id: 4
-Move micro: Objects, located at: 34 - X, 133 - Y. My id: 4
-Move micro: Objects, located at: 35 - X, 133 - Y. My id: 4
-Move micro: Objects, located at: 37 - X, 134 - Y. My id: 4
-Move micro: Objects, located at: 38 - X, 135 - Y. My id: 4
-Move micro: Objects, located at: 152 - X, 201 - Y. My id: 4
-Move micro: Objects, located at: 153 - X, 202 - Y. My id: 4
-Move micro: Objects, located at: 154 - X, 202 - Y. My id: 4
-Move micro: Objects, located at: 155 - X, 202 - Y. My id: 4
-Move micro: Objects, located at: 156 - X, 203 - Y. My id: 4
-Move micro: Objects, located at: 157 - X, 203 - Y. My id: 4
-Move micro: Objects, located at: 158 - X, 204 - Y. My id: 4
-Move micro: Objects, located at: 159 - X, 204 - Y. My id: 4
-Move micro: Objects, located at: 161 - X, 204 - Y. My id: 4
-Move micro: Objects, located at: 162 - X, 205 - Y. My id: 4
-Move micro: Objects, located at: 163 - X, 205 - Y. My id: 4
-Move micro: Objects, located at: 165 - X, 206 - Y. My id: 4
-Move micro: Objects, located at: 166 - X, 206 - Y. My id: 4
-Move micro: Objects, located at: 167 - X, 207 - Y. My id: 4
-Move micro: Objects, located at: 169 - X, 207 - Y. My id: 4
-Move micro: Objects, located at: 169 - X, 208 - Y. My id: 4
-Move micro: Objects, located at: 183 - X, 212 - Y. My id: 4
-Move micro: Objects, located at: 187 - X, 213 - Y. My id: 4
-Move micro: Objects, located at: 188 - X, 213 - Y. My id: 4
-Move micro: Objects, located at: 189 - X, 214 - Y. My id: 4
-Move micro: Objects, located at: 232 - X, 221 - Y. My id: 4
-Move micro: Objects, located at: 234 - X, 221 - Y. My id: 4
-Move micro: Objects, located at: 235 - X, 222 - Y. My id: 4
-Move micro: Objects, located at: 237 - X, 222 - Y. My id: 4
-Move micro: Objects, located at: 254 - X, 224 - Y. My id: 4
-Move micro: Objects, located at: 257 - X, 224 - Y. My id: 4
-Move micro: Objects, located at: 258 - X, 224 - Y. My id: 4
-Move micro: Objects, located at: 261 - X, 225 - Y. My id: 4
-Move micro: Objects, located at: 262 - X, 225 - Y. My id: 4
-Move micro: Objects, located at: 263 - X, 225 - Y. My id: 4
-Move micro: Objects, located at: 265 - X, 225 - Y. My id: 4
-Move micro: Objects, located at: 313 - X, 230 - Y. My id: 4
-Move micro: Objects, located at: 315 - X, 230 - Y. My id: 4
-Move micro: Objects, located at: 315 - X, 230 - Y. My id: 4
-Move micro: Objects, located at: 317 - X, 230 - Y. My id: 4
-Move micro: Objects, located at: 401 - X, 235 - Y. My id: 4
-Move micro: Objects, located at: 401 - X, 236 - Y. My id: 4
-Move micro: Objects, located at: 402 - X, 236 - Y. My id: 4
-Move micro: Objects, located at: 402 - X, 236 - Y. My id: 4
-Move micro: Objects, located at: 403 - X, 236 - Y. My id: 4
-Move micro: Objects, located at: 403 - X, 236 - Y. My id: 4
-Move micro: Objects, located at: 404 - X, 236 - Y. My id: 4
-Move micro: Objects, located at: 408 - X, 239 - Y. My id: 4
-Move micro: Objects, located at: 408 - X, 239 - Y. My id: 4
-Move micro: Objects, located at: 409 - X, 239 - Y. My id: 4
-Move micro: Objects, located at: 409 - X, 239 - Y. My id: 4
-Move micro: Objects, located at: 410 - X, 240 - Y. My id: 4
-Move micro: Objects, located at: 410 - X, 240 - Y. My id: 4
-Move micro: Objects, located at: 411 - X, 240 - Y. My id: 4
-Move micro: Objects, located at: 411 - X, 241 - Y. My id: 4
-Move micro: Objects, located at: 412 - X, 241 - Y. My id: 4
-Move micro: Objects, located at: 413 - X, 241 - Y. My id: 4
-Move micro: Objects, located at: 414 - X, 242 - Y. My id: 4
-Move micro: Objects, located at: 414 - X, 242 - Y. My id: 4
-Move micro: Objects, located at: 415 - X, 242 - Y. My id: 4
-Move micro: Objects, located at: 415 - X, 242 - Y. My id: 4
-Move micro: Objects, located at: 416 - X, 242 - Y. My id: 4
-Move micro: Objects, located at: 416 - X, 243 - Y. My id: 4
-Move micro: Objects, located at: 428 - X, 246 - Y. My id: 4
-Move micro: Objects, located at: 428 - X, 246 - Y. My id: 4
-Move micro: Objects, located at: 429 - X, 246 - Y. My id: 4
-Move micro: Objects, located at: 430 - X, 246 - Y. My id: 4
-Move micro: Objects, located at: 431 - X, 247 - Y. My id: 4
-Move micro: Objects, located at: 531 - X, 256 - Y. My id: 4
-Move micro: Objects, located at: 600 - X, 201 - Y. My id: 4
-Move micro: Objects, located at: 602 - X, 200 - Y. My id: 4
-Move micro: Objects, located at: 603 - X, 199 - Y. My id: 4
-Move micro: Objects, located at: 605 - X, 198 - Y. My id: 4
-Move micro: Objects, located at: 606 - X, 197 - Y. My id: 4
-Move micro: Objects, located at: 607 - X, 196 - Y. My id: 4
-Move micro: Objects, located at: 609 - X, 195 - Y. My id: 4
-Move micro: Objects, located at: 611 - X, 194 - Y. My id: 4
-Move micro: Objects, located at: 613 - X, 192 - Y. My id: 4
-Move micro: Objects, located at: 614 - X, 191 - Y. My id: 4
-Move micro: Objects, located at: 616 - X, 189 - Y. My id: 4
-Move micro: Objects, located at: 618 - X, 188 - Y. My id: 4
-Move micro: Objects, located at: 619 - X, 187 - Y. My id: 4
-Move micro: Objects, located at: 621 - X, 186 - Y. My id: 4
-Move micro: Objects, located at: 622 - X, 185 - Y. My id: 4
-Move micro: Objects, located at: 625 - X, 184 - Y. My id: 4
-Move micro: Objects, located at: 637 - X, 174 - Y. My id: 4
-Move micro: Objects, located at: 641 - X, 172 - Y. My id: 4
-Move micro: Objects, located at: 642 - X, 171 - Y. My id: 4
-Move micro: Objects, located at: 645 - X, 169 - Y. My id: 4
-Move micro: Objects, located at: 646 - X, 169 - Y. My id: 4
-Move micro: Objects, located at: 647 - X, 167 - Y. My id: 4
-Move micro: Objects, located at: 650 - X, 166 - Y. My id: 4
-Move micro: Objects, located at: 693 - X, 135 - Y. My id: 4
-Move micro: Objects, located at: 695 - X, 135 - Y. My id: 4
-Move micro: Objects, located at: 695 - X, 134 - Y. My id: 4
-Move micro: Objects, located at: 697 - X, 133 - Y. My id: 4
-Move micro: Objects, located at: 698 - X, 131 - Y. My id: 4
-Move micro: Objects, located at: 700 - X, 131 - Y. My id: 4
-Move micro: Objects, located at: 719 - X, 115 - Y. My id: 4
-Move micro: Objects, located at: 735 - X, 101 - Y. My id: 4
-Move micro: Objects, located at: 736 - X, 100 - Y. My id: 4
-Move micro: Objects, located at: 760 - X, 62 - Y. My id: 4
-Move micro: Objects, located at: 760 - X, 62 - Y. My id: 4
-Move micro: Objects, located at: 760 - X, 61 - Y. My id: 4
-Move micro: Objects, located at: 761 - X, 61 - Y. My id: 4
-Move micro: Objects, located at: 766 - X, 50 - Y. My id: 4
-Move micro: Objects, located at: 766 - X, 49 - Y. My id: 4
-Move micro: Objects, located at: 766 - X, 48 - Y. My id: 4
-Move micro: Objects, located at: 767 - X, 47 - Y. My id: 4
-Move micro: Objects, located at: 767 - X, 46 - Y. My id: 4
-Move micro: Objects, located at: 767 - X, 45 - Y. My id: 4
-Move micro: Objects, located at: 768 - X, 44 - Y. My id: 4
-Move micro: Objects, located at: 768 - X, 43 - Y. My id: 4
-Move micro: Objects, located at: 769 - X, 42 - Y. My id: 4
-Move micro: Objects, located at: 769 - X, 41 - Y. My id: 4
-Move micro: Objects, located at: 769 - X, 40 - Y. My id: 4
-Move micro: Objects, located at: 770 - X, 39 - Y. My id: 4
-Move micro: Objects, located at: 770 - X, 39 - Y. My id: 4
-Move micro: Objects, located at: 770 - X, 38 - Y. My id: 4
-Move micro: Objects, located at: 771 - X, 37 - Y. My id: 4
-Move micro: Objects, located at: 774 - X, 30 - Y. My id: 4
-Move micro: Objects, located at: 778 - X, 24 - Y. My id: 4
-Move micro: Objects, located at: 778 - X, 23 - Y. My id: 4
-Move micro: Objects, located at: 779 - X, 22 - Y. My id: 4
-Move micro: Objects, located at: 779 - X, 22 - Y. My id: 4
-Move micro: Objects, located at: 780 - X, 22 - Y. My id: 4
-Move micro: Objects, located at: 780 - X, 21 - Y. My id: 4
-Move micro: Objects, located at: 780 - X, 21 - Y. My id: 4
-Move micro: Objects, located at: 782 - X, 17 - Y. My id: 4
-Move micro: Objects, located at: 127 - X, 91 - Y. My id: 1
-Move micro: Objects, located at: 134 - X, 91 - Y. My id: 1
-Move micro: Objects, located at: 135 - X, 91 - Y. My id: 1
-Move micro: Objects, located at: 135 - X, 91 - Y. My id: 1
-Move micro: Objects, located at: 136 - X, 91 - Y. My id: 1
-Move micro: Objects, located at: 137 - X, 91 - Y. My id: 1
-Move micro: Objects, located at: 138 - X, 91 - Y. My id: 1
-Move micro: Objects, located at: 138 - X, 91 - Y. My id: 1
-Move micro: Objects, located at: 139 - X, 91 - Y. My id: 1
-Move micro: Objects, located at: 140 - X, 91 - Y. My id: 1
-Move micro: Objects, located at: 140 - X, 91 - Y. My id: 1
-Move micro: Objects, located at: 142 - X, 91 - Y. My id: 1
-Move micro: Objects, located at: 142 - X, 91 - Y. My id: 1
-Move micro: Objects, located at: 143 - X, 91 - Y. My id: 1
-Move micro: Objects, located at: 144 - X, 91 - Y. My id: 1
-Move micro: Objects, located at: 403 - X, 96 - Y. My id: 1
-Move micro: Objects, located at: 405 - X, 95 - Y. My id: 1
-Move micro: Objects, located at: 408 - X, 95 - Y. My id: 1
-Move micro: Objects, located at: 476 - X, 83 - Y. My id: 1
-Move micro: Objects, located at: 480 - X, 82 - Y. My id: 1
-Move micro: Objects, located at: 482 - X, 81 - Y. My id: 1
-Move micro: Objects, located at: 485 - X, 81 - Y. My id: 1
-Move micro: Objects, located at: 488 - X, 80 - Y. My id: 1
-Move micro: Objects, located at: 492 - X, 80 - Y. My id: 1
-Move micro: Objects, located at: 495 - X, 80 - Y. My id: 1
-Move micro: Objects, located at: 497 - X, 79 - Y. My id: 1
-Move micro: Objects, located at: 558 - X, 70 - Y. My id: 1
-Move micro: Objects, located at: 559 - X, 69 - Y. My id: 1
-Move micro: Objects, located at: 563 - X, 69 - Y. My id: 1
-Move micro: Objects, located at: 565 - X, 69 - Y. My id: 1
-Move micro: Objects, located at: 567 - X, 69 - Y. My id: 1
-Move micro: Objects, located at: 587 - X, 65 - Y. My id: 1
-Move micro: Objects, located at: 588 - X, 64 - Y. My id: 1
-Move micro: Objects, located at: 591 - X, 64 - Y. My id: 1
-Move micro: Objects, located at: 619 - X, 57 - Y. My id: 1
-Move micro: Objects, located at: 620 - X, 57 - Y. My id: 1
-Move micro: Objects, located at: 620 - X, 57 - Y. My id: 1
-Move micro: Objects, located at: 621 - X, 57 - Y. My id: 1
-Move micro: Objects, located at: 634 - X, 54 - Y. My id: 1
-Move micro: Objects, located at: 657 - X, 66 - Y. My id: 1
-Move micro: Objects, located at: 657 - X, 68 - Y. My id: 1
-Move micro: Objects, located at: 657 - X, 69 - Y. My id: 1
-Move micro: Objects, located at: 595 - X, 127 - Y. My id: 1
-Move micro: Objects, located at: 595 - X, 127 - Y. My id: 1
-Move micro: Objects, located at: 594 - X, 127 - Y. My id: 1
-Move micro: Objects, located at: 593 - X, 127 - Y. My id: 1
-Move micro: Objects, located at: 593 - X, 127 - Y. My id: 1
-Move micro: Objects, located at: 592 - X, 127 - Y. My id: 1
-Move micro: Objects, located at: 588 - X, 127 - Y. My id: 1
-Move micro: Objects, located at: 587 - X, 127 - Y. My id: 1
-Move micro: Objects, located at: 587 - X, 127 - Y. My id: 1
-Move micro: Objects, located at: 586 - X, 127 - Y. My id: 1
-Move micro: Objects, located at: 586 - X, 127 - Y. My id: 1
-Move micro: Objects, located at: 585 - X, 127 - Y. My id: 1
-Move micro: Objects, located at: 583 - X, 126 - Y. My id: 1
-Move micro: Objects, located at: 582 - X, 126 - Y. My id: 1
-Move micro: Objects, located at: 582 - X, 125 - Y. My id: 1
-Move micro: Objects, located at: 781 - X, 16 - Y. My id: 4
-Move micro: Objects, located at: 780 - X, 16 - Y. My id: 4
-Move micro: Objects, located at: 768 - X, 13 - Y. My id: 4
-Move micro: Objects, located at: 766 - X, 13 - Y. My id: 4
-Move micro: Objects, located at: 765 - X, 13 - Y. My id: 4
-Move micro: Objects, located at: 765 - X, 13 - Y. My id: 4
-Move micro: Objects, located at: 763 - X, 13 - Y. My id: 4
-Move micro: Objects, located at: 762 - X, 13 - Y. My id: 4
-Move micro: Objects, located at: 761 - X, 13 - Y. My id: 4
-Move micro: Objects, located at: 760 - X, 13 - Y. My id: 4
-Move micro: Objects, located at: 759 - X, 13 - Y. My id: 4
-Move micro: Objects, located at: 758 - X, 13 - Y. My id: 4
-Move micro: Objects, located at: 756 - X, 12 - Y. My id: 4
-Move micro: Objects, located at: 724 - X, 9 - Y. My id: 4
-Move micro: Objects, located at: 722 - X, 8 - Y. My id: 4
-Move micro: Objects, located at: 721 - X, 8 - Y. My id: 4
-Move micro: Objects, located at: 720 - X, 7 - Y. My id: 4
-Move micro: Objects, located at: 718 - X, 7 - Y. My id: 4
-Move micro: Objects, located at: 717 - X, 7 - Y. My id: 4
-Move micro: Objects, located at: 716 - X, 7 - Y. My id: 4
-Move micro: Objects, located at: 715 - X, 7 - Y. My id: 4
-Move micro: Objects, located at: 713 - X, 7 - Y. My id: 4
-Move micro: Objects, located at: 712 - X, 6 - Y. My id: 4
-Move micro: Objects, located at: 711 - X, 6 - Y. My id: 4
-Move micro: Objects, located at: 707 - X, 5 - Y. My id: 4
-Move micro: Objects, located at: 705 - X, 5 - Y. My id: 4
-Move micro: Objects, located at: 702 - X, 5 - Y. My id: 4
-Move micro: Objects, located at: 701 - X, 4 - Y. My id: 4
-Move micro: Objects, located at: 699 - X, 4 - Y. My id: 4
-Move micro: Objects, located at: 698 - X, 3 - Y. My id: 4
-Move micro: Objects, located at: 696 - X, 3 - Y. My id: 4
-Move micro: Objects, located at: 695 - X, 3 - Y. My id: 4
-Move micro: Objects, located at: 693 - X, 3 - Y. My id: 4
-Move micro: Objects, located at: 691 - X, 2 - Y. My id: 4
-Move micro: Objects, located at: 690 - X, 2 - Y. My id: 4
-Move micro: Objects, located at: 689 - X, 2 - Y. My id: 4
-Move micro: Objects, located at: 687 - X, 1 - Y. My id: 4
-Move micro: Objects, located at: 554 - X, -26 - Y. My id: 4
-Move micro: Objects, located at: 545 - X, -18 - Y. My id: 4
-Move micro: Objects, located at: 477 - X, 81 - Y. My id: 4
-Move micro: Objects, located at: 476 - X, 83 - Y. My id: 4
-Move micro: Objects, located at: 474 - X, 86 - Y. My id: 4
-Move micro: Objects, located at: 474 - X, 86 - Y. My id: 4
-Move micro: Objects, located at: 473 - X, 88 - Y. My id: 4
-Move micro: Objects, located at: 473 - X, 89 - Y. My id: 4
-Move micro: Objects, located at: 471 - X, 90 - Y. My id: 4
-Move micro: Objects, located at: 470 - X, 93 - Y. My id: 4
-Move micro: Objects, located at: 470 - X, 94 - Y. My id: 4
-Move micro: Objects, located at: 459 - X, 115 - Y. My id: 4
-Move micro: Objects, located at: 458 - X, 116 - Y. My id: 4
-Move micro: Objects, located at: 457 - X, 118 - Y. My id: 4
-Move micro: Objects, located at: 447 - X, 144 - Y. My id: 4
-Move micro: Objects, located at: 447 - X, 145 - Y. My id: 4
-Move micro: Objects, located at: 447 - X, 145 - Y. My id: 4
-Move micro: Objects, located at: 447 - X, 146 - Y. My id: 4
-Move micro: Objects, located at: 447 - X, 146 - Y. My id: 4
-Move micro: Objects, located at: 447 - X, 147 - Y. My id: 4
-Move micro: Objects, located at: 446 - X, 147 - Y. My id: 4
-Move micro: Objects, located at: 446 - X, 148 - Y. My id: 4
-Move micro: Objects, located at: 446 - X, 148 - Y. My id: 4
-Move micro: Objects, located at: 446 - X, 149 - Y. My id: 4
-Move micro: Objects, located at: 448 - X, 152 - Y. My id: 4
-Move micro: Objects, located at: 448 - X, 153 - Y. My id: 4
-Move micro: Objects, located at: 448 - X, 154 - Y. My id: 4
-Move micro: Objects, located at: 448 - X, 154 - Y. My id: 4
-Move micro: Objects, located at: 448 - X, 155 - Y. My id: 4
-Move micro: Objects, located at: 448 - X, 155 - Y. My id: 4
-Move micro: Objects, located at: 448 - X, 156 - Y. My id: 4
-Move micro: Objects, located at: 447 - X, 156 - Y. My id: 4
-Move micro: Objects, located at: 447 - X, 157 - Y. My id: 4
-Move micro: Objects, located at: 447 - X, 157 - Y. My id: 4
-Move micro: Objects, located at: 447 - X, 157 - Y. My id: 4
-Move micro: Objects, located at: 447 - X, 158 - Y. My id: 4
-Move micro: Objects, located at: 445 - X, 161 - Y. My id: 4
-Move micro: Objects, located at: 445 - X, 162 - Y. My id: 4
-Move micro: Objects, located at: 444 - X, 162 - Y. My id: 4
-Move micro: Objects, located at: 444 - X, 162 - Y. My id: 4
-Move micro: Objects, located at: 444 - X, 163 - Y. My id: 4
-Move micro: Objects, located at: 439 - X, 175 - Y. My id: 4
-Move micro: Objects, located at: 439 - X, 176 - Y. My id: 4
-Move micro: Objects, located at: 439 - X, 177 - Y. My id: 4
-Move micro: Objects, located at: 437 - X, 183 - Y. My id: 4
-Move micro: Objects, located at: 437 - X, 183 - Y. My id: 4
-Move micro: Objects, located at: 437 - X, 184 - Y. My id: 4
-Move micro: Objects, located at: 437 - X, 184 - Y. My id: 4
-Move micro: Objects, located at: 436 - X, 191 - Y. My id: 4
-Move micro: Objects, located at: 436 - X, 191 - Y. My id: 4
-Move micro: Objects, located at: 436 - X, 192 - Y. My id: 4
-Move micro: Objects, located at: 436 - X, 192 - Y. My id: 4
-Move micro: Objects, located at: 436 - X, 203 - Y. My id: 4
-Move micro: Objects, located at: 436 - X, 203 - Y. My id: 4
-Move micro: Objects, located at: 436 - X, 204 - Y. My id: 4
-Move micro: Objects, located at: 451 - X, 231 - Y. My id: 4
+Move micro: Objects, located at: 95 - X, 90 - Y. My id: 1
+Move micro: Objects, located at: 95 - X, 90 - Y. My id: 1
+Move micro: Objects, located at: 98 - X, 91 - Y. My id: 1
+Move micro: Objects, located at: 98 - X, 91 - Y. My id: 1
+Move micro: Objects, located at: 99 - X, 91 - Y. My id: 1
+Move micro: Objects, located at: 99 - X, 91 - Y. My id: 1
+Move micro: Objects, located at: 100 - X, 92 - Y. My id: 1
+Move micro: Objects, located at: 101 - X, 92 - Y. My id: 1
+Move micro: Objects, located at: 106 - X, 95 - Y. My id: 1
+Move micro: Objects, located at: 115 - X, 98 - Y. My id: 1
+Move micro: Objects, located at: 116 - X, 98 - Y. My id: 1
+Move micro: Objects, located at: 128 - X, 101 - Y. My id: 1
+Move micro: Objects, located at: 129 - X, 102 - Y. My id: 1
+Move micro: Objects, located at: 130 - X, 102 - Y. My id: 1
+Move micro: Objects, located at: 131 - X, 102 - Y. My id: 1
+Move micro: Objects, located at: 132 - X, 102 - Y. My id: 1
+Move micro: Objects, located at: 133 - X, 102 - Y. My id: 1
+Move micro: Objects, located at: 134 - X, 102 - Y. My id: 1
+Move micro: Objects, located at: 135 - X, 103 - Y. My id: 1
+Move micro: Objects, located at: 136 - X, 103 - Y. My id: 1
+Move micro: Objects, located at: 137 - X, 103 - Y. My id: 1
+Move micro: Objects, located at: 138 - X, 104 - Y. My id: 1
+Move micro: Objects, located at: 139 - X, 104 - Y. My id: 1
+Move micro: Objects, located at: 140 - X, 104 - Y. My id: 1
+Move micro: Objects, located at: 142 - X, 104 - Y. My id: 1
+Move micro: Objects, located at: 142 - X, 104 - Y. My id: 1
+Move micro: Objects, located at: 144 - X, 105 - Y. My id: 1
+Move micro: Objects, located at: 145 - X, 105 - Y. My id: 1
+Move micro: Objects, located at: 146 - X, 105 - Y. My id: 1
+Move micro: Objects, located at: 147 - X, 105 - Y. My id: 1
+Move micro: Objects, located at: 148 - X, 105 - Y. My id: 1
+Move micro: Objects, located at: 149 - X, 106 - Y. My id: 1
+Move micro: Objects, located at: 151 - X, 106 - Y. My id: 1
+Move micro: Objects, located at: 152 - X, 107 - Y. My id: 1
+Move micro: Objects, located at: 154 - X, 107 - Y. My id: 1
+Move micro: Objects, located at: 156 - X, 108 - Y. My id: 1
+Move micro: Objects, located at: 157 - X, 108 - Y. My id: 1
+Move micro: Objects, located at: 158 - X, 108 - Y. My id: 1
+Move micro: Objects, located at: 159 - X, 108 - Y. My id: 1
+Move micro: Objects, located at: 161 - X, 108 - Y. My id: 1
+Move micro: Objects, located at: 163 - X, 109 - Y. My id: 1
+Move micro: Objects, located at: 166 - X, 110 - Y. My id: 1
+Move micro: Objects, located at: 167 - X, 110 - Y. My id: 1
+Move micro: Objects, located at: 170 - X, 110 - Y. My id: 1
+Move micro: Objects, located at: 172 - X, 111 - Y. My id: 1
+Move micro: Objects, located at: 176 - X, 111 - Y. My id: 1
+Move micro: Objects, located at: 178 - X, 112 - Y. My id: 1
+Move micro: Objects, located at: 180 - X, 112 - Y. My id: 1
+Move micro: Objects, located at: 181 - X, 112 - Y. My id: 1
+Move micro: Objects, located at: 183 - X, 113 - Y. My id: 1
+Move micro: Objects, located at: 187 - X, 113 - Y. My id: 1
+Move micro: Objects, located at: 189 - X, 114 - Y. My id: 1
+Move micro: Objects, located at: 191 - X, 115 - Y. My id: 1
+Move micro: Objects, located at: 194 - X, 115 - Y. My id: 1
+Move micro: Objects, located at: 196 - X, 115 - Y. My id: 1
+Move micro: Objects, located at: 196 - X, 115 - Y. My id: 1
+Move micro: Objects, located at: 202 - X, 116 - Y. My id: 1
+Move micro: Objects, located at: 204 - X, 117 - Y. My id: 1
+Move micro: Objects, located at: 210 - X, 118 - Y. My id: 1
+Move micro: Objects, located at: 213 - X, 118 - Y. My id: 1
+Move micro: Objects, located at: 215 - X, 119 - Y. My id: 1
+Move micro: Objects, located at: 217 - X, 119 - Y. My id: 1
+Move micro: Objects, located at: 221 - X, 120 - Y. My id: 1
+Move micro: Objects, located at: 224 - X, 121 - Y. My id: 1
+Move micro: Objects, located at: 227 - X, 121 - Y. My id: 1
+Move micro: Objects, located at: 229 - X, 121 - Y. My id: 1
+Move micro: Objects, located at: 232 - X, 121 - Y. My id: 1
+Move micro: Objects, located at: 236 - X, 122 - Y. My id: 1
+Move micro: Objects, located at: 239 - X, 123 - Y. My id: 1
+Move micro: Objects, located at: 242 - X, 123 - Y. My id: 1
+Move micro: Objects, located at: 244 - X, 124 - Y. My id: 1
+Move micro: Objects, located at: 246 - X, 124 - Y. My id: 1
+Move micro: Objects, located at: 366 - X, 149 - Y. My id: 1
+Move micro: Objects, located at: 368 - X, 150 - Y. My id: 1
+Move micro: Objects, located at: 369 - X, 151 - Y. My id: 1
+Move micro: Objects, located at: 371 - X, 151 - Y. My id: 1
+Move micro: Objects, located at: 372 - X, 151 - Y. My id: 1
+Move micro: Objects, located at: 373 - X, 152 - Y. My id: 1
+Move micro: Objects, located at: 374 - X, 153 - Y. My id: 1
+Move micro: Objects, located at: 376 - X, 153 - Y. My id: 1
+Move micro: Objects, located at: 376 - X, 153 - Y. My id: 1
+Move micro: Objects, located at: 387 - X, 157 - Y. My id: 1
+Move micro: Objects, located at: 388 - X, 158 - Y. My id: 1
+Move micro: Objects, located at: 390 - X, 159 - Y. My id: 1
+Move micro: Objects, located at: 392 - X, 159 - Y. My id: 1
+Move micro: Objects, located at: 393 - X, 160 - Y. My id: 1
+Move micro: Objects, located at: 394 - X, 161 - Y. My id: 1
+Move micro: Objects, located at: 396 - X, 161 - Y. My id: 1
+Move micro: Objects, located at: 424 - X, 172 - Y. My id: 1
+Move micro: Objects, located at: 425 - X, 173 - Y. My id: 1
+Move micro: Objects, located at: 426 - X, 173 - Y. My id: 1
+Move micro: Objects, located at: 427 - X, 173 - Y. My id: 1
+Move micro: Objects, located at: 428 - X, 174 - Y. My id: 1
+Move micro: Objects, located at: 429 - X, 175 - Y. My id: 1
+Move micro: Objects, located at: 430 - X, 175 - Y. My id: 1
+Move micro: Objects, located at: 430 - X, 175 - Y. My id: 1
+Move micro: Objects, located at: 432 - X, 176 - Y. My id: 1
+Move micro: Objects, located at: 432 - X, 176 - Y. My id: 1
+Move micro: Objects, located at: 439 - X, 179 - Y. My id: 1
+Move micro: Objects, located at: 439 - X, 180 - Y. My id: 1
+Move micro: Objects, located at: 440 - X, 181 - Y. My id: 1
+Move micro: Objects, located at: 441 - X, 181 - Y. My id: 1
+Move micro: Objects, located at: 441 - X, 181 - Y. My id: 1
+Move micro: Objects, located at: 442 - X, 181 - Y. My id: 1
+Move micro: Objects, located at: 442 - X, 182 - Y. My id: 1
+Move micro: Objects, located at: 443 - X, 182 - Y. My id: 1
+Move micro: Objects, located at: 443 - X, 182 - Y. My id: 1
+Move micro: Objects, located at: 446 - X, 183 - Y. My id: 1
+Move micro: Objects, located at: 407 - X, 153 - Y. My id: 1. Dir: 0.6632251157578453
+Move micro: Objects, located at: 375 - X, 115 - Y. My id: 1. Dir: 0.8726646259971648
+Move micro: Objects, located at: 413 - X, 83 - Y. My id: 1. Dir: -3.839724354387525
+Move micro: Objects, located at: 364 - X, 78 - Y. My id: 1. Dir: 0.10471975511965978
+Move micro: Objects, located at: 323 - X, 105 - Y. My id: 1. Dir: -0.5759586531581288
+Move micro: Objects, located at: 338 - X, 152 - Y. My id: 1. Dir: 4.39822971502571
+Move micro: Objects, located at: 350 - X, 200 - Y. My id: 1. Dir: -1.8151424220741028
+Move micro: Objects, located at: 310 - X, 171 - Y. My id: 1. Dir: 0.6283185307179586
+Move micro: Objects, located at: 350 - X, 199 - Y. My id: 1. Dir: -2.530727415391778
+Move micro: Objects, located at: 336 - X, 246 - Y. My id: 1. Dir: -1.2740903539558606
+Move micro: Objects, located at: 342 - X, 197 - Y. My id: 1. Dir: -4.572762640225143
+Move micro: Objects, located at: 380 - X, 228 - Y. My id: 1. Dir: 3.822271061867582
+Move micro: Objects, located at: 331 - X, 234 - Y. My id: 1. Dir: -0.13962634015954636
+Move micro: Objects, located at: 374 - X, 210 - Y. My id: 1. Dir: 2.6179938779914944
+Move micro: Objects, located at: 415 - X, 237 - Y. My id: 1. Dir: -2.5656340004316642
+Move micro: Objects, located at: 432 - X, 191 - Y. My id: 1. Dir: -4.34586983746588
+Move micro: Objects, located at: 462 - X, 230 - Y. My id: 1. Dir: -2.234021442552742
+Move micro: Objects, located at: 484 - X, 186 - Y. My id: 1. Dir: 2.0420352248333655
+Move micro: Objects, located at: 484 - X, 235 - Y. My id: 1. Dir: 4.694935687864747
+Move micro: Objects, located at: 445 - X, 205 - Y. My id: 1. Dir: -5.619960191421741
+Move micro: Objects, located at: 494 - X, 213 - Y. My id: 1. Dir: -2.9670597283903604
+Move micro: Objects, located at: 524 - X, 252 - Y. My id: 1. Dir: -2.2165681500327987
+Move micro: Objects, located at: 574 - X, 252 - Y. My id: 1. Dir: 3.141592653589793
+Move micro: Objects, located at: 616 - X, 226 - Y. My id: 1. Dir: 2.5830872929516078
+Move micro: Objects, located at: 567 - X, 235 - Y. My id: 1. Dir: -0.19198621771937624
+Move micro: Objects, located at: 572 - X, 284 - Y. My id: 1. Dir: 4.60766922526503
+Move micro: Objects, located at: 613 - X, 311 - Y. My id: 1. Dir: -2.5656340004316642
+Move micro: Objects, located at: 634 - X, 267 - Y. My id: 1. Dir: -4.258603374866164
+Move micro: Objects, located at: 585 - X, 262 - Y. My id: 1. Dir: 0.10471975511965978
+Move micro: Objects, located at: 601 - X, 309 - Y. My id: 1. Dir: -1.9024088846738192
+Move micro: Objects, located at: 628 - X, 350 - Y. My id: 1. Dir: -2.1467549799530254
+Move micro: Objects, located at: 657 - X, 390 - Y. My id: 1. Dir: -2.199114857512855
+Move micro: Objects, located at: 678 - X, 345 - Y. My id: 1. Dir: -4.276056667386108
+Move micro: Objects, located at: 640 - X, 376 - Y. My id: 1. Dir: -0.6806784082777885
+Move micro: Objects, located at: 684 - X, 398 - Y. My id: 1. Dir: 3.612831551628262
+Move micro: Objects, located at: 647 - X, 366 - Y. My id: 1. Dir: 0.7155849933176751
+Move micro: Objects, located at: 660 - X, 318 - Y. My id: 1. Dir: 1.8500490071139892
+Move micro: Objects, located at: 708 - X, 307 - Y. My id: 1. Dir: -3.368485456349056
+Move micro: Objects, located at: 748 - X, 278 - Y. My id: 1. Dir: -3.7699111843077517
+Move micro: Objects, located at: 699 - X, 272 - Y. My id: 1. Dir: 0.12217304763960307
+Move micro: Objects, located at: 742 - X, 248 - Y. My id: 1. Dir: -3.6477381366681487
+Move micro: Objects, located at: 707 - X, 213 - Y. My id: 1. Dir: 0.7853981633974483
+Move micro: Objects, located at: 756 - X, 212 - Y. My id: 1. Dir: -3.1764992386296798
+Move micro: Objects, located at: 804 - X, 201 - Y. My id: 1. Dir: -3.368485456349056
+Move micro: Objects, located at: 807 - X, 152 - Y. My id: 1. Dir: 1.6406094968746698
+Move micro: Objects, located at: 759 - X, 163 - Y. My id: 1. Dir: 6.056292504420323
+Move micro: Objects, located at: 786 - X, 204 - Y. My id: 1. Dir: -2.1467549799530254
+Move micro: Objects, located at: 790 - X, 253 - Y. My id: 1. Dir: -1.6580627893946132
+Move micro: Objects, located at: 801 - X, 205 - Y. My id: 1. Dir: -4.485496177625427
+Move micro: Objects, located at: 770 - X, 243 - Y. My id: 1. Dir: -0.8901179185171081
+Move micro: Objects, located at: 730 - X, 214 - Y. My id: 1. Dir: -5.654866776461628
+Move micro: Objects, located at: 757 - X, 173 - Y. My id: 1. Dir: 2.1467549799530254
+Move micro: Objects, located at: 773 - X, 220 - Y. My id: 1. Dir: -1.9024088846738192
+Move micro: Objects, located at: 815 - X, 245 - Y. My id: 1. Dir: 3.6826447217080354
+Move micro: Objects, located at: 836 - X, 201 - Y. My id: 1. Dir: -4.258603374866164
+Move micro: Objects, located at: 792 - X, 178 - Y. My id: 1. Dir: 0.4886921905584123
+Move micro: Objects, located at: 824 - X, 216 - Y. My id: 1. Dir: -2.2689280275926285
+Move micro: Objects, located at: 825 - X, 265 - Y. My id: 1. Dir: 4.6774823953448035
+Move micro: Objects, located at: 821 - X, 314 - Y. My id: 1. Dir: 4.799655442984406
+Move micro: Objects, located at: 868 - X, 298 - Y. My id: 1. Dir: -3.473205211468716
+Move micro: Objects, located at: 914 - X, 280 - Y. My id: 1. Dir: -3.5255650890285457
+Move micro: Objects, located at: 947 - X, 243 - Y. My id: 1. Dir: -3.9793506945470716
+Move micro: Objects, located at: 920 - X, 284 - Y. My id: 1. Dir: 5.288347633542818
+Move micro: Objects, located at: 932 - X, 332 - Y. My id: 1. Dir: -1.8325957145940461
+Move micro: Objects, located at: 883 - X, 329 - Y. My id: 1. Dir: 0.06981317007977318
+Move micro: Objects, located at: 904 - X, 285 - Y. My id: 1. Dir: 2.0245819323134224
+Move micro: Objects, located at: 950 - X, 266 - Y. My id: 1. Dir: -3.543018381548489
+Move micro: Objects, located at: 979 - X, 306 - Y. My id: 1. Dir: 4.084070449666731
+Move micro: Objects, located at: 1020 - X, 279 - Y. My id: 1. Dir: -3.735004599267865
+Move micro: Objects, located at: 982 - X, 310 - Y. My id: 1. Dir: 5.602506898901797
+Move micro: Objects, located at: 976 - X, 261 - Y. My id: 1. Dir: -4.834562028024293
+Move micro: Objects, located at: 963 - X, 309 - Y. My id: 1. Dir: -1.2915436464758039
+Move micro: Objects, located at: 951 - X, 261 - Y. My id: 1. Dir: -4.956735075663896
+Move micro: Objects, located at: 937 - X, 214 - Y. My id: 1. Dir: 1.2740903539558606
+Move micro: Objects, located at: 888 - X, 220 - Y. My id: 1. Dir: 6.14355896702004
+Move micro: Objects, located at: 929 - X, 247 - Y. My id: 1. Dir: -2.5656340004316642
+Move micro: Objects, located at: 880 - X, 252 - Y. My id: 1. Dir: -0.10471975511965978
+Move micro: Objects, located at: 909 - X, 292 - Y. My id: 1. Dir: 4.084070449666731
+Move micro: Objects, located at: 936 - X, 251 - Y. My id: 1. Dir: -4.136430327226561
+Move micro: Objects, located at: 942 - X, 202 - Y. My id: 1. Dir: -4.590215932745087
+Move micro: Objects, located at: 949 - X, 251 - Y. My id: 1. Dir: -1.7278759594743862
+Move micro: Objects, located at: 924 - X, 208 - Y. My id: 1. Dir: 1.0471975511965976
+Move micro: Objects, located at: 963 - X, 238 - Y. My id: 1. Dir: -2.478367537831948
+Move micro: Objects, located at: 933 - X, 199 - Y. My id: 1. Dir: -5.375614096142535
+Move micro: Objects, located at: 963 - X, 160 - Y. My id: 1. Dir: 2.234021442552742
+Move micro: Objects, located at: 1009 - X, 177 - Y. My id: 1. Dir: -2.792526803190927
+Move micro: Objects, located at: 1016 - X, 226 - Y. My id: 1. Dir: -1.7278759594743862
+Move micro: Objects, located at: 972 - X, 203 - Y. My id: 1. Dir: -5.794493116621174
+Move micro: Objects, located at: 926 - X, 221 - Y. My id: 1. Dir: 5.899212871740834
+Move micro: Objects, located at: 961 - X, 256 - Y. My id: 1. Dir: -2.356194490192345
+Move micro: Objects, located at: 935 - X, 214 - Y. My id: 1. Dir: 1.0122909661567112
+Move micro: Objects, located at: 984 - X, 219 - Y. My id: 1. Dir: -3.036872898470133
+Move micro: Objects, located at: 1031 - X, 203 - Y. My id: 1. Dir: -3.473205211468716
+Move micro: Objects, located at: 992 - X, 233 - Y. My id: 1. Dir: 5.6374134839416845
+Move micro: Objects, located at: 944 - X, 245 - Y. My id: 1. Dir: -0.24434609527920614
+Move micro: Objects, located at: 946 - X, 196 - Y. My id: 1. Dir: -4.6600291028248595
+Move micro: Objects, located at: 995 - X, 195 - Y. My id: 1. Dir: 3.1066860685499065
+Move micro: Objects, located at: 1044 - X, 193 - Y. My id: 1. Dir: -3.193952531149623
+Move micro: Objects, located at: 1008 - X, 227 - Y. My id: 1. Dir: -0.7504915783575618
+Move micro: Objects, located at: 1057 - X, 221 - Y. My id: 1. Dir: -3.2812189937493397
+Move micro: Objects, located at: 1061 - X, 172 - Y. My id: 1. Dir: -4.625122517784973
+Move micro: Objects, located at: 1026 - X, 138 - Y. My id: 1. Dir: -5.515240436302081
+Move micro: Objects, located at: 1009 - X, 184 - Y. My id: 1. Dir: -1.2217304763960306
+Move micro: Objects, located at: 989 - X, 139 - Y. My id: 1. Dir: 1.1519173063162575
+Move micro: Objects, located at: 974 - X, 92 - Y. My id: 1. Dir: -5.026548245743669
+Move micro: Objects, located at: 925 - X, 98 - Y. My id: 1. Dir: 6.161012259539984
+Move micro: Objects, located at: 951 - X, 56 - Y. My id: 1. Dir: -4.153883619746504
+Move micro: Objects, located at: 1000 - X, 56 - Y. My id: 1. Dir: 3.1590459461097367
+Move micro: Objects, located at: 956 - X, 77 - Y. My id: 1. Dir: 5.82939970166106
+Move micro: Objects, located at: 932 - X, 120 - Y. My id: 1. Dir: 5.218534463463046
+Move micro: Objects, located at: 889 - X, 96 - Y. My id: 1. Dir: 0.5235987755982988
+Move micro: Objects, located at: 937 - X, 106 - Y. My id: 1. Dir: 3.351032163829113
+Move micro: Objects, located at: 985 - X, 93 - Y. My id: 1. Dir: -3.420845333908886
+Move micro: Objects, located at: 985 - X, 44 - Y. My id: 1. Dir: 1.5533430342749532
+Move micro: Objects, located at: 991 - X, 93 - Y. My id: 1. Dir: -1.710422666954443
+Move micro: Objects, located at: 1039 - X, 83 - Y. My id: 1. Dir: 2.9321531433504737
+Move micro: Objects, located at: 1064 - X, 125 - Y. My id: 1. Dir: 4.171336912266447
+Move micro: Objects, located at: 1025 - X, 155 - Y. My id: 1. Dir: 5.619960191421741
+Move micro: Objects, located at: 976 - X, 164 - Y. My id: 1. Dir: -0.19198621771937624
+Move micro: Objects, located at: 928 - X, 174 - Y. My id: 1. Dir: 6.073745796940266
+Move micro: Objects, located at: 958 - X, 213 - Y. My id: 1. Dir: -2.234021442552742
+Move micro: Objects, located at: 1005 - X, 229 - Y. My id: 1. Dir: 3.473205211468716
+Move micro: Objects, located at: 956 - X, 235 - Y. My id: 1. Dir: -0.12217304763960307
+Move micro: Objects, located at: 992 - X, 201 - Y. My id: 1. Dir: 2.3911010752322315
+Move micro: Objects, located at: 1028 - X, 235 - Y. My id: 1. Dir: 3.8920842319473548
+Move micro: Objects, located at: 1032 - X, 186 - Y. My id: 1. Dir: 1.6580627893946132
+Move micro: Objects, located at: 1005 - X, 227 - Y. My id: 1. Dir: -0.9948376736367679
+Move micro: Objects, located at: 988 - X, 181 - Y. My id: 1. Dir: -5.061454830783556
+Move micro: Objects, located at: 964 - X, 224 - Y. My id: 1. Dir: -1.064650843716541
+Move micro: Objects, located at: 919 - X, 203 - Y. My id: 1. Dir: 0.4363323129985824
+Move micro: Objects, located at: 897 - X, 159 - Y. My id: 1. Dir: 1.0995574287564276
+Move micro: Objects, located at: 924 - X, 200 - Y. My id: 1. Dir: 4.118977034706618
+Move micro: Objects, located at: 930 - X, 151 - Y. My id: 1. Dir: -4.590215932745087
+Move micro: Objects, located at: 891 - X, 121 - Y. My id: 1. Dir: -5.619960191421741
+Move micro: Objects, located at: 891 - X, 170 - Y. My id: 1. Dir: -1.5882496193148399
+Move micro: Objects, located at: 850 - X, 143 - Y. My id: 1. Dir: -5.707226654021458
+Move micro: Objects, located at: 867 - X, 189 - Y. My id: 1. Dir: -1.9198621771937625
+Move micro: Objects, located at: 820 - X, 204 - Y. My id: 1. Dir: -0.3141592653589793
+Move micro: Objects, located at: 806 - X, 157 - Y. My id: 1. Dir: -5.009094953223726
+Move micro: Objects, located at: 840 - X, 121 - Y. My id: 1. Dir: -3.961897402027128
+Move micro: Objects, located at: 888 - X, 131 - Y. My id: 1. Dir: 3.351032163829113
+Move micro: Objects, located at: 920 - X, 168 - Y. My id: 1. Dir: 3.9968039870670147
+Move micro: Objects, located at: 898 - X, 124 - Y. My id: 1. Dir: 1.0995574287564276
+Move micro: Objects, located at: 932 - X, 88 - Y. My id: 1. Dir: -3.961897402027128
+Move micro: Objects, located at: 952 - X, 43 - Y. My id: 1. Dir: -4.293509959906051
+Move micro: Objects, located at: 906 - X, 25 - Y. My id: 1. Dir: 0.3839724354387525
+Move micro: Objects, located at: 858 - X, 37 - Y. My id: 1. Dir: -0.2617993877991494
+Move micro: Objects, located at: 826 - X, 74 - Y. My id: 1. Dir: -0.8552113334772214
+Move micro: Objects, located at: 792 - X, 39 - Y. My id: 1. Dir: 0.8028514559173916
+Move micro: Objects, located at: 822 - X, 0 - Y. My id: 1. Dir: -4.066617157146788
+Move micro: Objects, located at: 773 - X, 0 - Y. My id: 1. Dir: -6.213372137099813
+Move micro: Objects, located at: 726 - X, 16 - Y. My id: 1. Dir: 5.951572749300664
+Move micro: Objects, located at: 761 - X, 0 - Y. My id: 1. Dir: -3.9269908169872414
+Move micro: Objects, located at: 799 - X, 0 - Y. My id: 1. Dir: -3.822271061867582
+Move micro: Objects, located at: 750 - X, 0 - Y. My id: 1. Dir: -6.126105674500097
+Move micro: Objects, located at: 724 - X, 42 - Y. My id: 1. Dir: 5.270894341022875
+Move micro: Objects, located at: 703 - X, 86 - Y. My id: 1. Dir: 5.1661745859032155
+Move micro: Objects, located at: 686 - X, 132 - Y. My id: 1. Dir: 5.061454830783556
+Move micro: Objects, located at: 735 - X, 127 - Y. My id: 1. Dir: 3.036872898470133
+Move micro: Objects, located at: 764 - X, 167 - Y. My id: 1. Dir: -2.199114857512855
+Move micro: Objects, located at: 736 - X, 207 - Y. My id: 1. Dir: -0.9599310885968813
+Move micro: Objects, located at: 731 - X, 158 - Y. My id: 1. Dir: 1.4660765716752369
+Move micro: Objects, located at: 682 - X, 154 - Y. My id: 1. Dir: -6.19591884457987
+Move micro: Objects, located at: 634 - X, 144 - Y. My id: 1. Dir: -6.073745796940266
+Move micro: Objects, located at: 626 - X, 95 - Y. My id: 1. Dir: 1.3962634015954636
+Move micro: Objects, located at: 638 - X, 47 - Y. My id: 1. Dir: 1.8151424220741028
+Move micro: Objects, located at: 659 - X, 2 - Y. My id: 1. Dir: 2.007128639793479
+Move micro: Objects, located at: 615 - X, 24 - Y. My id: 1. Dir: 5.811946409141117
+Move micro: Objects, located at: 566 - X, 29 - Y. My id: 1. Dir: -0.10471975511965978
+Move micro: Objects, located at: 533 - X, 66 - Y. My id: 1. Dir: 5.445427266222308
+Move micro: Objects, located at: 575 - X, 40 - Y. My id: 1. Dir: 2.5830872929516078
+Move micro: Objects, located at: 526 - X, 40 - Y. My id: 1. Dir: 6.265732014659643
+Move micro: Objects, located at: 572 - X, 58 - Y. My id: 1. Dir: -2.7576202181510405
+Move micro: Objects, located at: 543 - X, 98 - Y. My id: 1. Dir: 5.340707511102648
+Move micro: Objects, located at: 531 - X, 146 - Y. My id: 1. Dir: -1.3089969389957472
+Move micro: Objects, located at: 489 - X, 171 - Y. My id: 1. Dir: -0.5410520681182421
+Move micro: Objects, located at: 482 - X, 122 - Y. My id: 1. Dir: -4.869468613064179
+Move micro: Objects, located at: 494 - X, 74 - Y. My id: 1. Dir: 1.8325957145940461
+Move micro: Objects, located at: 448 - X, 91 - Y. My id: 1. Dir: -0.3665191429188092
+Move micro: Objects, located at: 479 - X, 53 - Y. My id: 1. Dir: -4.031710572106901
+Move micro: Objects, located at: 457 - X, 9 - Y. My id: 1. Dir: -5.183627878423159
+Move micro: Objects, located at: 503 - X, 26 - Y. My id: 1. Dir: -2.792526803190927
+Move micro: Objects, located at: 545 - X, 51 - Y. My id: 1. Dir: 3.6826447217080354
+Move micro: Objects, located at: 498 - X, 65 - Y. My id: 1. Dir: 5.98647933434055
+Move micro: Objects, located at: 523 - X, 23 - Y. My id: 1. Dir: 2.111848394913139
+Move micro: Objects, located at: 561 - X, 0 - Y. My id: 1. Dir: -3.822271061867582
+Move micro: Objects, located at: 532 - X, 40 - Y. My id: 1. Dir: -0.9424777960769379
+Move micro: Objects, located at: 511 - X, 85 - Y. My id: 1. Dir: 5.1487212933832724
+Move micro: Objects, located at: 539 - X, 45 - Y. My id: 1. Dir: -4.101523742186674
+Move micro: Objects, located at: 510 - X, 85 - Y. My id: 1. Dir: -0.9424777960769379
+Move micro: Objects, located at: 500 - X, 37 - Y. My id: 1. Dir: -4.9218284906240095
+Move micro: Objects, located at: 547 - X, 53 - Y. My id: 1. Dir: -2.8099800957108707
+Move micro: Objects, located at: 527 - X, 8 - Y. My id: 1. Dir: 1.1519173063162575
+Move micro: Objects, located at: 553 - X, 0 - Y. My id: 1. Dir: -4.153883619746504
+Move micro: Objects, located at: 585 - X, 37 - Y. My id: 1. Dir: -2.2863813201125716
+Move micro: Objects, located at: 536 - X, 28 - Y. My id: 1. Dir: -6.09119908946021
+Move micro: Objects, located at: 563 - X, 0 - Y. My id: 1. Dir: 2.1642082724729685
+Move micro: Objects, located at: 592 - X, 40 - Y. My id: 1. Dir: 4.084070449666731
+Move micro: Objects, located at: 641 - X, 47 - Y. My id: 1. Dir: 3.2986722862692828
+Move micro: Objects, located at: 682 - X, 74 - Y. My id: 1. Dir: -2.548180707911721
+Move micro: Objects, located at: 731 - X, 83 - Y. My id: 1. Dir: -2.949606435870417
+Move micro: Objects, located at: 731 - X, 132 - Y. My id: 1. Dir: -1.5533430342749532
+Move micro: Objects, located at: 691 - X, 103 - Y. My id: 1. Dir: -5.654866776461628
+Move micro: Objects, located at: 674 - X, 149 - Y. My id: 1. Dir: -1.2042771838760873
+Move micro: Objects, located at: 723 - X, 148 - Y. My id: 1. Dir: 3.1066860685499065
+Move micro: Objects, located at: 728 - X, 197 - Y. My id: 1. Dir: 4.60766922526503
+Move micro: Objects, located at: 686 - X, 222 - Y. My id: 1. Dir: 5.742133239061344
+Move micro: Objects, located at: 673 - X, 174 - Y. My id: 1. Dir: -4.991641660703783
+Move micro: Objects, located at: 671 - X, 125 - Y. My id: 1. Dir: -4.76474885794452
+Move micro: Objects, located at: 716 - X, 145 - Y. My id: 1. Dir: 3.5604716740684323
+Move micro: Objects, located at: 730 - X, 98 - Y. My id: 1. Dir: -4.4156830075456535
+Move micro: Objects, located at: 755 - X, 140 - Y. My id: 1. Dir: -2.111848394913139
+Move micro: Objects, located at: 795 - X, 112 - Y. My id: 1. Dir: 2.530727415391778
+Move micro: Objects, located at: 823 - X, 72 - Y. My id: 1. Dir: -4.101523742186674
+Move micro: Objects, located at: 801 - X, 116 - Y. My id: 1. Dir: -1.0995574287564276
+Move micro: Objects, located at: 768 - X, 153 - Y. My id: 1. Dir: -0.8377580409572782
+Move micro: Objects, located at: 757 - X, 105 - Y. My id: 1. Dir: 1.3439035240356338
+Move micro: Objects, located at: 806 - X, 99 - Y. My id: 1. Dir: -3.263765701229396
+Move micro: Objects, located at: 851 - X, 78 - Y. My id: 1. Dir: 2.705260340591211
+Move micro: Objects, located at: 874 - X, 34 - Y. My id: 1. Dir: 2.059488517353309
+Move micro: Objects, located at: 844 - X, 0 - Y. My id: 1. Dir: -5.375614096142535
+Move micro: Objects, located at: 893 - X, 3 - Y. My id: 1. Dir: -3.07177948351002
+Move micro: Objects, located at: 933 - X, 32 - Y. My id: 1. Dir: -2.5132741228718345
+Move micro: Objects, located at: 957 - X, 0 - Y. My id: 1. Dir: 2.076941809873252
+Move micro: Objects, located at: 919 - X, 0 - Y. My id: 1. Dir: 0.6981317007977318
+Move micro: Objects, located at: 907 - X, 0 - Y. My id: 1. Dir: -4.974188368183839
+Move micro: Objects, located at: 913 - X, 49 - Y. My id: 1. Dir: -1.6929693744344996
+Move micro: Objects, located at: 884 - X, 89 - Y. My id: 1. Dir: 5.340707511102648
+Move micro: Objects, located at: 921 - X, 121 - Y. My id: 1. Dir: -2.426007660272118
+Move micro: Objects, located at: 881 - X, 150 - Y. My id: 1. Dir: -0.6283185307179586
+Move micro: Objects, located at: 855 - X, 108 - Y. My id: 1. Dir: 1.0122909661567112
+Move micro: Objects, located at: 892 - X, 76 - Y. My id: 1. Dir: 2.426007660272118
+Move micro: Objects, located at: 899 - X, 27 - Y. My id: 1. Dir: 1.7278759594743862
+Move micro: Objects, located at: 926 - X, 0 - Y. My id: 1. Dir: 2.1467549799530254
+Move micro: Objects, located at: 970 - X, 23 - Y. My id: 1. Dir: -2.652900463031381
+Move micro: Objects, located at: 933 - X, 55 - Y. My id: 1. Dir: -0.7155849933176751
+Move micro: Objects, located at: 980 - X, 40 - Y. My id: 1. Dir: -3.4557519189487724
+Move micro: Objects, located at: 972 - X, 0 - Y. My id: 1. Dir: 1.3962634015954636
+Move micro: Objects, located at: 993 - X, 0 - Y. My id: 1. Dir: -4.276056667386108
+Move micro: Objects, located at: 1039 - X, 18 - Y. My id: 1. Dir: -2.7576202181510405
+Move micro: Objects, located at: 1002 - X, 51 - Y. My id: 1. Dir: 5.550147021341968
+Move micro: Objects, located at: 983 - X, 97 - Y. My id: 1. Dir: -1.1693705988362009
+Move micro: Objects, located at: 1017 - X, 132 - Y. My id: 1. Dir: 3.944444109507185
+Move micro: Objects, located at: 1047 - X, 93 - Y. My id: 1. Dir: 2.234021442552742
+Move micro: Objects, located at: 1069 - X, 137 - Y. My id: 1. Dir: -2.0420352248333655
+Move micro: Objects, located at: 1069 - X, 186 - Y. My id: 1. Dir: -1.5882496193148399
+Move micro: Objects, located at: 1115 - X, 169 - Y. My id: 1. Dir: 2.792526803190927
+Move micro: Objects, located at: 1098 - X, 215 - Y. My id: 1. Dir: -1.2217304763960306
+Move micro: Objects, located at: 1054 - X, 193 - Y. My id: 1. Dir: -5.811946409141117
+Move micro: Objects, located at: 1091 - X, 226 - Y. My id: 1. Dir: 3.8746309394274117
+Move micro: Objects, located at: 1045 - X, 243 - Y. My id: 1. Dir: -0.3490658503988659
+Move micro: Objects, located at: 1028 - X, 289 - Y. My id: 1. Dir: -1.2217304763960306
+Move micro: Objects, located at: 1002 - X, 331 - Y. My id: 1. Dir: 5.270894341022875
+Move micro: Objects, located at: 977 - X, 374 - Y. My id: 1. Dir: 5.235987755982989
+Move micro: Objects, located at: 984 - X, 325 - Y. My id: 1. Dir: 1.7278759594743862
+Move micro: Objects, located at: 977 - X, 276 - Y. My id: 1. Dir: -4.869468613064179
+Move micro: Objects, located at: 933 - X, 255 - Y. My id: 1. Dir: 0.4537856055185257
+Move micro: Objects, located at: 889 - X, 276 - Y. My id: 1. Dir: -0.4537856055185257
+Move micro: Objects, located at: 877 - X, 324 - Y. My id: 1. Dir: 4.956735075663896
+Move micro: Objects, located at: 912 - X, 290 - Y. My id: 1. Dir: -3.9095375244672983
+Move micro: Objects, located at: 945 - X, 253 - Y. My id: 1. Dir: 2.303834612632515
+Move micro: Objects, located at: 932 - X, 301 - Y. My id: 1. Dir: -1.2915436464758039
+Move micro: Objects, located at: 954 - X, 345 - Y. My id: 1. Dir: 4.241150082346221
+Move micro: Objects, located at: 908 - X, 362 - Y. My id: 1. Dir: 5.934119456780721
+Move micro: Objects, located at: 897 - X, 314 - Y. My id: 1. Dir: 1.3439035240356338
+Move micro: Objects, located at: 929 - X, 277 - Y. My id: 1. Dir: 2.2863813201125716
+Move micro: Objects, located at: 977 - X, 288 - Y. My id: 1. Dir: 3.368485456349056
+Move micro: Objects, located at: 928 - X, 297 - Y. My id: 1. Dir: -0.19198621771937624
+Move micro: Objects, located at: 926 - X, 346 - Y. My id: 1. Dir: 4.76474885794452
+Move micro: Objects, located at: 883 - X, 371 - Y. My id: 1. Dir: 5.759586531581287
+Move micro: Objects, located at: 883 - X, 321 - Y. My id: 1. Dir: -4.71238898038469
+Move micro: Objects, located at: 887 - X, 370 - Y. My id: 1. Dir: -1.6580627893946132
+Move micro: Objects, located at: 841 - X, 353 - Y. My id: 1. Dir: -5.916666164260777
+Move micro: Objects, located at: 829 - X, 305 - Y. My id: 1. Dir: 1.3264502315156905
+Move micro: Objects, located at: 860 - X, 343 - Y. My id: 1. Dir: -2.251474735072685
+Move micro: Objects, located at: 898 - X, 312 - Y. My id: 1. Dir: 2.4609142453120048
+Move micro: Objects, located at: 857 - X, 339 - Y. My id: 1. Dir: -0.5759586531581288
+Move micro: Objects, located at: 844 - X, 291 - Y. My id: 1. Dir: -4.991641660703783
+Move micro: Objects, located at: 820 - X, 248 - Y. My id: 1. Dir: 1.064650843716541
+Move micro: Objects, located at: 870 - X, 248 - Y. My id: 1. Dir: 3.141592653589793
+Move micro: Objects, located at: 908 - X, 279 - Y. My id: 1. Dir: -2.4609142453120048
+Move micro: Objects, located at: 880 - X, 239 - Y. My id: 1. Dir: 0.9599310885968813
+Move micro: Objects, located at: 904 - X, 196 - Y. My id: 1. Dir: 2.076941809873252
