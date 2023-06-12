@@ -58,16 +58,6 @@ public class MyFunctions {
                 throw new RuntimeException(e);
             }
 
-            Rectangle rect = new Rectangle(
-                    En.getCanvas().getLayoutX() + En.getCanvas().getTranslateX(),
-                    En.getCanvas().getLayoutY() + En.getCanvas().getTranslateY(),
-                    En.getCanvas().getWidth(),
-                    En.getCanvas().getHeight());
-            rect.setFill(null);
-            rect.setStroke(Color.RED);
-            rect.setStrokeWidth(3);
-            main.root.getChildren().add(rect);
-
         });
         main.Entities.clear();
     }
@@ -89,6 +79,7 @@ public class MyFunctions {
         for (Objects En : main.Entities) {
             for (macroBase macro : main.macroObjects) {
                 if (macro.getArmor() <= 0) {
+                    macro.getCanvas().getGraphicsContext2D().clearRect(0,0, macro.getCanvas().getWidth(),macro.getCanvas().getHeight());
                     main.macroObjects.remove(macro);
                     main.root.getChildren().remove(macro.getCanvas());
                 }

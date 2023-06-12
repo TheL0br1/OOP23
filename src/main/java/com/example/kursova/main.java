@@ -34,8 +34,9 @@ import java.util.Random;
 import java.util.Scanner;
 
 
-//52, 13, 17, 26, 40
-//39,77,91,11,25
+//52, 13, 17, 26, 40 - 2
+//39,77,91,11,25 - 3
+//9,23,28,33,38 - 4
 public class main extends Application {
 
     public static final int STAGE_WIDTH;
@@ -102,7 +103,7 @@ public class main extends Application {
                     MyFunctions.deleteEntities();
                 }
             }
-            case DOWN -> {
+            case UP -> {
                 if (event.isControlDown()) {
                     //stage.setY(stage.getY() - 15);
                     if (root.getTranslateY() + 15 < +15) {
@@ -114,7 +115,7 @@ public class main extends Application {
                     MyFunctions.moveAll(Math.PI * 1.5);
                 }
             }
-            case UP -> {
+            case DOWN -> {
                 if (event.isControlDown()) {
                     if (root.getTranslateY() - 15 > -3000 + STAGE_HEIGHT) {
                         root.setTranslateY(root.getTranslateY() - 15);
@@ -231,31 +232,27 @@ public class main extends Application {
         miniMapCanvas.setOnMouseClicked(mouseEvent -> {
             extracted(stage, mouseEvent);
         });
-        scene.setOnMouseClicked(mouseEvent -> {
-            System.out.println("x: " + mouseEvent.getSceneX());
-            System.out.println("y: " + mouseEvent.getSceneY());
-
-        });
         scene.setOnKeyPressed(event -> {
             extracted(stage, event);
         });
         steamEngine a = new steamEngine(new Position(0, 10));
+        steamEngine a1 = new steamEngine(new Position(1000, 2000));
+
         steamTurbine b = new steamTurbine(new Position(900, 500));
+        steamTurbine b1 = new steamTurbine(new Position(2000, 2500));
+
         nuclearReactor c = new nuclearReactor(new Position(900, 10));
+        nuclearReactor c1 = new nuclearReactor(new Position(1500, 1000));
+
         stage.setScene(scene);
         relateX = miniMapCanvas.getWidth() / rect.getWidth();
         relateY = miniMapCanvas.getHeight() / rect.getHeight();
         macroObjects.add(a);
         macroObjects.add(b);
         macroObjects.add(c);
-        mediumBiter a1 = new mediumBiter();
-        try {
-            smallBiter a2 = smallBiter.clone(a1);
-            System.out.println(a2 instanceof mediumBiter);
-
-        } catch (ClassNotFoundException e) {
-            throw new RuntimeException(e);
-        }
+        macroObjects.add(a1);
+        macroObjects.add(b1);
+        macroObjects.add(c1);
 
         stage.show();
 

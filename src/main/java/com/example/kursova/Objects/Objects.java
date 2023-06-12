@@ -74,11 +74,10 @@ public class Objects {
             if(!isActive()) { return; }
 
             if (isDragging) {
-                // Перевірка нажаття правої кнопки миші
                 getPosition().X = (int) (event.getSceneX()- dragPosition.X);
                 getPosition().Y = (int) (event.getSceneY()- dragPosition.Y);
-                getCanvas().setLayoutX((int) event.getSceneX()-dragPosition.X);
-                getCanvas().setLayoutY((int) event.getSceneY()-dragPosition.Y);
+                getCanvas().setLayoutX((int) event.getScreenX()-dragPosition.X-main.root.getTranslateX());
+                getCanvas().setLayoutY((int) event.getScreenY()-dragPosition.Y-main.root.getTranslateY());
                 try {
                     main.writer.write("Move micro: " + this +"\n" );
                 } catch (IOException ex) {
@@ -104,15 +103,17 @@ public class Objects {
         if (getCanvas().getLayoutX() < 0) {
             getCanvas().setLayoutX(0);
         }
+        else if (getCanvas().getLayoutY() > 3000) {
+            getCanvas().setLayoutY(3000);
+        }
         if (getCanvas().getLayoutY() < 0) {
             getCanvas().setLayoutY(0);
         }
-        if (getCanvas().getLayoutY() > 3000) {
-            getCanvas().setLayoutY(3000);
-        }
-        if (getCanvas().getLayoutX() > 3000) {
+        else if (getCanvas().getLayoutX() > 3000) {
             getCanvas().setLayoutX(3000);
         }
+
+
         getPosition().X = (int) getCanvas().getLayoutX();
         getPosition().Y = (int) getCanvas().getLayoutY();
         main.writer.write("Move micro: " + this + ". Dir: " + dir + "\n");
