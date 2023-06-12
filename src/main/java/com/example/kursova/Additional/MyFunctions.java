@@ -2,9 +2,9 @@ package com.example.kursova.Additional;
 
 import com.example.kursova.Objects.Objects;
 import com.example.kursova.Objects.macroObjects.macroBase;
-import com.example.kursova.Objects.microObjects.fish;
-import com.example.kursova.Objects.microObjects.ikra;
-import com.example.kursova.Objects.microObjects.malok;
+import com.example.kursova.Objects.microObjects.amateur;
+import com.example.kursova.Objects.microObjects.profesional;
+import com.example.kursova.Objects.microObjects.skiled;
 import com.example.kursova.main;
 import javafx.animation.AnimationTimer;
 import javafx.scene.SnapshotParameters;
@@ -20,17 +20,17 @@ public class MyFunctions {
 
     public static ArrayList<AnimationTimer> timers = new ArrayList<>();
 
-    public static void createEntity(String type, String name, int x, int y, int health, int damage, int armor) throws IOException {
+    public static void createEntity(String type, String name, int x, int y, int health, int damage, int money) throws IOException {
         Objects temp = null;
         switch (type) {
-            case "ikra":
-                temp = new Objects(new ikra(name, health, damage, armor), x, y);
+            case "amateur":
+                temp = new Objects(new amateur(name, health, damage, money), x, y);
                 break;
-            case "malok":
-                temp = new Objects(new malok(name, health, damage, armor), x, y);
+            case "skiled":
+                temp = new Objects(new skiled(name, health, damage, money), x, y);
                 break;
-            case "fish":
-                temp = new Objects(new fish(name, health, damage, armor), x, y);
+            case "profesional":
+                temp = new Objects(new profesional(name, health, damage, money), x, y);
                 break;
         }
         if (temp == null) {
@@ -88,7 +88,7 @@ public class MyFunctions {
         main.macroObjects.forEach(macroBase::draw);
         for (Objects En : main.Entities) {
             for (macroBase macro : main.macroObjects) {
-                if (macro.getArmor() <= 0) {
+                if (macro.getMoney() <= 0) {
                     main.macroObjects.remove(macro);
                     main.root.getChildren().remove(macro.getCanvas());
                 }
@@ -97,7 +97,7 @@ public class MyFunctions {
                     if (!macro.isContains(En.e)) {
                         macro.addEntity(En.e);
                     }
-                    macro.giveArmor(En.e);
+                    macro.giveMoney(En.e);
                 }
             }
             for (Objects En2 : main.Entities) {

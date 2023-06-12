@@ -2,6 +2,7 @@
 package com.example.kursova.Objects;
 
 
+import com.example.kursova.Objects.microObjects.amateur;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.effect.ColorAdjust;
 import javafx.scene.image.Image;
@@ -11,17 +12,17 @@ import java.io.Serializable;
 
 
 public class Sprite implements Serializable {
-    private Image spriteSheet;
-    private int frameWidth;
-    private int frameHeight;
+    private final Image spriteSheet;
+    private final int frameWidth;
+    private final int frameHeight;
 
 
-    private Objects objects;
+    private final Objects objects;
 
     private int currentFrame;
-    private int numFrames;
-    private double xPos;
-    private double yPos;
+    private final int numFrames;
+    private final double xPos;
+    private final double yPos;
 
     public Sprite(Objects objects, int numFrames, double xPos, double yPos) {
         this.objects = objects;
@@ -50,9 +51,9 @@ public class Sprite implements Serializable {
         gc.fillText(objects.e.getName(), 0, 10);
 
         gc.setFill(Color.GREEN);
-        gc.fillRect(0, 20, (double) objects.e.getHealth() / objects.e.maxHealth * frameWidth, (double) 20);
-        gc.setFill(Color.GRAY);
-        gc.fillRect(0, 60, (double) objects.e.getArmor() / objects.e.maxArmor * frameWidth, (double) 20);
+        gc.fillRect(0, 20, (double) objects.e.getHealth() / amateur.maxHealth * frameWidth, 20);
+        gc.setFill(Color.GOLD);
+        gc.fillRect(0, 60, (double) objects.e.getMoney() / amateur.maxMoney * frameWidth, 20);
 
         gc.drawImage(spriteSheet, x, y, frameWidth, frameHeight, 0, 100, frameWidth, frameHeight);
     }

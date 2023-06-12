@@ -17,17 +17,17 @@ public class queryMenu implements Initializable {
 
     @FXML
     public RadioButton isActive;
-    public TextField armorValue;
+    public TextField moneyValue;
     public TextField dependsValue;
     public TextField healthValue;
-    public RadioButton isArmor;
-    public boolean isArmorB = false;
+    public RadioButton isMoney;
+    public boolean isMoneyB = false;
     public boolean isHealthB = false;
     public boolean isDependsB = false;
     public boolean isActiveB = false;
     public RadioButton isDepends;
     public RadioButton isHealth;
-    public ChoiceBox armorChoice;
+    public ChoiceBox moneyChoice;
     public Button doSearch;
     public ChoiceBox dependsChoice;
     public ChoiceBox healthChoice;
@@ -36,8 +36,8 @@ public class queryMenu implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         System.out.println("queryMenu.initialization");
-        armorChoice.getItems().addAll("<", "=", ">");
-        armorChoice.setValue("=");
+        moneyChoice.getItems().addAll("<", "=", ">");
+        moneyChoice.setValue("=");
         dependsChoice.getItems().addAll("<", "=", ">");
         dependsChoice.setValue("=");
         healthChoice.getItems().addAll("<", "=", ">");
@@ -71,22 +71,22 @@ public class queryMenu implements Initializable {
                         break;
                 }
             }
-            if (isArmorB) {
-                switch (armorChoice.getValue().toString()) {
+            if (isMoneyB) {
+                switch (moneyChoice.getValue().toString()) {
                     case "=":
-                        if (en.e.getArmor() != Integer.parseInt(armorValue.getText())) {
+                        if (en.e.getMoney() != Integer.parseInt(moneyValue.getText())) {
                             continue;
                         }
                         break;
 
                     case ">":
-                        if (!(en.e.getArmor() > Integer.parseInt(armorValue.getText()))) {
+                        if (!(en.e.getMoney() > Integer.parseInt(moneyValue.getText()))) {
                             continue;
                         }
                         break;
 
                     case "<":
-                        if (!(en.e.getArmor() < Integer.parseInt(armorValue.getText()))) {
+                        if (!(en.e.getMoney() < Integer.parseInt(moneyValue.getText()))) {
                             continue;
                         }
                         break;
@@ -117,21 +117,21 @@ public class queryMenu implements Initializable {
 
 
                     case "<":
-                        if (!(dependsCount < Integer.parseInt(armorValue.getText()))) {
+                        if (!(dependsCount < Integer.parseInt(moneyValue.getText()))) {
                             continue;
                         }
                         break;
 
                 }
             }
-            resultSearch.setText(resultSearch.getText()+ en.e.toString()+"\n");
+            resultSearch.setText(resultSearch.getText() + en.e.toString() + "\n");
         }
     }
 
 
-    public void changeIsArmor(ActionEvent actionEvent) {
-        isArmorB = !isArmorB;
-        System.out.println(isArmorB);
+    public void changeIsMoney(ActionEvent actionEvent) {
+        isMoneyB = !isMoneyB;
+        System.out.println(isMoneyB);
     }
 
     public void changeIsDepends(ActionEvent actionEvent) {

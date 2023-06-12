@@ -12,46 +12,39 @@ enum Action {
     RUN
 }
 
-public class ikra implements Serializable, Comparable<ikra>, Cloneable {
+public class amateur implements Serializable, Comparable<amateur>, Cloneable {
 
 
-    private static int count;
-    private double directionR = 0;
-    private double speed = 50;
-    private final int id;
-    private Action action;
-
-
-
-    private int armor;
+    public final static int maxMoney;
     public final static int maxHealth;
     public final static int maxDamage;
-    public final static int maxArmor;
-
-    private int health;
-    private int damage;
-
-
-
-    private boolean active;
     private static final int MaxSpeed;
-
-    private String name;
-
+    private static int count;
 
     static {
         count = 0;
         MaxSpeed = 100;
         maxDamage = 100;
         maxHealth = 1000;
-        maxArmor = 2000;
+        maxMoney = 2000;
         System.out.println("Class statis initialization");
     }
 
-    public ikra(String name, int health, int damage, int armor) throws IOException {
+    private final int id;
+    private double directionR = 0;
+    private double speed = 50;
+    private Action action;
+    private int health;
+    private int damage;
+    private boolean active;
+    private String name;
+
+    private int money;
+
+    public amateur(String name, int health, int damage, int money) throws IOException {
         this.setName(name);
         this.setAction(Action.NEUTRAL);
-        this.setArmor(armor);
+        this.setMoney(money);
         setActive(true);
         id = count;
         this.setHealth(health);
@@ -62,28 +55,39 @@ public class ikra implements Serializable, Comparable<ikra>, Cloneable {
 
     }
 
-    public ikra(ikra a) throws IOException {
-        this(a.getName(), a.getHealth(), a.getDamage(), a.getArmor());
+    public amateur(amateur a) throws IOException {
+        this(a.getName(), a.getHealth(), a.getDamage(), a.getMoney());
     }
 
-    public ikra() throws IOException {
-        this("Small_byter", maxHealth, maxDamage, maxArmor);
+    public amateur() throws IOException {
+        this("Small_byter", maxHealth, maxDamage, maxMoney);
+    }
+
+    static public amateur clone(amateur prototype) throws IOException, ClassNotFoundException {
+
+        ByteArrayOutputStream bos = new ByteArrayOutputStream();
+        ObjectOutputStream out = new ObjectOutputStream(bos);
+        out.writeObject(prototype);
+        out.flush();
+        ObjectInputStream in = new ObjectInputStream(new ByteArrayInputStream(bos.toByteArray()));
+        return ((amateur) in.readObject());
+
     }
 
     public String getName() {
         return name;
     }
 
-    public void setDirection(double degreeR) {
-        setDirectionR(degreeR);
+    public void setName(String name) {
+        this.name = name;
     }
 
     public double getDirection() {
         return getDirectionR();
     }
 
-    public void setAction(Action action) {
-        this.action = action;
+    public void setDirection(double degreeR) {
+        setDirectionR(degreeR);
     }
 
     public Action getAction(Action action) {
@@ -94,55 +98,48 @@ public class ikra implements Serializable, Comparable<ikra>, Cloneable {
         return id;
     }
 
-
-
     public int getDamage() {
         return damage;
+    }
+
+    public void setDamage(int damage) {
+        this.damage = damage;
     }
 
     public int getHealth() {
         return health;
     }
 
-    public int getArmor() {
-        return armor;
+    public void setHealth(int health) {
+        this.health = health;
     }
 
-    public void setArmor(int armor) {
-        this.armor = armor;
+    public int getMoney() {
+        return money;
     }
 
-    static public ikra clone(ikra prototype) throws IOException, ClassNotFoundException {
-
-        ByteArrayOutputStream bos = new ByteArrayOutputStream();
-        ObjectOutputStream out = new ObjectOutputStream(bos);
-        out.writeObject(prototype);
-        out.flush();
-        ObjectInputStream in = new ObjectInputStream(new ByteArrayInputStream(bos.toByteArray()));
-        return ((ikra) in.readObject());
-
+    public void setMoney(int money) {
+        this.money = money;
     }
 
-    public boolean equals(ikra a, ikra b) {
+    public boolean equals(amateur a, amateur b) {
         return a == b;
     }
 
     @Override
     public String toString() {
-        return "ikra{" +
+        return "amateur{" +
                 "directionR=" + directionR +
                 ", speed=" + speed +
                 ", id=" + id +
                 ", action=" + action +
-                ", armor=" + armor +
+                ", money=" + money +
                 ", health=" + health +
                 ", damage=" + damage +
                 ", active=" + active +
                 ", name='" + name + '\'' +
                 '}';
     }
-
-
 
     public double getDirectionR() {
         return directionR;
@@ -156,12 +153,8 @@ public class ikra implements Serializable, Comparable<ikra>, Cloneable {
         return action;
     }
 
-    public void setHealth(int health) {
-        this.health = health;
-    }
-
-    public void setDamage(int damage) {
-        this.damage = damage;
+    public void setAction(Action action) {
+        this.action = action;
     }
 
     public boolean isActive() {
@@ -172,7 +165,6 @@ public class ikra implements Serializable, Comparable<ikra>, Cloneable {
         this.active = active;
     }
 
-
     public double getSpeed() {
         return speed;
     }
@@ -181,15 +173,10 @@ public class ikra implements Serializable, Comparable<ikra>, Cloneable {
         this.speed = speed;
     }
 
-    public void setName(String name) {
-        this.name = name;
-    }
-
     @Override
-    public int compareTo(ikra o) {
+    public int compareTo(amateur o) {
         return Integer.compare(this.getId(), o.getId());
     }
-
 
 
 }

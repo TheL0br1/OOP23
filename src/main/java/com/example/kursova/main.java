@@ -4,12 +4,12 @@ import com.example.kursova.Additional.MyFunctions;
 import com.example.kursova.Controllers.initMicro;
 import com.example.kursova.Objects.Objects;
 import com.example.kursova.Objects.Position;
+import com.example.kursova.Objects.macroObjects.biteStore;
+import com.example.kursova.Objects.macroObjects.fishStore;
+import com.example.kursova.Objects.macroObjects.fishingPlace;
 import com.example.kursova.Objects.macroObjects.macroBase;
-import com.example.kursova.Objects.macroObjects.obmil;
-import com.example.kursova.Objects.macroObjects.perekat;
-import com.example.kursova.Objects.macroObjects.pleso;
-import com.example.kursova.Objects.microObjects.ikra;
-import com.example.kursova.Objects.microObjects.malok;
+import com.example.kursova.Objects.microObjects.amateur;
+import com.example.kursova.Objects.microObjects.skiled;
 import javafx.animation.AnimationTimer;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -191,7 +191,7 @@ public class main extends Application {
         stage.setWidth(main.STAGE_WIDTH);
         stage.setHeight(main.STAGE_HEIGHT);
 
-        stage.setTitle("lab4 Barasiy");
+        stage.setTitle("lab4");
 
         AnimationTimer timer = new AnimationTimer() {
             private final long lastUpdate = 0;
@@ -239,19 +239,19 @@ public class main extends Application {
         scene.setOnKeyPressed(event -> {
             extracted(stage, event);
         });
-        obmil a = new obmil(new Position(0, 10));
-        perekat b = new perekat(new Position(900, 500));
-        pleso c = new pleso(new Position(900, 10));
+        biteStore a = new biteStore(new Position(0, 10));
+        fishStore b = new fishStore(new Position(900, 500));
+        fishingPlace c = new fishingPlace(new Position(900, 10));
         stage.setScene(scene);
         relateX = miniMapCanvas.getWidth() / rect.getWidth();
         relateY = miniMapCanvas.getHeight() / rect.getHeight();
         macroObjects.add(a);
         macroObjects.add(b);
         macroObjects.add(c);
-        malok a1 = new malok();
+        skiled a1 = new skiled();
         try {
-            ikra a2 = ikra.clone(a1);
-            System.out.println(a2 instanceof malok);
+            amateur a2 = amateur.clone(a1);
+            System.out.println(a2 instanceof skiled);
 
         } catch (ClassNotFoundException e) {
             throw new RuntimeException(e);

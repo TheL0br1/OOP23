@@ -27,7 +27,7 @@ public class Controller implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         System.out.println("Controller.initialize");
-        typeChoice.getItems().addAll("ikra", "malok", "fish");
+        typeChoice.getItems().addAll("amateur", "skiled", "profesional");
 
 
     }

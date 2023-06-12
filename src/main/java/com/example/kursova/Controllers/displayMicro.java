@@ -2,7 +2,7 @@ package com.example.kursova.Controllers;
 
 import com.example.kursova.Additional.MyFunctions;
 import com.example.kursova.Objects.Objects;
-import com.example.kursova.Objects.microObjects.ikra;
+import com.example.kursova.Objects.microObjects.amateur;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.canvas.Canvas;
@@ -18,21 +18,22 @@ import java.util.ResourceBundle;
 public class displayMicro implements Initializable {
 
     @FXML
-    public TextField armor;
+    public TextField money;
     public TextField health;
     public TextField damage;
     public TextField name;
     public Canvas canvas = new Canvas();
     private Objects objects;
+
     public void changeHp(MouseEvent ignoredMouseEvent) {
         objects.e.setHealth(Integer.parseInt(health.getText()));
         health.setPromptText(Integer.toString(objects.e.getHealth()));
     }
 
-    public void changeArmor(MouseEvent ignoredMouseEvent) {
-       // entity.setHealth(Integer.parseInt(health.getText()));
-        objects.e.setArmor(Integer.parseInt(armor.getText()));
-        armor.setPromptText(armor.getText());
+    public void changeMoney(MouseEvent ignoredMouseEvent) {
+        // entity.setHealth(Integer.parseInt(health.getText()));
+        objects.e.setMoney(Integer.parseInt(money.getText()));
+        money.setPromptText(money.getText());
     }
 
     public void changeName(MouseEvent ignoredMouseEvent) {
@@ -62,8 +63,8 @@ public class displayMicro implements Initializable {
         damage.setPromptText(Integer.toString(objects.e.getDamage()));
     }
     public void deepCopyObject() throws IOException, ClassNotFoundException {
-        ikra a = ikra.clone(objects.e);
-        MyFunctions.createEntity(a.getClass().getSimpleName(), a.getName(), 0, 0, a.getHealth(), a.getDamage(), a.getArmor());
+        amateur a = amateur.clone(objects.e);
+        MyFunctions.createEntity(a.getClass().getSimpleName(), a.getName(), 0, 0, a.getHealth(), a.getDamage(), a.getMoney());
     }
 
 }
